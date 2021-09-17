@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/get_offers")
 def get_offers():
     offers = mongo.db.offers.find()
-    return render_template("offers.html",offers=offers)
+    return render_template("offers.html", offers=offers)
                             
 
 if __name__ == "__main__":
