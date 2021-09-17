@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Extending base template</h2>
-
     {% for offer in offers %}
         {{ offer.fruit_category }}<br>
         {{ offer.location }}<br>
