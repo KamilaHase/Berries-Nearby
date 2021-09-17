@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" type="text/css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
     {% block styles %}
     {% endblock %}
@@ -13,7 +14,59 @@
     <title>Berries Nearby</title>
 </head>
 <body>
-   
+    <header>
+        <!--
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo left"><img src="../static/images/logoBN.png" class="z-depth-5" id="logo" alt="logo-berries-nearby"></a>
+              
+                <ul id="nav-mobile" class="right hide-on-med-and-down nav-menu-mine">
+                  <li><a href="badges.html"><h5 class="nav-enter">Enter</h5></a></li>
+                  <li><a href="collapsible.html"><h5 class="nav-register">Register</h5></a></li>
+                  <li><a href="sass.html" id="about-navbar"><h5 class="nav-about">About the project</h5></a></li>
+                </ul>
+              
+          </div>
+        </nav>
+        -->
+      </header>
+
+      <nav>
+        <!--large screens navbar-->
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo left"><img src="../static/images/logoBN.png" class="z-depth-5" id="logo" alt="logo-berries-nearby"></a>
+         
+          <!--
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger center-align right btn-floating btn-large halfway-fab waves-effect waves-light black">
+            <i class="material-icons menu-bar-mobile white-text">arrow_drop_down_circle</i>
+          </a> -->
+
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger btn-floating btn-large halfway-fab waves-effect waves-light black">
+            <i class="large material-icons">arrow_drop_down</i>
+          </a>
+          
+          <ul class="right hide-on-med-and-down nav-menu-mine">
+            <li><a href="#"><h6>Enter</h6></a></li>
+            <li><a href="#"><h6>Register</h6></a></li>
+            <li><a href="#"><h6>Add New Offer</h6></a></li>
+            <li><a href="#"><h6>Edit Categories</h6></a></li>
+            <li><a href="#"><h6>About the Project</h6></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!--mobile navbar-->
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="#"><h5>Enter</h5></a></li>
+        <li><a href="#"><h5>Register</h5></a></li>
+        <li><a href="#"><h5>Add New Offer</h5></a></li>
+        <li><a href="#"><h5>Edit Categories</h5></a></li>
+        <li><a href="#"><h5>About the Project</h5></a></li>
+      </ul>
+
+
+
+
     {% block content %}
     {% endblock %}
 
