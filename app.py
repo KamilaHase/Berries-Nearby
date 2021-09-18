@@ -27,7 +27,27 @@ def get_offers():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    return render_template("register.html")                            
+    if request.method == "POST":
+        # check if email already exists in db
+        existing_email = mongo.db.users.find_one(
+            {"email": request.form.get("email").lower()})
+
+        if existing_email:
+            flash("This email has been already used.")
+            return redirect(url_for("register"))
+
+        register = {
+            "first_name": request.form.get("first_name").lower(),
+            "last_name": request.form.get("last_name").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("email").lower()
+        flash("Registration Successful!")
+    return render_template("register.html")                          
 
 
 if __name__ == "__main__":

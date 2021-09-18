@@ -54,6 +54,12 @@ nav {
     padding-right: 20px;
 }
 
+.flash-msg {
+    line-height: 2!important;
+    margin: 1px;
+    border-radius: 25px;
+}
+
 /*-------------------------register.html-------------------------------------------------*/
 
     /* label color */
@@ -90,6 +96,10 @@ nav {
     /* icon prefix focus color */
     .input-field .prefix.active {
       color: #880e4f !important;
+    }
+
+    .btn-register {
+      border-radius: 25px;
     }
 
 

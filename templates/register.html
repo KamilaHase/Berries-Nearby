@@ -2,41 +2,43 @@
 {% block content %}
 
 <div class="row">
-  <div class="offset-m3 col s6">
+  <div class="offset-m2 col s8">
     <h5>Register</h5>
-    <h6>Register to Berries Nearby, get access to list of gardens around you and offer your own berfruits to others! 
+    <h6>Register to Berries Nearby, get access to list of gardens around you and offer your own fruits to others! 
     </h6>
   </div>
 </div> 
 
 <div class="row">
-    <form class="col s8 offset-m3 form-color-purple" method="POST" action="{{ url_for('register') }}">
+    <form class="col s10 offset-m2 form-color-purple" method="POST" action="{{ url_for('register') }}">
       <div class="row">
-        <div class="input-field input-purple-underline col s8">
+        <div class="input-field input-purple-underline col s10">
             <input id="first_name" type="text" class="validate" name="first_name">
             <label for="first_name">First Name</label>
           </div>
       </div>
       <div class="row">
-        <div class="input-field input-purple-underline col s8">
+        <div class="input-field input-purple-underline col s10">
           <input id="last_name" type="text" class="validate" name="last_name">
           <label for="last_name">Last Name</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field input-purple-underline col s8">
+        <div class="input-field input-purple-underline col s10">
           <input id="email" type="email" class="validate" name="email">
           <label for="email">Email</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field input-purple-underline col s8">
+        <div class="input-field input-purple-underline col s10">
           <input id="password" type="password" class="validate" name="password">
           <label for="password">Password</label>
         </div>
       </div>
       <div class="row">
-        <button class="btn col s8 waves-effect waves-light pink darken-4" type="submit" name="action">Submit</button>
+        <div class="center">
+        <button class="btn offset-m3 col s4 waves-effect waves-light pink darken-4 btn-register" type="submit" name="action">Submit</button>
+      </div>
       </div>
     </form>
   </div>
