@@ -60,13 +60,13 @@ nav {
     border-radius: 25px;
 }
 
-.parallax-container {
+.purple-cont {
   height: 300px;
   width: 100%!important;
 }
 
 .purple-par-text {
-  margin-top: 40px;
+  padding-top: 40px;
 }
 
 .btn-get-started {

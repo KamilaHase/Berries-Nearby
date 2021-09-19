@@ -1,61 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="paralax-main-pg">
+<section>
     <div class="section white">
-      <div class="row container offset-m2">
-        <h5 class="header right-align">Pick your favourite fruits and vegetables on your own. <br>Offer your fruits and veggies to others.</h5>
-        <p class="grey-text text-darken-3 lighten-3 motivation-qutoes right-align">Getting fruits and letting them go has never been easier.</p>
-      </div>
-    </div>
-  
-    <div class="parallax-container">
-      <div class="parallax purple-par pink darken-4">
-        <div class="row offset-m2 purple-par-text container">
-          <div class="col s4 white-text center">
-            <i class="fas fa-child fa-4x"></i>
-            <p>Arrange a suitable time and come to pick organic fruits from local gardens.</p>
-          </div>
-          <div class="col s4 white-text center">
-            <i class="fab fa-pagelines fa-4x"></i>
-            <p>Worry no more what to do with tons of fruits that grew in your garden.</p>
-          </div>
-          <div class="col s4 white-text center">
-            <i class="fas fa-network-wired fa-4x"></i>
-            <p>Get access to available farmers or offer your own fruits to others.</p>
-          </div>
-          <div class="offset-s3 col s6 center">
-            <a class="waves-effect waves-light btn red accent-3 btn-get-started" href="">Get started now</a>
-          </div>
+        <div class="row container offset-m2">
+          <h5 class="header right-align">Pick your favourite fruits and vegetables on your own. <br>Offer your fruits and veggies to others.</h5>
+          <p class="grey-text text-darken-3 lighten-3 motivation-qutoes right-align">Getting fruits and letting them go has never been easier.</p>
         </div>
-        </div>
-    </div>
-  
-    <div class="section white">
-      <div class="row container">
-        <h3 class="header">Pick Home-Grown Fruits</h3>
-        <p class="grey-text text-darken-3 lighten-3 customer">Sign up as a member and get access to our lists of farmers who offer their fruits for self-picking in the Gothenburg area. You will be able to pick fruits and vegetables that grew in one of the local gardens, are of organic quality and free or just a little charge.
-        </p>
-        <h3 class="header">Offer Your Fruits To Others</h3>
-        <p class="grey-text text-darken-3 lighten-3 farmer">Do you want to offer your garden fruits to others? Were your trees generous and there is too many fruits for your own consumption? Is your garden located in Gothenburg area? Become our member and share the information with the closed group. 
-          You will be able to share as many/little details as you wish and offer other members to come and pick themselves or you may sell your own already picked fruits. 
-          </p>
       </div>
-    </div>
-  
-    <div class="parallax-container">
-      <div class="parallax img-fruits-baskets"><img src="../static/images/fruits-baskets.jpg"></div>
-    </div>
     
-    <div class="section white">
-      <div class="row container">
-        <h3 class="header">Berries Nearby</h3>
-        <p class="grey-text text-darken-3 lighten-3 about-bn">We are an independent group of gardeners who don’nt like to let their fruits to get wasted. We have no profit from these actions. 
-        </p>
+      <div>
+        <div class="purple-cont pink darken-4">
+          <div class="row offset-m2 purple-par-text container">
+            <div class="col s4 white-text center">
+              <i class="fas fa-child fa-4x"></i>
+              <p>Arrange a suitable time and come to pick organic fruits from local gardens.</p>
+            </div>
+            <div class="col s4 white-text center">
+              <i class="fab fa-pagelines fa-4x"></i>
+              <p>Worry no more what to do with tons of fruits that grew in your garden.</p>
+            </div>
+            <div class="col s4 white-text center">
+              <i class="fas fa-network-wired fa-4x"></i>
+              <p>Get access to available farmers or offer your own fruits to others.</p>
+            </div>
+            <div class="offset-s3 col s6 center">
+              <a class="waves-effect waves-light btn red accent-3 btn-get-started" href="{{ url_for('register') }}">Get started now</a>
+            </div>
+          </div>
+          </div>
       </div>
-    </div>
-  
-  </section>
+
+      <div class="section white">
+        <div class="row container">
+          <h3 class="header">Pick Home-Grown Fruits</h3>
+          <p class="grey-text text-darken-3 lighten-3 customer">Sign up as a member and get access to our lists of farmers who offer their fruits for self-picking in the Gothenburg area. You will be able to pick fruits and vegetables that grew in one of the local gardens, are of organic quality and free or just a little charge.
+          </p>
+          <h3 class="header">Offer Your Fruits To Others</h3>
+          <p class="grey-text text-darken-3 lighten-3 farmer">Do you want to offer your garden fruits to others? Were your trees generous and there is too many fruits for your own consumption? Is your garden located in Gothenburg area? Become our member and share the information with the closed group. 
+            You will be able to share as many/little details as you wish and offer other members to come and pick themselves or you may sell your own already picked fruits. 
+            </p>
+        </div>
+
+      <div>
+        <img src="url_for('static', 'images/baskets.png')"/>
+      </div>
+
+      <div class="parallax-container">
+        <div class="parallax img-fruits-baskets"><img src="url_for('static', 'images/fruits-baskets.jpg')"></div>
+      </div>
+
+      </div>
+</section>
         
    
 
