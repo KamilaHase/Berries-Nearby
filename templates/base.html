@@ -20,7 +20,7 @@
       <nav>
         <!--large screens navbar-->
         <div class="nav-wrapper">
-          <a href="{{ url_for('get_offers') }}" class="brand-logo left"><img src="../static/images/logoBN.png" class="z-depth-5" id="logo" alt="logo-berries-nearby"></a>
+          <a href="{{ url_for('home') }}" class="brand-logo left"><img src="../static/images/logoBN.png" class="z-depth-5" id="logo" alt="logo-berries-nearby"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger btn-floating btn-large halfway-fab waves-effect waves-light black">
             <i class="large material-icons">arrow_drop_down</i>
           </a>
@@ -63,7 +63,7 @@
   </section>
 
 <!--block content-->
-  <main class="container">
+  <main>
       {% block content %}
       {% endblock %}
   </main>

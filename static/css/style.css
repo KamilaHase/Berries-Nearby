@@ -60,6 +60,21 @@ nav {
     border-radius: 25px;
 }
 
+.parallax-container {
+  height: 300px;
+  width: 100%!important;
+}
+
+.purple-par-text {
+  margin-top: 40px;
+}
+
+.btn-get-started {
+  margin-top: 15px;
+  border-radius: 25px;
+}
+
+
 /*-------------------------register.html-------------------------------------------------*/
 
     /* label color */
@@ -104,6 +119,12 @@ nav {
 
 
 /*-------------------------MEDIA QUERIES-------------------------------------------------*/
+@media only screen and (min-width: 550px) {
+.my-par {
+    width: 100%!important;
+}
+}
+
 
 @media(max-width: 555px) {
     #logo {
