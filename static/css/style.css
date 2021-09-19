@@ -61,8 +61,7 @@ nav {
 }
 
 .purple-cont {
-  height: 300px;
-  width: 100%!important;
+  height: 320px;
 }
 
 .purple-par-text {
@@ -74,8 +73,12 @@ nav {
   border-radius: 25px;
 }
 
+.parallax-container {
+  height: 320px;
+}
+
 .img-fruits-baskets {
-  height: 350px;
+  height: 320px;
   width: 100vw;
   background: url(../images/baskets.png) center center fixed;
 
