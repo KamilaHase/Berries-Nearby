@@ -74,6 +74,35 @@ nav {
   border-radius: 25px;
 }
 
+.img-fruits-baskets {
+  height: 350px;
+  width: 100vw;
+  background: url(../images/baskets.png) center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    -webkit-overflow-scrolling: touch;
+
+    display: flex;
+    position: relative;
+}
+
+/*
+background: url(../images/HaseKR-toys-blur-sm.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    -webkit-overflow-scrolling: touch;
+
+    display: flex;
+    position: relative;
+
+*/
 
 /*-------------------------register.html-------------------------------------------------*/
 
