@@ -91,7 +91,19 @@ def profile(email):
     # grab the session user's email from db
     email = mongo.db.users.find_one(
         {"email": session["user"]})["email"]
-    return render_template("profile.html", email=email)
+
+    if session["user"]:
+        return render_template("profile.html", email=email)
+    
+    return redirect(url_for("signin"))
+
+
+@app.route("/signout")
+def signout():
+    # remove user from session cookie
+    flash("You have been signed out.")
+    session.pop("user")
+    return redirect(url_for("signin"))
 
 
 if __name__ == "__main__":
