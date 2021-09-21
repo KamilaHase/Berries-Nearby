@@ -95,6 +95,10 @@ nav {
 
 
 /*-------------------------register.html-------------------------------------------------*/
+.lower-from-logo {
+  margin-top: 40px;
+}
+
 
     /* label color */
     .input-field label {
@@ -136,6 +140,12 @@ nav {
       border-radius: 25px;
     }
 
+/*-------------------------signin.html-------------------------------------------------*/
+    .btn-enter {
+      border-radius: 25px;
+    }
+
+    
 
 /*-------------------------MEDIA QUERIES-------------------------------------------------*/
 @media only screen and (min-width: 550px) {

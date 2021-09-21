@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row">
+<div class="row lower-from-logo">
   <div class="offset-m2 col s8">
-    <h5>Register</h5>
+    <h5 class="center">Register</h5>
     <h6>Register to Berries Nearby, get access to list of gardens around you and offer your own fruits to others! 
     </h6>
   </div>
@@ -45,7 +45,7 @@
 
   <div class="row">
     <div class="offset-m3 col s6 center">
-    <h6>Do you already have an account?<a class="waves-effect btn-flat">Sign in here.</a></h6>
+    <h6>Do you already have an account?<a class="waves-effect btn-flat" href="{{ url_for('signin') }}">Sign in here.</a></h6>
   </div>
         
 

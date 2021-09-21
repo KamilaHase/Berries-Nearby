@@ -26,7 +26,7 @@
           </a>
           
           <ul class="right hide-on-med-and-down nav-menu-mine">
-            <li><a href="#"><h6>Enter</h6></a></li>
+            <li><a href="{{ url_for('signin') }}"><h6>Enter</h6></a></li>
             <li><a href="{{ url_for('register') }}"><h6>Register</h6></a></li>
             <li><a href="#"><h6>Add New Offer</h6></a></li>
             <li><a href="#"><h6>Edit Categories</h6></a></li>
@@ -37,7 +37,7 @@
 
       <!--mobile navbar-->
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="#"><h5>Enter</h5></a></li>
+        <li><a href="{{ url_for('signin') }}"><h5>Enter</h5></a></li>
         <li><a href="{{ url_for('register') }}"><h5>Register</h5></a></li>
         <li><a href="#"><h5>Add New Offer</h5></a></li>
         <li><a href="#"><h5>Edit Categories</h5></a></li>
