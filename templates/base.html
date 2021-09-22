@@ -27,6 +27,7 @@
           
           <ul class="right hide-on-med-and-down nav-menu-mine">
             {% if session.user %}
+              <li><a href="{{ url_for('offers') }}"><h6>Current Offers</h6></a></li>
               <li><a href="{{ url_for('profile', email=session['user']) }}"><h6>Profile</h6></a></li>
               <li><a href="#"><h6>Edit Categories</h6></a></li>
               <li><a href="{{ url_for('signout') }}"><h6>Sign Out</h6></a></li>
@@ -43,9 +44,11 @@
       <!--mobile navbar-->
       <ul class="sidenav" id="mobile-demo">
         {% if session.user %}
+          <li><a href="{{ url_for('offers') }}"><h6>Current Offers</h6></a></li>
           <li><a href="{{ url_for('profile', email=session['user']) }}"><h6>Profile</h6></a></li>
           <li><a href="#"><h5>Edit Categories</h5></a></li>
           <li><a href="{{ url_for('signout') }}"><h6>Sign Out</h6></a></li>
+          
         {% else %}
           <li><a href="{{ url_for('home') }}"><h5>Home</h5></a></li>
           <li><a href="{{ url_for('signin') }}"><h5>Enter</h5></a></li>
