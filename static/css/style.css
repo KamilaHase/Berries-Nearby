@@ -154,11 +154,11 @@ nav {
 
     .profile-icon {
       padding: 4px;
-      padding-top
     }
 
     .offer-card {
       margin: 10px;
+      min-height: 150%;
     }
     
 
