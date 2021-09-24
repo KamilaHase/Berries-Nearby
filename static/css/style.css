@@ -16,6 +16,11 @@ p {
     font-size: medium;
 }
 
+strong {
+  font-weight: 800;
+}
+
+
 header {
   margin-bottom: 20px;
 }
@@ -161,6 +166,43 @@ nav {
       min-height: 150%;
     }
     
+/*-------------------------offers.html-------------------------------------------------*/
+.cards-padding {
+  padding: 0!important;
+}
+
+
+.card-action-style {
+  margin-top: 0!important;
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+
+}
+
+.content-card-padding {
+  padding: 0!important;
+}
+
+.card-title-padding {
+  padding: 16px!important;
+}
+
+.offer-image {
+  position: relative;
+}
+
+.offer-free {
+  position: relative;
+  margin-top: -100px;
+}
+
+.button-free {
+  z-index: 20;
+}
+
+.icon-free {
+  font-size: 3rem!important;
+}
 
 /*-------------------------MEDIA QUERIES-------------------------------------------------*/
 @media only screen and (min-width: 550px) {

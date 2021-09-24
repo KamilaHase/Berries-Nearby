@@ -8,34 +8,50 @@
   <div class="row">
     <div class="">
       {% for offer in offers %}
-      <div class="card col m5 offer-card">
-            
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="{{ url_for('static', filename='images/baskets.png') }}">
-        </div>
-        <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"> {{ offer.fruit_category }}
-            <i class="material-icons right">more_vert</i>
-            </span>
-            <p>{{ offer.location }}</p>
-            <p>{{ offer.date_of_pick_up }}</p>
+  
 
+      <div class="card col m5 offer-card cards-padding sticky-action">
+
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{ url_for('static', filename='images/baskets.png') }}">
         </div>
+        <div class="card-content content-card-padding ">
+          <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.fruit_category }}
+            <i class="material-icons right">more_vert</i>
+          </span>
+
+          <div class="card-action pink darken-4 white-text">
+            <p>{{ offer.location }}</p>
+            <p>{{ offer.date_of_pick_up }}, {{ offer.time }}</p>
+          </div>
+        </div>
+
         <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{ offer.location }}<br>{{ offer.date_of_pick_up }}
-            <i class="material-icons right">close</i></span>
-            <p>{{ offer.time }}</p>
-            <p>{{ offer.description }}</p>
-            <p>Equipment: {{ offer.equipment }}</p>
-            <p>Contact: {{ offer.contact }}</p>
-            <p>Price:  {{ offer.price }}</p>
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+          <p>{{ offer.description }}</p>
+          <p><strong>Equipment:</strong> {{ offer.equipment }}</p>
+          <p><strong>Contact:</strong> {{ offer.contact }}</p>      
+        </div>
+
+        {% if offer.price == "free" %}
+            <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free" data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">insert_emoticon</i></a>
             
-        </div>
-        
-        </div>
+            {% else %}
+            <div class="card-reveal">
+              <p><strong>Price:</strong> {{ offer.price }}</p>      
+            </div>
+
+        {% endif %}
+
+       
+      </div>
+      
+      
         {% endfor %}
     </div>
     
   </div>
 </div>
+
+
 {% endblock %}
