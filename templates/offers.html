@@ -1,35 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="offer-cards-all container">  
-  
+
+
+
+<div class="container">
   <div class="row">
-        {% for offer in offers %}
-        <div class="card col m3 offset-s3 offer-card">
-  
-          <div class="card-image waves-effect waves-block waves-light">
+    <div class="">
+      {% for offer in offers %}
+      <div class="card col m5 offer-card">
+            
+        <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="{{ url_for('static', filename='images/baskets.png') }}">
-          </div>
+        </div>
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"> {{ offer.fruit_category }}
+            <i class="material-icons right">more_vert</i>
+            </span>
+            <p>{{ offer.location }}</p>
+            <p>{{ offer.date_of_pick_up }}</p>
 
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">This is a link</a></p>
-          </div>
-
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{ offer.location }}<br>{{ offer.date_of_pick_up }}
+            <i class="material-icons right">close</i></span>
+            <p>{{ offer.time }}</p>
+            <p>{{ offer.description }}</p>
+            <p>Equipment: {{ offer.equipment }}</p>
+            <p>Contact: {{ offer.contact }}</p>
+            <p>Price:  {{ offer.price }}</p>
+            
+        </div>
+        
+        </div>
+        {% endfor %}
+    </div>
     
-  </div>  
-  {% endfor %}
-</section>
-
-
-
-
-     
-
-
-
+  </div>
+</div>
 {% endblock %}
