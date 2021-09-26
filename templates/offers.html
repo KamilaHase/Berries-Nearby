@@ -22,7 +22,7 @@
 
           <div class="card-action pink darken-4 white-text">
             <p>{{ offer.location }}</p>
-            <p>{{ offer.date_of_pick_up }}, {{ offer.time }}</p>
+            <p>{{ offer.date_of_pick_up }}, {{ offer.time_start }}-{{ offer.time_end }}</p>
           </div>
         </div>
 
@@ -33,7 +33,7 @@
           <p><strong>Contact:</strong> {{ offer.contact }}</p>      
         </div>
 
-        {% if offer.price == "free" %}
+        {% if offer.price_free == "on" %}
             <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free" data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">insert_emoticon</i></a>
             
             {% else %}

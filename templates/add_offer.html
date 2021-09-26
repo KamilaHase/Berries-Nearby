@@ -4,16 +4,122 @@
 <div class="row lower-from-logo">
     <div class="offset-m2 col s8">
       <h5 class="center">Publish Your Offer</h5>
-      <h6>Here you can insert your new offer. 
+      <h6>Insert your new offer here. 
       </h6>
     </div>
   </div> 
   
+
   <div class="row">
       <form class="col s10 offset-m2 form-color-purple" method="POST" action="">
+
+        <div class="row">
+          <div class="input-field input-purple-underline col s10">
+              <select id="fruit_category" name="fruit_category">
+                <option value="" disabled selected>Fruit Category</option>
+                <option value="apples_pears">Apples and Pears</option>
+                <option value="berries">Berries</option>
+                <option value="cherries">Cherries</option>
+                <option value="peaches_apricots_plums">Peaches, Apricots, Plums</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="others">Others</option>
+              </select>
+              <label for="fruit_category">Select the category of your fruits</label>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field input-purple-underline col s10">
+            <select id="location" name="location">
+                <option value="" disabled selected>Location</option>
+                <option value="askim_frolunda">Askim-Frölunda</option>
+                <option value="goteborgs_centrum">Göteborgs Centrum</option>
+                <option value="lundby">Lundby</option>
+                <option value="majorna">Majorna</option>
+                <option value="norra_hisingen">Norra Hisingen</option>
+                <option value="vastra_goteborg">Västra Göteborg</option>
+                <option value="orgryte_harlanda">Örgryte-Härlanda</option>
+                <option value="ostra_goteborg">Östra Göteborg</option>
+                <option value="molndal">Mölndal</option>
+                <option value="kallered">Kållered</option>
+                <option value="kungsbacka">Kungsbacka</option>
+                <option value="boras">Borås</option>
+                <option value="kungalv">Kungalv</option>
+                <option value="other">other - please specify in Description</option>
+              </select>
+            <label for="location">Where can we find you</label>
+        </div>
+    </div>
+
+
+        <div class="row">
+          <div class="input-field input-purple-underline col s10">
+              <input id="date_of_pick_up" name="date_of_pick_up" type="text" class="datepicker validate" required>
+              <label for="date_of_pick_up">Date available for pick up</label>
+          </div>
+        </div>  
+        <div class="row">
+          <div class="input-field input-purple-underline col s5">
+              <input placeholder="From" id="time_start" name="time_start" type="text" class="timepicker validate" required>
+              <label for="time_start">Time available - START</label>
+          </div>
+          <div class="input-field input-purple-underline col s5">
+              <input placeholder="Until" id="time_end" name="time_end" type="text" class="timepicker validate" required>
+              <label for="time_end">Time available for pick up - END</label>
+          </div>
+        </div>  
+
+        <div class="row">
+          <div class="input-field input-purple-underline col s10">
+            <input placeholder="Anything you want to let people know." 
+              id="description" name="description" type="text" class="validate" minlength="3" maxlength="200" required>
+            <label for="description">Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field input-purple-underline col s10">
+            <input placeholder="E.g. what is available to borrow and use or necessary to bring on one’s own (ladders, baskets, etc.)"
+              id="equipment" name="equipment" type="text" class="validate" minlength="3" maxlength="200" required>
+            <label for="equipment">Equipment</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field input-purple-underline col s10">
+            <input placeholder="Phone, messenger, whatsapp etc. Email not desired." id="contact" name="contact" type="text" class="validate" minlength="3" maxlength="200" required>
+            <label for="contact">Contact</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field input-purple-underline col s10">
+            <div class="switch">
+              <label for="price_free">
+                Free of charge
+                <input type="checkbox" id="price_free" name="price_free">
+                   <span class="lever"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+    
+          <div class="row">
+            <div class="input-field input-purple-underline col s10">
+              <input placeholder="Your desired price." 
+                id="price" name="price" type="number" class="validate" min="1" max="1000">
+              <label for="price">Price</label>
+            </div>
+          </div>
+        
+
+
+      </form>
+
+
+      <!--
         <div class="row">
             <div class="input-field input-purple-underline col s10">
-                <select>
+                <select id="">
                   <option value="" disabled selected>Fruit Category</option>
                   <option value="1">Apples and Pears</option>
                   <option value="2">Berries</option>
@@ -53,6 +159,7 @@
               <label for="date_of_pick_up">Date available for pick up</label>
             </div>
         </div>
+        -->
 
     
 

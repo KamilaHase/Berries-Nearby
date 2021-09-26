@@ -11,5 +11,13 @@ $(document).ready(function(){
             done: "Select"
         }
     });
+    $('.timepicker').timepicker({
+        showClearBtn: true,
+        i18n: {
+            done: "Select",
+            clear: "Clear",
+            cancel: "Cancel"
+        }
+    });
   
   });
