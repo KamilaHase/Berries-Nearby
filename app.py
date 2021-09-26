@@ -108,7 +108,9 @@ def signout():
 
 @app.route("/add_offer")
 def add_offer():
-    return render_template("add_offer.html")    
+    fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits", 1)
+    location = mongo.db.location.find().sort("category_location", 1)
+    return render_template("add_offer.html", fruit_categories=fruit_categories, location=location)   
 
 
 if __name__ == "__main__":
