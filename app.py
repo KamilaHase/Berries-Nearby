@@ -106,8 +106,31 @@ def signout():
     return redirect(url_for("signin"))
 
 
-@app.route("/add_offer")
+@app.route("/add_offer", methods=["GET", "POST"])
 def add_offer():
+    if request.method == "POST":
+        price_free = "on" if request.form.get("price_free") else "off"
+        offers = {
+            "fruit_category": request.form.get("fruit_category"),
+            "contact": request.form.get("contact"),
+            "date_of_pick_up": request.form.get("date_of_pick_up"),
+            "description": request.form.get("description"),
+            "equipment": request.form.get("equipment"),
+            "time_start": request.form.get("time_start"),
+            "time_end": request.form.get("time_end"),
+            "price_free": price_free,
+            "price": request.form.get("price"),
+            "created_by": session["user"]
+        }
+        mongo.db.offers.insert_one(offers)
+
+        location = {
+            "category_location": request.form.get("category_location")
+        }
+        mongo.db.location.insert_one(loction)
+        flash("Offer Successfully Added")
+        return redirect(url_for("offers"))
+
     fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits", 1)
     location = mongo.db.location.find().sort("category_location", 1)
     return render_template("add_offer.html", fruit_categories=fruit_categories, location=location)   

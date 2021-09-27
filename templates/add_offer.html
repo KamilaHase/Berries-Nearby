@@ -1,155 +1,107 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <div class="row lower-from-logo">
-    <div class="offset-m2 col s8">
+   <div class="offset-m2 col s8">
       <h5 class="center">Publish Your Offer</h5>
       <h6>Insert your new offer here. 
       </h6>
-    </div>
-  </div> 
-  
+   </div>
+</div>
 
-  <div class="row">
-      <form class="col s10 offset-m2 form-color-purple" method="POST" action="">
-
-        <div class="row">
-          <div class="input-field input-purple-underline col s10">
-              <select id="category_fruits" name="category_fruits" class="validate" required>
-                {% for fruit_category in fruit_categories %}
-                <option value="{{ fruit_category.category_fruits }}">{{ fruit_category.category_fruits }}</option>
-                {% endfor %}
-              </select>
-              <label for="category_fruits">Select the category of your fruits</label>
-          </div>
+<div class="row">
+<form class="col s10 offset-m2 form-color-purple" method="POST" action="{{ url_for('add_offer')}}">
+   <!--fruits category-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <select id="category_fruits" name="category_fruits" class="validate" required>
+            {% for fruit_category in fruit_categories %}
+            <option value="{{ fruit_category.category_fruits }}">{{ fruit_category.category_fruits }}</option>
+            {% endfor %}
+         </select>
+         <label for="category_fruits">Select the category of your fruits</label>
       </div>
+   </div>
+   <!--location-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <select id="category_location" name="category_location" class="validate" required>
+            {% for location in location %}
+            <option value="{{ location.category_location }}">{{ location.category_location }}
+               {% endfor %}
+         </select>
+         <label for="category_location">Where can we find you</label>
+      </div>
+   </div>
+   <!--date for pick up-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <input id="date_of_pick_up" name="date_of_pick_up" type="text" class="datepicker validate" required>
+         <label for="date_of_pick_up">Date available for pick up</label>
+      </div>
+   </div>
+   <!--time available-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s5">
+         <input placeholder="From" id="time_start" name="time_start" type="text" class="timepicker validate" required>
+         <label for="time_start">Time available - START</label>
+      </div>
+      <div class="input-field input-purple-underline col s5">
+         <input placeholder="Until" id="time_end" name="time_end" type="text" class="timepicker validate" required>
+         <label for="time_end">Time available for pick up - END</label>
+      </div>
+   </div>
+   <!--description-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <input placeholder="Anything you want to let people know." 
+            id="description" name="description" type="text" class="validate" minlength="3" maxlength="200" required>
+         <label for="description">Description</label>
+      </div>
+   </div>
+   <!--equipment-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <input placeholder="E.g. what is available to borrow and use or necessary to bring on one’s own (ladders, baskets, etc.)"
+            id="equipment" name="equipment" type="text" class="validate" minlength="3" maxlength="200" required>
+         <label for="equipment">Equipment</label>
+      </div>
+   </div>
+   <!--contact-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <input placeholder="Phone, messenger, whatsapp etc. Email not desired." id="contact" name="contact" type="text" class="validate" minlength="3" maxlength="200" required>
+         <label for="contact">Contact</label>
+      </div>
+   </div>
+   <!--price-free - on/off-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <div class="switch">
+            <label for="price_free">
+            Free of charge
+            <input type="checkbox" id="price_free" name="price_free">
+            <span class="lever"></span>
+            </label>
+         </div>
+      </div>
+   </div>
+   <!--price-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <input placeholder="Your desired price." 
+            id="price" name="price" type="number" class="validate" min="1" max="1000">
+         <label for="price">Price</label>
+      </div>
+   </div>
+   <!--submit-->
+   <div class="row">
+   <div class="center">
+      <button class="btn offset-m3 col s4 waves-effect waves-light pink darken-4 btn-register" 
+         type="submit" name="">Add Offer</button>
+   </div>
+</form>
 
-      <div class="row">
-        <div class="input-field input-purple-underline col s10">
-            <select id="category_location" name="category_location" class="validate" required>
-                {% for location in location %}
-                <option value="{{ location.category_location }}">{{ location.category_location }}
-                {% endfor %}
-              </select>
-            <label for="category_location">Where can we find you</label>
-        </div>
-    </div>
-
-
-        <div class="row">
-          <div class="input-field input-purple-underline col s10">
-              <input id="date_of_pick_up" name="date_of_pick_up" type="text" class="datepicker validate" required>
-              <label for="date_of_pick_up">Date available for pick up</label>
-          </div>
-        </div>  
-        <div class="row">
-          <div class="input-field input-purple-underline col s5">
-              <input placeholder="From" id="time_start" name="time_start" type="text" class="timepicker validate" required>
-              <label for="time_start">Time available - START</label>
-          </div>
-          <div class="input-field input-purple-underline col s5">
-              <input placeholder="Until" id="time_end" name="time_end" type="text" class="timepicker validate" required>
-              <label for="time_end">Time available for pick up - END</label>
-          </div>
-        </div>  
-
-        <div class="row">
-          <div class="input-field input-purple-underline col s10">
-            <input placeholder="Anything you want to let people know." 
-              id="description" name="description" type="text" class="validate" minlength="3" maxlength="200" required>
-            <label for="description">Description</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field input-purple-underline col s10">
-            <input placeholder="E.g. what is available to borrow and use or necessary to bring on one’s own (ladders, baskets, etc.)"
-              id="equipment" name="equipment" type="text" class="validate" minlength="3" maxlength="200" required>
-            <label for="equipment">Equipment</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field input-purple-underline col s10">
-            <input placeholder="Phone, messenger, whatsapp etc. Email not desired." id="contact" name="contact" type="text" class="validate" minlength="3" maxlength="200" required>
-            <label for="contact">Contact</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field input-purple-underline col s10">
-            <div class="switch">
-              <label for="price_free">
-                Free of charge
-                <input type="checkbox" id="price_free" name="price_free">
-                   <span class="lever"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-    
-          <div class="row">
-            <div class="input-field input-purple-underline col s10">
-              <input placeholder="Your desired price." 
-                id="price" name="price" type="number" class="validate" min="1" max="1000">
-              <label for="price">Price</label>
-            </div>
-          </div>
-        
-
-
-      </form>
-
-
-      <!--
-        <div class="row">
-            <div class="input-field input-purple-underline col s10">
-                <select id="">
-                  <option value="" disabled selected>Fruit Category</option>
-                  <option value="1">Apples and Pears</option>
-                  <option value="2">Berries</option>
-                  <option value="3">Cherries</option>
-                  <option value="4">Peaches, Apricots, Plums</option>
-                  <option value="5">Vegetables</option>
-                  <option value="6">Others</option>
-                </select>
-                <label>Select the category of your fruits</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field input-purple-underline col s10">
-                <select>
-                    <option value="" disabled selected>Location</option>
-                    <option value="1">Askim-Frölunda</option>
-                    <option value="2">Göteborgs Centrum</option>
-                    <option value="3">Lundby</option>
-                    <option value="4">Majorna</option>
-                    <option value="5">Norra Hisingen</option>
-                    <option value="6">Västra Göteborg</option>
-                    <option value="7">Örgryte-Härlanda</option>
-                    <option value="8">Östra Göteborg</option>
-                    <option value="9">Mölndal</option>
-                    <option value="10">Kållered</option>
-                    <option value="11">Kungsbacka</option>
-                    <option value="12">Borås</option>
-                    <option value="13">Kungalv</option>
-                    <option value="14">other - please specify in Description</option>
-                  </select>
-                  <label>Where can we find you</label>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="input-field input-purple-underline col s10" id="date_of_pick_up" name="date_of_pick_up" type="text" class="datepicker">
-              <label for="date_of_pick_up">Date available for pick up</label>
-            </div>
-        </div>
-        -->
-
-    
-
-
-
-
-       
 
 {% endblock %}
