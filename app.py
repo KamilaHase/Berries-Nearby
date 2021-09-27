@@ -114,7 +114,7 @@ def add_offer():
         offers = {
             "category_fruits": request.form.get("category_fruits"),
             "contact": request.form.get("contact"),
-            "location": request.form.get("location"),
+            "category_location": request.form.get("category_location"),
             "date_of_pick_up": request.form.get("date_of_pick_up"),
             "description": request.form.get("description"),
             "equipment": request.form.get("equipment"),

@@ -198,11 +198,12 @@ nav {
 }
 
 .button-free {
-  z-index: 50;
+  z-index: 100!important;
+  position: relative;
 }
 
 .icon-free {
-  font-size: 3rem!important;
+  font-size: 2rem!important;
 }
 
 /*-------------------------MEDIA QUERIES-------------------------------------------------*/

@@ -13,7 +13,7 @@
       <div class="card col m5 offer-card cards-padding sticky-action">
 
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="{{ url_for('static', filename='images/baskets.png') }}">
+            <img class="activator" src="{{ url_for('static', filename='images/baskets.png') }}">
         </div>
         <div class="card-content content-card-padding ">
           <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.category_fruits }}
@@ -21,7 +21,9 @@
           </span>
 
           <div class="card-action pink darken-4 white-text">
-            <p>{{ offer.category_location }}</p>
+            <p>{{ offer.category_location }}
+             
+            </p>
             <p>{{ offer.date_of_pick_up }}, {{ offer.time_start }}-{{ offer.time_end }}</p>
           </div>
         </div>
@@ -30,19 +32,20 @@
           <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
           <p>{{ offer.description }}</p>
           <p><strong>Equipment:</strong> {{ offer.equipment }}</p>
-          <p><strong>Contact:</strong> {{ offer.contact }}</p>      
+          <p><strong>Contact:</strong> {{ offer.contact }}</p> 
+          {% if offer.price_free == "off" %}
+          <p><strong>Price:</strong> {{ offer.price }} SEK/kg</p>
+          {% endif %}
         </div>
 
         {% if offer.price_free == "on" %}
+          <div class="z-depth-5">
+            <!--<i class="material-icons icon-free text-red tooltipped right" data-position="bottom" data-tooltip="FREE of charge">insert_emoticon</i>
+            -->
             <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free" data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">insert_emoticon</i></a>
             
-            {% else %}
-            <div class="card-reveal">
-              <p><strong>Price:</strong> {{ offer.price }}</p>      
             </div>
-
-        {% endif %}
-
+            {% endif %}
        
       </div>
       
