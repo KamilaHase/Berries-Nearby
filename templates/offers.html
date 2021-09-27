@@ -7,21 +7,21 @@
 <div class="container">
   <div class="row">
     <div class="">
-      {% for offer in offers %}
+      
   
-
+      {% for offer in offers %} 
       <div class="card col m5 offer-card cards-padding sticky-action">
 
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="{{ url_for('static', filename='images/baskets.png') }}">
         </div>
         <div class="card-content content-card-padding ">
-          <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.fruit_category }}
+          <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.category_fruits }}
             <i class="material-icons right">more_vert</i>
           </span>
 
           <div class="card-action pink darken-4 white-text">
-            <p>{{ offer.location }}</p>
+            <p>{{ offer.category_location }}</p>
             <p>{{ offer.date_of_pick_up }}, {{ offer.time_start }}-{{ offer.time_end }}</p>
           </div>
         </div>

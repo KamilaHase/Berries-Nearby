@@ -27,7 +27,8 @@ def home():
 @app.route("/offers")
 def offers():
     offers = list(mongo.db.offers.find())
-    return render_template("offers.html", offers=offers)
+    location = mongo.db.location.find()
+    return render_template("offers.html", offers=offers, location=location)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -111,8 +112,9 @@ def add_offer():
     if request.method == "POST":
         price_free = "on" if request.form.get("price_free") else "off"
         offers = {
-            "fruit_category": request.form.get("fruit_category"),
+            "category_fruits": request.form.get("category_fruits"),
             "contact": request.form.get("contact"),
+            "location": request.form.get("location"),
             "date_of_pick_up": request.form.get("date_of_pick_up"),
             "description": request.form.get("description"),
             "equipment": request.form.get("equipment"),
@@ -124,10 +126,6 @@ def add_offer():
         }
         mongo.db.offers.insert_one(offers)
 
-        location = {
-            "category_location": request.form.get("category_location")
-        }
-        mongo.db.location.insert_one(loction)
         flash("Offer Successfully Added")
         return redirect(url_for("offers"))
 
