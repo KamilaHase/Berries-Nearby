@@ -163,7 +163,7 @@ nav {
     }
 
     .offer-card {
-      margin: 10px;
+      margin: 30px;
       min-height: 150%;
     }
     
@@ -203,7 +203,11 @@ nav {
 }
 
 .icon-free {
-  font-size: 2rem!important;
+  font-size: 1.5rem!important;
+}
+
+.btns-edit {
+  margin-top: -25px;
 }
 
 /*-------------------------MEDIA QUERIES-------------------------------------------------*/

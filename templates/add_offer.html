@@ -3,7 +3,7 @@
 
 
 <div class="row lower-from-logo">
-   <div class="offset-m2 col s8">
+   <div class="offset-s2 col s8">
       <h5 class="center">Publish Your Offer</h5>
       <h6>Insert your new offer here. 
       </h6>
@@ -11,11 +11,12 @@
 </div>
 
 <div class="row">
-<form class="col s10 offset-m2 form-color-purple" method="POST" action="{{ url_for('add_offer')}}">
+<form class="col s10 offset-s2 form-color-purple" method="POST" action="{{ url_for('add_offer')}}">
    <!--fruits category-->
    <div class="row">
       <div class="input-field input-purple-underline col s10">
          <select id="category_fruits" name="category_fruits" class="validate" required>
+            <option value="" disabled selected>Choose your option</option>
             {% for fruit_category in fruit_categories %}
             <option value="{{ fruit_category.category_fruits }}">{{ fruit_category.category_fruits }}</option>
             {% endfor %}
@@ -27,6 +28,7 @@
    <div class="row">
       <div class="input-field input-purple-underline col s10">
          <select id="category_location" name="category_location" class="validate" required>
+            <option value="" disabled selected>Choose your option</option>
             {% for location in location %}
             <option value="{{ location.category_location }}">{{ location.category_location }}
             {% endfor %}

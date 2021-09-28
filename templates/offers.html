@@ -2,8 +2,15 @@
 {% block content %}
 
 
+<div class="row lower-from-logo">
+  <div class="offset-s2 col s8">
+    <h5 class="center">Current Offers</h5>
+    <h6>Open the cards to see more information and full description. You may contact the farmer on your own by the contact provided.</h6>
+  </div>
+</div> 
 
 
+<!--offer cards-->
 <div class="container">
   <div class="row">
     <div class="">
@@ -19,11 +26,17 @@
           <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.category_fruits }}
             <i class="material-icons right">more_vert</i>
           </span>
+          <div class="btns-edit"> 
+            <a class="waves-effect waves-grey white btn-flat"><i class="material-icons green-text">check</i></a>
+            <a class="waves-effect waves-grey white btn-flat"><i class="material-icons indigo-text">edit</i></a>
+            {% if offer.created_by == session["user"] %}
+            <p class="chip indigo right white-text">MY OFFER</p>
+            {% endif %}
+          </div>
+            
 
           <div class="card-action pink darken-4 white-text">
-            <p>{{ offer.category_location }}
-             
-            </p>
+           <span> <p>{{ offer.category_location }}</p></span>
             <p>{{ offer.date_of_pick_up }}, {{ offer.time_start }}-{{ offer.time_end }}</p>
           </div>
         </div>
@@ -36,14 +49,18 @@
           {% if offer.price_free == "off" %}
           <p><strong>Price:</strong> {{ offer.price }} SEK/kg</p>
           {% endif %}
+
+          {% if offer.created_by == session["user"] %}
+          <p class="chip indigo right white-text">MY OFFER</p>
+            {% else %}
+            <p class="chip right">Offered by: {{ offer.created_by }}</p>
+          {% endif %}
         </div>
 
         {% if offer.price_free == "on" %}
           <div class="z-depth-5">
-            <!--<i class="material-icons icon-free text-red tooltipped right" data-position="bottom" data-tooltip="FREE of charge">insert_emoticon</i>
-            -->
-            <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free" data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">insert_emoticon</i></a>
-            
+            <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free" 
+              data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">thumb_up</i></a>
             </div>
             {% endif %}
        
