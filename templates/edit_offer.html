@@ -15,9 +15,13 @@
    <div class="row">
       <div class="input-field input-purple-underline col s10">
          <select id="category_fruits" name="category_fruits" class="validate" required>
-            <option value="" disabled selected>Choose your option</option>
+            <option value="" disabled>Choose your option</option>
             {% for fruit_category in fruit_categories %}
-            <option value="{{ fruit_category.category_fruits }}">{{ fruit_category.category_fruits }}</option>
+               {% if fruit_category.category_fruits == offer.category_fruits %}
+                  <option value="{{ fruit_category.category_fruits }}"selected>{{ fruit_category.category_fruits }}</option>
+               {% else %}
+                  <option value="{{ fruit_category.category_fruits }}">{{ fruit_category.category_fruits }}</option>
+               {% endif %}
             {% endfor %}
          </select>
          <label for="category_fruits">Select the category of your fruits</label>
@@ -27,9 +31,13 @@
    <div class="row">
       <div class="input-field input-purple-underline col s10">
          <select id="category_location" name="category_location" class="validate" required>
-            <option value="" disabled selected>Choose your option</option>
+            <option value="" disabled>Choose your option</option>
             {% for location in location %}
-            <option value="{{ location.category_location }}">{{ location.category_location }}
+               {% if location.category_location == offer.category_location %}
+                  <option value="{{ location.category_location }}"selected>{{ location.category_location }}
+               {% else %}
+                  <option value="{{ location.category_location }}">{{ location.category_location }}
+               {% endif %}
             {% endfor %}
          </select>
          <label for="category_location">Where can we find you</label>
@@ -38,25 +46,25 @@
    <!--date for pick up-->
    <div class="row">
       <div class="input-field input-purple-underline col s10">
-         <input id="date_of_pick_up" name="date_of_pick_up" type="text" class="datepicker validate" required>
+         <input value="{{ offer.date_of_pick_up }}" id="date_of_pick_up" name="date_of_pick_up" type="text" class="datepicker validate" required>
          <label for="date_of_pick_up">Date available for pick up</label>
       </div>
    </div>
    <!--time available-->
    <div class="row">
       <div class="input-field input-purple-underline col s5">
-         <input placeholder="From" id="time_start" name="time_start" type="text" class="timepicker validate" required>
+         <input value="{{ offer.time_start }}" placeholder="From" id="time_start" name="time_start" type="text" class="timepicker validate" required>
          <label for="time_start">Time available - START</label>
       </div>
       <div class="input-field input-purple-underline col s5">
-         <input placeholder="Until" id="time_end" name="time_end" type="text" class="timepicker validate" required>
+         <input value="{{ offer.time_end }}" placeholder="Until" id="time_end" name="time_end" type="text" class="timepicker validate" required>
          <label for="time_end">Time available for pick up - END</label>
       </div>
    </div>
    <!--description-->
    <div class="row">
       <div class="input-field input-purple-underline col s10">
-         <input placeholder="Anything you want to let people know." 
+         <input value="{{ offer.description }}" placeholder="Anything you want to let people know." 
             id="description" name="description" type="text" class="validate" minlength="3" maxlength="200" required>
          <label for="description">Description</label>
       </div>
@@ -64,7 +72,7 @@
    <!--equipment-->
    <div class="row">
       <div class="input-field input-purple-underline col s10">
-         <input placeholder="E.g. what is available to borrow and use or necessary to bring on one’s own (ladders, baskets, etc.)"
+         <input value="{{ offer.equipment }}" placeholder="E.g. what is available to borrow and use or necessary to bring on one’s own (ladders, baskets, etc.)"
             id="equipment" name="equipment" type="text" class="validate" minlength="3" maxlength="200" required>
          <label for="equipment">Equipment</label>
       </div>
@@ -72,7 +80,7 @@
    <!--contact-->
    <div class="row">
       <div class="input-field input-purple-underline col s10">
-         <input placeholder="Phone, messenger, whatsapp etc. Email not desired." id="contact" name="contact" type="text" class="validate" minlength="3" maxlength="200" required>
+         <input value="{{ offer.contact }}" placeholder="Phone, messenger, whatsapp etc. Email not desired." id="contact" name="contact" type="text" class="validate" minlength="3" maxlength="200" required>
          <label for="contact">Contact</label>
       </div>
    </div>
@@ -82,7 +90,11 @@
          <div class="switch">
             <label for="price_free">
             Free of charge
+            {% if offer.price_free == "on" %}
+            <input type="checkbox" id="price_free" name="price_free"checked>
+            {% else %}
             <input type="checkbox" id="price_free" name="price_free">
+            {% endif %}
             <span class="lever"></span>
             </label>
          </div>
@@ -91,7 +103,7 @@
    <!--price-->
    <div class="row">
       <div class="input-field input-purple-underline col s10">
-         <input placeholder="Your desired price." 
+         <input value="{{ offer.price }}"placeholder="Change your price." 
             id="price" name="price" type="number" class="validate" min="1" max="1000">
          <label for="price">Price - SEK/kg</label>
       </div>
@@ -99,8 +111,10 @@
    <!--submit-->
    <div class="row">
    <div class="center">
-      <button class="btn offset-m3 col s4 waves-effect waves-light indigo btn-register" 
-         type="submit" name="">Edit Offer</button>
+      <a href="{{ url_for('offers') }}" class="btn col s3 waves-effect waves-light pink darken-4 btn-register" 
+         type="submit">Cancel</a>
+      <button class="btn offset-m3 col s3 waves-effect waves-light indigo btn-register" 
+         type="submit">Edit Offer</button>
    </div>
 </form>
 

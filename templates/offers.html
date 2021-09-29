@@ -27,8 +27,8 @@
             <i class="material-icons right">more_vert</i>
           </span>
           <div class="btns-edit"> 
-            <a class="waves-effect waves-grey white btn-flat tooltipped" data-position="top" data-tooltip="Done"><i class="material-icons green-text">check</i></a>
-            <a href="{{ url_for('edit_offer', offer_id=offer._id) }}" class="waves-effect waves-grey white btn-flat tooltipped" data-position="top" data-tooltip="Edit"><i class="material-icons indigo-text">edit</i></a>
+            <a class="waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Done"><i class="material-icons green-text">check</i></a>
+            <a href="{{ url_for('edit_offer', offer_id=offer._id) }}" class="waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Edit"><i class="material-icons indigo-text">edit</i></a>
             {% if offer.created_by == session["user"] %}
             <p class="chip indigo right white-text">MY OFFER</p>
             {% endif %}

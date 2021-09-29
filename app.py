@@ -141,16 +141,40 @@ def add_offer():
         flash("Offer Successfully Added")
         return redirect(url_for("offers"))
 
-    fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits", 1)
-    location = mongo.db.location.find().sort("category_location", 1)
+    fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits",1)
+    location = mongo.db.location.find().sort("category_location",1)
     return render_template("add_offer.html", fruit_categories=fruit_categories, location=location)   
 
 
 @app.route("/edit_offer/<offer_id>", methods=["GET", "POST"])
 def edit_offer(offer_id):
+    if request.method == "POST":
+        price_free = "on" if request.form.get("price_free") else "off"
+        offers = {
+            "category_fruits": request.form.get("category_fruits"),
+            "contact": request.form.get("contact"),
+            "category_location": request.form.get("category_location"),
+            "date_of_pick_up": request.form.get("date_of_pick_up"),
+            "description": request.form.get("description"),
+            "equipment": request.form.get("equipment"),
+            "time_start": request.form.get("time_start"),
+            "time_end": request.form.get("time_end"),
+            "price_free": price_free,
+            "price": request.form.get("price"),
+            "offer_image": offer_image.filename,
+            "img_id": result,
+            "created_by": session["user"]
+        }
+        mongo.db.offers.insert_one(offers)
+
+        flash("Offer Successfully Added")
+        return redirect(url_for("offers"))
+    
     offer = mongo.db.offers.find_one({"_id": ObjectId(offer_id)})
-    fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits", 1)
-    return render_template("edit_offer.html", offer=offer, fruit_categories=fruit_categories)
+    fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits",1)
+    location = mongo.db.location.find().sort("category_location",1)
+
+    return render_template("edit_offer.html", offer=offer, fruit_categories=fruit_categories, location=location)
 
 
 if __name__ == "__main__":

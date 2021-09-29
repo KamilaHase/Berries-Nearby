@@ -20,7 +20,7 @@ $(document).ready(function(){
         }
     });
 
-    /*----validate select in forms - adapted from source Code Institute "Materialize Form Validation" lesson---*/
+    /*----validate select/div in forms - adapted from source Code Institute "Materialize Form Validation" lesson---*/
     validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #880e4f", "box-shadow": "0 1px 0 0 #880e4f" };
