@@ -1,4 +1,5 @@
 import os
+import uuid
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -111,6 +112,15 @@ def signout():
 def add_offer():
     if request.method == "POST":
         price_free = "on" if request.form.get("price_free") else "off"
+        result = None
+
+        if "offer_image" in request.files:
+            offer_image = request.files['offer_image']
+            if offer_image.filename != '':
+                # generate filename using an uuid
+                offer_image.filename = str(uuid.uuid4())
+                result = mongo.save_file(offer_image.filename, offer_image)
+
         offers = {
             "category_fruits": request.form.get("category_fruits"),
             "contact": request.form.get("contact"),
@@ -122,6 +132,8 @@ def add_offer():
             "time_end": request.form.get("time_end"),
             "price_free": price_free,
             "price": request.form.get("price"),
+            "offer_image": offer_image.filename,
+            "img_id": result,
             "created_by": session["user"]
         }
         mongo.db.offers.insert_one(offers)
