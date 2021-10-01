@@ -11,14 +11,40 @@ $(document).ready(function(){
             done: "Select"
         }
     });
+
     $('.timepicker').timepicker({
         showClearBtn: true,
+        twelveHour: false,
         i18n: {
             done: "Select",
             clear: "Clear",
             cancel: "Cancel"
         }
-    });
+    });  
+  
+/*---price---*/
+$( "#price_free" ).click(function() {
+    $("#price_amount").css("display", "none");
+});
+
+$( "#price_free" ).click(function() {
+    if ($("#price_amount").css("display", "none")) {
+        $("#price_amount").css("display", "visible")
+    }
+});
+
+/*-------
+
+$( "#price_free" ).click(function() {
+    if ("#price_free" == "on") {
+        $("#price_amount").css("display", "none");
+    } else {
+        $("#price_amount").css("display", "visible")
+    }
+  });
+
+  ---*/
+
 
     /*----validate select/div in forms - adapted from source Code Institute "Materialize Form Validation" lesson---*/
     validateMaterializeSelect();
