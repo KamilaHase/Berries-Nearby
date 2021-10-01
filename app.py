@@ -150,7 +150,7 @@ def add_offer():
 def edit_offer(offer_id):
     if request.method == "POST":
         price_free = "on" if request.form.get("price_free") else "off"
-        offers = {
+        submit = {
             "category_fruits": request.form.get("category_fruits"),
             "contact": request.form.get("contact"),
             "category_location": request.form.get("category_location"),
@@ -161,14 +161,11 @@ def edit_offer(offer_id):
             "time_end": request.form.get("time_end"),
             "price_free": price_free,
             "price": request.form.get("price"),
-            "offer_image": offer_image.filename,
-            "img_id": result,
             "created_by": session["user"]
         }
-        mongo.db.offers.insert_one(offers)
+        mongo.db.offers.update({"_id": ObjectId(offer_id)}, submit)
 
-        flash("Offer Successfully Added")
-        return redirect(url_for("offers"))
+        flash("Offer Successfully Updated")
     
     offer = mongo.db.offers.find_one({"_id": ObjectId(offer_id)})
     fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits",1)
