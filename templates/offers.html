@@ -34,6 +34,13 @@
             <p class="chip indigo right white-text">MY OFFER</p>
            
           </div>
+          {% else %}
+          <div class="btns-edit"> 
+            <a href="" class="waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Report farmer"><i class="material-icons red-text">error_outline</i></a>
+            
+            <p class="chip right">by: {{ offer.created_by }} </p>
+           
+          </div>
           {% endif %}
 
           <div class="card-action pink darken-4 white-text">

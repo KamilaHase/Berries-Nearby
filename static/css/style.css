@@ -211,9 +211,6 @@ nav {
   margin-top: -25px;
 }
 
-.disappear {
-  display: none;
-}
 
 /*-------------------------MEDIA QUERIES-------------------------------------------------*/
 @media only screen and (min-width: 550px) {
