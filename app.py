@@ -5,7 +5,9 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import (generate_password_hash, 
+    check_password_hash, safe_str_cmp)
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -24,6 +26,7 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     return render_template("home.html")
+
 
 @app.route("/offers")
 def offers():
@@ -112,28 +115,18 @@ def signout():
 def add_offer():
     if request.method == "POST":
         price_free = "on" if request.form.get("price_free") else "off"
-        result = None
-
-        if "offer_image" in request.files:
-            offer_image = request.files['offer_image']
-            if offer_image.filename != '':
-                # generate filename using an uuid
-                offer_image.filename = str(uuid.uuid4())
-                result = mongo.save_file(offer_image.filename, offer_image)
 
         offers = {
             "category_fruits": request.form.get("category_fruits"),
             "contact": request.form.get("contact"),
             "category_location": request.form.get("category_location"),
-            "date_of_pick_up": request.form.get("date_of_pick_up"),
+            "date_of_pick_up": datetime.now().strftime("%d/%m/%Y"),
             "description": request.form.get("description"),
             "equipment": request.form.get("equipment"),
             "time_start": request.form.get("time_start"),
             "time_end": request.form.get("time_end"),
             "price_free": price_free,
             "price": request.form.get("price"),
-            "offer_image": offer_image.filename,
-            "img_id": result,
             "created_by": session["user"]
         }
         mongo.db.offers.insert_one(offers)
@@ -146,10 +139,12 @@ def add_offer():
     return render_template("add_offer.html", fruit_categories=fruit_categories, location=location)   
 
 
+
 @app.route("/edit_offer/<offer_id>", methods=["GET", "POST"])
 def edit_offer(offer_id):
     if request.method == "POST":
         price_free = "on" if request.form.get("price_free") else "off"
+
         submit = {
             "category_fruits": request.form.get("category_fruits"),
             "contact": request.form.get("contact"),
@@ -179,6 +174,11 @@ def delete_offer(offer_id):
     mongo.db.offers.remove({"_id": ObjectId(offer_id)})
     flash("Offer Deleted")
     return redirect(url_for("offers"))
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("error/404.html")
 
 
 if __name__ == "__main__":
