@@ -2,36 +2,36 @@
 {% block content %}
 
 
-
+<div class="container">
 <div class="row lower-from-logo">
     <div class="offset-s2 col s8">
       <h5 class="center">Edit Categories</h5>
     </div>
   </div> 
 
-<div class="container">
-<div class="row">
-  <div class="">
-    <div class="">
-      
-      <div class="img-categories center" alt=""></div>
-        {% for category in categories %}
-        <div class="">
-         <h6 class="chip card-categories">{{ category.category_fruits }}
-         <span>
-          <a href=""class="waves-effect waves-grey white btn-flat transparent tooltipped" data-position="bottom" data-tooltip="Delete"><i class="material-icons red-text">clear</i></a>
-          <a href="" class="waves-effect waves-grey white btn-flat transparent tooltipped" data-position="bottom" data-tooltip="Edit"><i class="material-icons indigo-text">edit</i></a>
-          </span> 
-        </h6>
-      </div>
-        {% endfor %}
-    
+  
+  <section>
+    <div class="img-categories center" alt="">
     </div>
+
+  
+  <div class="">
+    {% for category in categories %}
+    <div class="waves-effect waves-light btn-large card-categories grey lighten-3">
+      <h6 class="black-text">{{ category.category_fruits }}
+      
+        <a href=""class="waves-effect waves-grey white btn-flat transparent tooltipped" 
+          data-position="bottom" data-tooltip="Delete"><i class="material-icons red-text icons-edit-cat">clear</i></a>
+        <a href="" class="waves-effect waves-grey white btn-flat transparent tooltipped" 
+          data-position="bottom" data-tooltip="Edit"><i class="material-icons indigo-text icons-edit-cat">edit</i></a>
+      
+    </h6>
   </div>
+ 
+  {% endfor %}  
+  </div>
+  
+</section>
 </div>
-</div>
-
-
-
 
 {% endblock %}
