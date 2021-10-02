@@ -4,12 +4,11 @@
 
 <div class="container">
 <div class="row lower-from-logo">
-    <div class="offset-s2 col s8">
+    <div class="col s8">
       <h5 class="center">Edit Categories</h5>
     </div>
   </div> 
-
-  
+ 
   <section>
     <div class="img-categories center" alt="">
     </div>
@@ -29,6 +28,10 @@
   </div>
  
   {% endfor %}  
+  
+    <a href="{{ url_for('add_category') }}" class="btn btn-large col s4 waves-effect waves-light card-categories pink darken-4" 
+         type="submit" name="">Add a New Category</a>
+  
   </div>
   
 </section>

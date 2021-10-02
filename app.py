@@ -182,6 +182,18 @@ def get_categories():
     return render_template("categories.html", categories=categories)
 
 
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_fruits": request.form.get("category_fruits")
+        }
+        mongo.db.fruit_categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("get_categories"))
+    return render_template("add_category.html")
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template("error/404.html")
