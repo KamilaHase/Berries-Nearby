@@ -12,16 +12,18 @@
 
 <div class="row">
   <div class="card">
-    <div class="card-content">
+    <div class="">
       
       <img src="" class="img-categories center" alt="">
         {% for category in categories %}
+        <div class="categories-underline">
          <h6 class="card-categories">{{ category.category_fruits }}
          <span>
           <a href=""class="waves-effect waves-grey white btn-flat transparent tooltipped" data-position="bottom" data-tooltip="Delete"><i class="material-icons red-text">clear</i></a>
           <a href="" class="waves-effect waves-grey white btn-flat transparent tooltipped" data-position="bottom" data-tooltip="Edit"><i class="material-icons indigo-text">edit</i></a>
           </span> 
         </h6>
+      </div>
         {% endfor %}
     
     </div>
