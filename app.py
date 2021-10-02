@@ -161,7 +161,7 @@ def edit_offer(offer_id):
         mongo.db.offers.update({"_id": ObjectId(offer_id)}, submit)
 
         flash("Offer Successfully Updated")
-    
+
     offer = mongo.db.offers.find_one({"_id": ObjectId(offer_id)})
     fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits",1)
     location = mongo.db.location.find().sort("category_location",1)
@@ -174,6 +174,12 @@ def delete_offer(offer_id):
     mongo.db.offers.remove({"_id": ObjectId(offer_id)})
     flash("Offer Deleted")
     return redirect(url_for("offers"))
+
+
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.fruit_categories.find().sort("category_fruits", 1))
+    return render_template("categories.html", categories=categories)
 
 
 @app.errorhandler(404)

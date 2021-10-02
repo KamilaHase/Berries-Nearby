@@ -30,7 +30,7 @@
               <li><a href="{{ url_for('offers') }}"><h6>Current Offers</h6></a></li>
               <li><a href="{{ url_for('add_offer') }}"><h6>Add Offer</h6></a></li>
               <li><a href="{{ url_for('profile', email=session['user']) }}"><h6>Profile</h6></a></li>
-              <li><a href="#"><h6>Edit Categories</h6></a></li>
+              <li><a href="{{ url_for('get_categories') }}"><h6>Edit Categories</h6></a></li>
               <li><a href="{{ url_for('signout') }}"><h6>Sign Out</h6></a></li>
             {% else %}
               <li><a href="{{ url_for('home') }}"><h6>Home</h6></a></li>  
@@ -48,7 +48,7 @@
           <li><a href="{{ url_for('offers') }}"><h6>Current Offers</h6></a></li>
           <li><a href="{{ url_for('add_offer') }}"><h6>Current Offers</h6></a></li>
           <li><a href="{{ url_for('profile', email=session['user']) }}"><h6>Profile</h6></a></li>
-          <li><a href="#"><h5>Edit Categories</h5></a></li>
+          <li><a href="{{ url_for('get_categories') }}"><h5>Edit Categories</h5></a></li>
           <li><a href="{{ url_for('signout') }}"><h6>Sign Out</h6></a></li>
           
         {% else %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<div class="row lower-from-logo">
+    <div class="offset-s2 col s8">
+      <h5 class="center">Edit Categories</h5>
+    </div>
+  </div> 
+
+
+<div class="row">
+  <div class="card">
+    <div class="card-content">
+      
+      <img src="" class="img-categories center" alt="">
+        {% for category in categories %}
+         <h6 class="card-categories">{{ category.category_fruits }}
+         <span>
+          <a href=""class="waves-effect waves-grey white btn-flat transparent tooltipped" data-position="bottom" data-tooltip="Delete"><i class="material-icons red-text">clear</i></a>
+          <a href="" class="waves-effect waves-grey white btn-flat transparent tooltipped" data-position="bottom" data-tooltip="Edit"><i class="material-icons indigo-text">edit</i></a>
+          </span> 
+        </h6>
+        {% endfor %}
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

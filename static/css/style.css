@@ -211,6 +211,21 @@ nav {
   margin-top: -25px;
 }
 
+/*-------------------------get_categories.html-------------------------------------------------*/
+
+.card-categories {
+ 
+}
+
+.img-categories {
+  background: url(../images/berriesCategories.jpg) no-repeat center center;
+  border-radius: 50%;
+  float: right;
+  height: 350px;
+  width: 350px;
+  
+
+}
 
 /*-------------------------MEDIA QUERIES-------------------------------------------------*/
 @media only screen and (min-width: 550px) {
