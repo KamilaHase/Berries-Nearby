@@ -225,14 +225,19 @@ nav {
   background: url(../images/berriesCategories-circle.png) no-repeat center center;
   border-radius: 50%;
   float: left;
-  height: 450px;
-  width: 450px;
+  height: 350px;
+  width: 350px;
   margin-top: -20px;
+  margin: 30px;
 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  position: relative;
+  overflow: hidden;
+  shape-outside: circle();
   
 
 }
