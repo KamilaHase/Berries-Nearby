@@ -99,6 +99,13 @@ nav {
 }
 
 
+/*-------------------------footer-------------------------------------------------*/
+.footer-icon {
+  margin: 4px;
+  display:inline;
+}
+
+
 /*-------------------------register.html-------------------------------------------------*/
 .lower-from-logo {
   margin-top: 40px;
@@ -174,6 +181,13 @@ nav {
 line-height: 36px!important;
 }
 
+.search-area {
+  border-radius: 25px;
+  background-color: #e0e0e0;
+  min-width: 200px;
+}
+
+
 .cards-padding {
   padding: 0!important;
 }
@@ -235,7 +249,6 @@ line-height: 36px!important;
 }
 
 .img-categories {
-  background: url(../images/berriesCategories-circle.png) no-repeat center center;
   border-radius: 50%;
   height: 350px;
   width: 350px;
