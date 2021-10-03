@@ -183,6 +183,16 @@ def delete_offer(offer_id):
     return redirect(url_for("offers"))
 
 
+@app.route('/report_offer/<offer_id>', methods=['GET', 'POST'])
+def report_offer(offer_id):
+    if request.method == 'POST':
+        mongo.db.offers.update_one(
+            {"_id": ObjectId(offer_id)},
+            {'$push': {'report_offer': request.form.get('report_offer')}})
+        flash('Offer reported, thank you.')
+    return redirect(url_for('offers'))
+
+
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.fruit_categories.find().sort("category_fruits", 1))

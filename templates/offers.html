@@ -39,7 +39,19 @@
       <div class="card col m5 offer-card cards-padding sticky-action">
 
         <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="{{ url_for('static', filename='images/baskets.png') }}">
+          {% if offer.category_fruits == "Apples and Pears" %}
+            <img class="activator" src="{{ url_for('static', filename='images/apples-pears.jpg') }}">
+            {% elif offer.category_fruits == "Peaches, Apricots, Plums" %}
+            <img class="activator" src="{{ url_for('static', filename='images/pears-plums.jpg') }}">
+            {% elif offer.category_fruits == "Cherries" %}
+            <img class="activator" src="{{ url_for('static', filename='images/cherries.jpg') }}">
+            {% elif offer.category_fruits == "Berries" %}
+            <img class="activator" src="{{ url_for('static', filename='images/berries-cat.jpg') }}">
+            {% elif offer.category_fruits == "Vegetables" %}
+            <img class="activator" src="{{ url_for('static', filename='images/vegetables.jpg') }}">
+            {% else %}
+            <img class="activator" src="{{ url_for('static', filename='images/unknown-category.jpg') }}">
+            {% endif %}
         </div>
         <div class="card-content content-card-padding ">
           <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.category_fruits }}
@@ -94,6 +106,26 @@
        
       </div>
       
+
+  <!-- Modal - Report Offer -->
+  <form method="POST" action="{{ url_for('report_offer', offer_id=offer._id) }}">
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Report Offer</h4>
+        <p>Is there anything you want to let us know about this farmer? Please go ahead and we will proceed the query.</p>
+        <div class="input-field col m8">
+          <input id="report_offer" name="report_offer" type="text" class="validate" minlength="3" maxlength="50">
+          <label for="report_offer">Write Your Report</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-close waves-effect waves-green btn-flat" 
+         type="submit">Submit</button>
+        <a href="{{ url_for('offers') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+      </div>
+    </div>
+  </form>
+
       
         {% endfor %}
     </div>
@@ -105,23 +137,6 @@
 {% endif %}
 
 
-  <!-- Modal - Report Offer -->
-  <form method="POST" action="{{ url_for('report_farmer', ad_id=ad._id) }}">
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Report Offer</h4>
-      <p>Is there anything you want to let us know about this farmer? Please go ahead and we will proceed the query.</p>
-      <div class="input-field col m8">
-        <input id="report_offer" name="report_offer" type="text" class="validate" minlength="3" maxlength="50">
-        <label for="report_offer">Write Your Report</label>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-    </div>
-  </div>
-</form>
 
 
 
