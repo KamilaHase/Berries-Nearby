@@ -55,7 +55,8 @@
           </div>
           {% else %}
           <div class="btns-edit"> 
-            <a href="" class="waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Report farmer"><i class="material-icons red-text">error_outline</i></a>
+            
+            <a href="#modal1" class="modal-trigger waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Report farmer" onlick><i class="material-icons red-text">error_outline</i></a>
             
             <p class="chip right">by: {{ offer.created_by }} </p>
            
@@ -102,6 +103,26 @@
 {% else %}
 <h6 class="indigo-text">No results found.</h6>
 {% endif %}
+
+
+  <!-- Modal - Report Offer -->
+  <form method="POST" action="{{ url_for('report_farmer', ad_id=ad._id) }}">
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Report Offer</h4>
+      <p>Is there anything you want to let us know about this farmer? Please go ahead and we will proceed the query.</p>
+      <div class="input-field col m8">
+        <input id="report_offer" name="report_offer" type="text" class="validate" minlength="3" maxlength="50">
+        <label for="report_offer">Write Your Report</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+  </div>
+</form>
+
 
 
 {% endblock %}
