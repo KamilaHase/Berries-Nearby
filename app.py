@@ -35,6 +35,13 @@ def offers():
     return render_template("offers.html", offers=offers, location=location)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    offers = list(mongo.db.offers.find({"$text": {"$search": query}}))
+    return render_template("offers.html", offers=offers)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
