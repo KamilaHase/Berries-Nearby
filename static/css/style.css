@@ -169,10 +169,14 @@ nav {
     }
     
 /*-------------------------offers.html-------------------------------------------------*/
+
+.btn-action-src-offer {
+line-height: 36px!important;
+}
+
 .cards-padding {
   padding: 0!important;
 }
-
 
 .card-action-style {
   margin-top: 0!important;

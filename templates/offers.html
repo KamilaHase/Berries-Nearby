@@ -1,28 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<div class="container">
 <div class="row lower-from-logo">
-  <div class="offset-s2 col s8">
+  <div class="col s8">
     <h5 class="center">Current Offers</h5>
     <h6>Open the cards to see more information and full description. You may contact the farmer on your own by the contact provided.</h6>
   </div>
 </div> 
 
-<div class="row">
-  <form class="col s10 offset-s2 form-color-purple" method="POST" action="{{ url_for('search')}}">
-      <div class="input-field input-purple-underline col s10">
-         <input id="query" name="query" type="text" class="validate" minlength="3" maxlength="50">
-         <label for="query">Search through fruit names or desired location</label>
-         <div> 
-         <a href="{{ url_for('offers') }}"class="waves-effect waves-grey white btn-flat right tooltipped" data-position="bottom" data-tooltip="Clear"><i class="material-icons red-text">clear</i></a>
-          <button  type="submit" class="waves-effect waves-grey white btn-flat right tooltipped" data-position="bottom" data-tooltip="Search"><i class="material-icons indigo-text">search</i></a>
-          </div> 
-         
-      </div>
-   </div>
-  </form>
 
+<div class="">
+  {% if offers|length > 0 %}
+  <form class="form-color-purple" method="POST" action="{{ url_for('search')}}">
+    <div class="row input-field input-purple-underline">
+      <div class="input-field col m8">
+        <input placeholder= "Search through fruit names or desired location" id="query" name="query" type="text" class="validate" minlength="3" maxlength="50">
+        <label for="query" >Search</label>
+      </div>
+      
+      <div class=" btn-action-src-offer">
+        <button  type="submit" class="waves-effect waves-grey white btn-flat left tooltipped" data-position="bottom" data-tooltip="Search"><i class="material-icons indigo-text">search</i></a></button>
+        <a href="{{ url_for('offers') }}"class="waves-effect waves-grey white btn-flat left tooltipped" data-position="bottom" data-tooltip="Clear"><i class="material-icons red-text">clear</i></a>
+    </div>
+  </div>
+  
+  </form>
+</div>
+</div>
 
 
 <!--offer cards-->
@@ -95,6 +100,9 @@
     
   </div>
 </div>
+{% else %}
+<h6 class="indigo-text">No results found.</h6>
+{% endif %}
 
 
 {% endblock %}
