@@ -179,7 +179,7 @@ def delete_offer(offer_id):
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.fruit_categories.find().sort("category_fruits", 1))
-    return render_template("categories.html", categories=categories)
+    return render_template("get_categories.html", categories=categories)
 
 
 @app.route("/add_category", methods=["GET", "POST"])
@@ -192,6 +192,28 @@ def add_category():
         flash("New Category Added")
         return redirect(url_for("get_categories"))
     return render_template("add_category.html")
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "category_fruits": request.form.get("category_fruits")
+        }
+        mongo.db.fruit_categories.update({"_id": ObjectId(category_id)}, 
+            submit)
+        flash("Category Successfully Updated")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.fruit_categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    mongo.db.fruit_categories.remove({"_id": ObjectId(category_id)})
+    flash("Category Successfully Deleted")
+    return redirect(url_for("get_categories"))
 
 
 @app.errorhandler(404)

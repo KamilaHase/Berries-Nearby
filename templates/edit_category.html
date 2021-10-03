@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="row lower-from-logo">
+   <div class="offset-s2 col s8">
+      <h5 class="center">Edit Category of Fruits</h5>
+   </div>
+</div>
+
+<div class="row">
+<form class="col s10 offset-s2 form-color-purple" method="POST" action="{{ url_for('edit_category', category_id=category._id )}}">
+   
+   <!--edit fruits category-->
+   <div class="row">
+      <div class="input-field input-purple-underline col s10">
+         <input 
+            value=" {{ category.category_fruits }}" id="category_fruits" name="category_fruits" type="text" class="validate" minlength="3" maxlength="20" required>
+         <label for="category_fruits">Category of fruits</label>
+      </div>
+   </div>
+  
+   <!--submit-->
+   <div class="row">
+   <div class="center">
+      <a href="{{ url_for('get_categories') }}" class="btn col s3 waves-effect waves-light pink darken-4 btn-register" 
+         type="submit">Cancel</a>
+      <button class="btn offset-m3 col s4 waves-effect waves-light indigo btn-register" 
+         type="submit" name="">Edit Category</button>
+   </div>
+   </div>
+</form>
+
+
+{% endblock %}
