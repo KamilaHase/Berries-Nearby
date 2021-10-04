@@ -25,6 +25,12 @@
       </div>
       <div class="row">
         <div class="input-field input-purple-underline col s10">
+          <input placeholder="Choose username visible to others" id="username" type="text" class="validate" name="username" minlength="3" maxlength="20" pattern="^[a-zA-Z0-9]{3,20}$" required>
+          <label for="username">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field input-purple-underline col s10">
           <input id="email" type="email" class="validate" name="email" required>
           <label for="email">Email</label>
         </div>

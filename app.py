@@ -46,25 +46,26 @@ def search():
 def register():
     if request.method == "POST":
         # check if email already exists in db
-        existing_email = mongo.db.users.find_one(
-            {"email": request.form.get("email").lower()})
+        existing_username = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
 
-        if existing_email:
-            flash("This email has already been used.")
+        if existing_username:
+            flash("This username has already been used.")
             return redirect(url_for("register"))
 
         register = {
             "first_name": request.form.get("first_name").lower(),
             "last_name": request.form.get("last_name").lower(),
+            "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
-        session["user"] = request.form.get("email").lower()
+        session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", email=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")                          
 
@@ -73,17 +74,17 @@ def register():
 def signin():
     if request.method == "POST":
         # check if email already exists in db
-        existing_email = mongo.db.users.find_one(
-            {"email": request.form.get("email").lower()})
+        existing_username = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
         
-        if existing_email:
+        if existing_username:
             # ensure inserted password matches email input
             if check_password_hash(
-                existing_email["password"], request.form.get("password")):
-                session["user"] = request.form.get("email")
-                flash("Welcome! You are signed in as {}".format(request.form.get("email")))
+                existing_username["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome! You are signed in as {}".format(request.form.get("username")))
                 return redirect(url_for(
-                    "profile", email=session["user"]))
+                    "profile", username=session["user"]))
             
             else:
                 # invalid password match
@@ -98,18 +99,21 @@ def signin():
     return render_template("signin.html") 
 
 
-@app.route("/profile/<email>", methods=["GET", "POST"])
-def profile(email):
-    # grab the session user's email from db
-    email = mongo.db.users.find_one(
-        {"email": session["user"]})["email"]
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    user_offers = mongo.db.offers.find({'created_by': session["user"]})
+    offers = mongo.db.offers.find()
 
     if session["user"]:
-        return render_template("profile.html", email=email)
+        return render_template("profile.html", 
+            username=username, user_offers=user_offers, offers=offers)
     
     return redirect(url_for("signin"))
 
-
+    
 @app.route("/signout")
 def signout():
     # remove user from session cookie
