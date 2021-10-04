@@ -23,45 +23,9 @@ $(document).ready(function(){
         }
     });  
 
-    
-
-/*---price working on ON not OFF---*/
-$( "#price_free" ).val("on").click(function() {
-    $("#price_amount").css("display", "none");
-});
-
-$( "#price_free" ).val("off").click(function() {
-    $("#price_amount").css("display", "visible");
-});
-
-
-
-
-/*-------
-
-function priceSwitch() {
-let price_freeOn = $("#price_free").val();
-
-if (price_freeOn == "on") {
-    $("#price_amount").css("display", "none"); //hidden price
-  } else {
-    $("#price_amount").css("display", "visible"); //price visible
-  }
-};
-
-
-
-
-
-$( "#price_free" ).click(function() {
-    if ("#price_free" == "on") {
-        $("#price_amount").css("display", "none");
-    } else {
-        $("#price_amount").css("display", "visible")
-    }
-  });
-
-  ---*/
+    $( "#price_free" ).click(function(){
+        $("#price_amount").toggle();
+      });
 
 
     /*----validate select/div in forms - adapted from source Code Institute "Materialize Form Validation" lesson---*/

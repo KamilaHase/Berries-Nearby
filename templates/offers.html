@@ -3,7 +3,7 @@
 
 <div class="container">
 <div class="row lower-from-logo">
-  <div class="col s8">
+  <div class="">
     <h5 class="center">Current Offers</h5>
     <h6>Open the cards to see more information and full description. You may contact the farmer on your own by the contact provided.</h6>
     <p>Note: We are working on functionality to upload your own fruit image. For now the images are uploaded automatically.</p>
@@ -14,7 +14,7 @@
   {% if offers|length > 0 %}
   <form class="form-color-purple" method="POST" action="{{ url_for('search')}}">
     <div class="row input-field input-purple-underline">
-      <div class="input-field col m8">
+      <div class="input-field col m10">
         <input placeholder= "Search through fruit names or desired location" id="query" name="query" type="text" class="validate" minlength="3" maxlength="50">
         <label for="query" >Search</label>
       </div>
