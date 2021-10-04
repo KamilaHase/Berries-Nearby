@@ -190,11 +190,32 @@ def delete_offer(offer_id):
 @app.route('/report_offer/<offer_id>', methods=['GET', 'POST'])
 def report_offer(offer_id):
     if request.method == 'POST':
-        mongo.db.offers.update_one(
-            {"_id": ObjectId(offer_id)},
-            {'$push': {'report_offer': request.form.get('report_offer')}})
+        mongo.db.reports.insert_one(
+            {
+                'description': request.form.get('report_offer'),
+                'reported_by': session["user"],
+                'offer_id': offer_id
+            })
         flash('Offer reported, thank you.')
     return redirect(url_for('offers'))
+
+
+@app.route('/reports', methods=['GET'])
+def reports():
+    reports = mongo.db.reports.find()
+    return render_template("reports.html", reports=reports)
+
+
+@app.route('/report_detail/<report_id>', methods=['GET'])
+def report_detail(report_id):
+    report = mongo.db.reports.find_one({"_id": ObjectId(report_id)})
+    offer = mongo.db.offers.find_one({"_id": ObjectId(report['offer_id'])})
+    report_detail = {
+        'report': report,
+        'user': mongo.db.users.find_one({"username": offer['created_by']}),
+        'offer': offer
+    }
+    return render_template("report_detail.html", report=report_detail)
 
 
 @app.route("/get_categories")

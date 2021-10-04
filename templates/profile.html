@@ -13,7 +13,7 @@
   </div>
 
   <h5 class="center">My Profile</h5>
-    <h6>Here are your current and finished offers.</h6>
+  <h6>Here are your current and finished offers.</h6>
   
     
   
@@ -26,7 +26,8 @@
 
 <!--offers - cards -->
 {% for offer in offers %} 
-{% if offer.created_by == session["user"] %} 
+{% if offer.created_by == session["user"] %}
+
       <div class="card col m5 offer-card cards-padding sticky-action">
 
         <div class="card-image waves-effect waves-block waves-light">
@@ -113,7 +114,8 @@
   </form>
 
   
-
+ 
+  
   {% endif %}
         {% endfor %}
     </div>

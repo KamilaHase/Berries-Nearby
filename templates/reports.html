@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="row lower-from-logo">
+    <div class="">
+      <h5 class="center">Reports</h5>
+      
+    </div>
+  </div>
+
+  
+   
+
+
+<!--offer cards-->
+<div class="container">
+  <div class="row">
+    <div class="">
+
+
+      {% for report in reports %}
+      
+      <div>
+        {{ report.description }}
+      </div>
+      <div>
+        {{ report.reported_by }}
+      </div>
+      <a href="{{ url_for('report_detail', report_id=report._id) }}">
+        Details
+      </a>
+
+
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
