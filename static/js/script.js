@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge:"right"});
+    $(".dropdown-trigger").dropdown();
     $('.parallax').parallax();
     $('.tooltipped').tooltip();
     $('select').formSelect();

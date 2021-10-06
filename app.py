@@ -192,7 +192,7 @@ def report_offer(offer_id):
     if request.method == 'POST':
         mongo.db.reports.insert_one(
             {
-                'description': request.form.get('report_offer'),
+                'report_content': request.form.get('report_content'),
                 'reported_by': session["user"],
                 'offer_id': offer_id
             })
@@ -210,12 +210,13 @@ def reports():
 def report_detail(report_id):
     report = mongo.db.reports.find_one({"_id": ObjectId(report_id)})
     offer = mongo.db.offers.find_one({"_id": ObjectId(report['offer_id'])})
+    offers = mongo.db.offers.find()
     report_detail = {
         'report': report,
         'user': mongo.db.users.find_one({"username": offer['created_by']}),
         'offer': offer
     }
-    return render_template("report_detail.html", report=report_detail)
+    return render_template("report_detail.html", report=report_detail, offers=offers)
 
 
 @app.route("/get_categories")
