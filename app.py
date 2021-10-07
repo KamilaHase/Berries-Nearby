@@ -210,13 +210,12 @@ def reports():
 def report_detail(report_id):
     report = mongo.db.reports.find_one({"_id": ObjectId(report_id)})
     offer = mongo.db.offers.find_one({"_id": ObjectId(report['offer_id'])})
-    offers = mongo.db.offers.find()
     report_detail = {
         'report': report,
         'user': mongo.db.users.find_one({"username": offer['created_by']}),
         'offer': offer
     }
-    return render_template("report_detail.html", report=report_detail, offers=offers)
+    return render_template("report_detail.html", report=report_detail)
 
 
 @app.route("/get_categories")
