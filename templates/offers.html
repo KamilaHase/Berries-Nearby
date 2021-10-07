@@ -43,21 +43,21 @@
 
       {% for offer in offers %}
       <div class="card col m5 offer-card cards-padding sticky-action">
-
+        
         <div class="card-image waves-effect waves-block waves-light">
           {% if offer.category_fruits == "Apples and Pears" %}
-          <img class="activator" src="{{ url_for('static', filename='images/apples-pears.jpg') }}">
-          {% elif offer.category_fruits == "Peaches, Apricots, Plums" %}
-          <img class="activator" src="{{ url_for('static', filename='images/pears-plums.jpg') }}">
-          {% elif offer.category_fruits == "Cherries" %}
-          <img class="activator" src="{{ url_for('static', filename='images/cherries.jpg') }}">
-          {% elif offer.category_fruits == "Berries" %}
-          <img class="activator" src="{{ url_for('static', filename='images/berries-cat.jpg') }}">
-          {% elif offer.category_fruits == "Vegetables" %}
-          <img class="activator" src="{{ url_for('static', filename='images/vegetables.jpg') }}">
-          {% else %}
-          <img class="activator" src="{{ url_for('static', filename='images/unknown-category.jpg') }}">
-          {% endif %}
+            <img class="activator" src="{{ url_for('static', filename='images/apples-pears.jpg') }}">
+            {% elif offer.category_fruits == "Peaches, Apricots, Plums" %}
+            <img class="activator" src="{{ url_for('static', filename='images/pears-plums.jpg') }}">
+            {% elif offer.category_fruits == "Cherries" %}
+            <img class="activator" src="{{ url_for('static', filename='images/cherries.jpg') }}">
+            {% elif offer.category_fruits == "Berries" %}
+            <img class="activator" src="{{ url_for('static', filename='images/berries-cat.jpg') }}">
+            {% elif offer.category_fruits == "Vegetables" %}
+            <img class="activator" src="{{ url_for('static', filename='images/vegetables.jpg') }}">
+            {% else %}
+            <img class="activator" src="{{ url_for('static', filename='images/unknown-category.jpg') }}">
+            {% endif %}
         </div>
         <div class="card-content content-card-padding ">
           <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.category_fruits }}
