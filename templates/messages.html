@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="row lower-from-logo">
+    <div class="">
+      <h5 class="center">Message Farmer</h5>
+      
+    </div>
+  </div>
+
+
+<!--message cards-->
+
+<div class="col s12 m6">
+  <div class="card cards-reports darken-1">
+    <div class="card-content white-text">
+      <form action="{{ url_for('messages', message_id=message._id)}}" method="POST">
+  
+        <div class="input-field input-purple-underline col s10">
+           <textarea 
+              id="message_content" name="message_content" type="text" class="validate" minlength="3" maxlength="300" required>
+            </textarea>
+           <label for="message_content">Message to Farmer</label>
+        </div>
+        <div class="card-action">
+        <button class="btn offset-m3 col s3 waves-effect waves-light teal right btn-register" 
+        type="submit">Send Message</button>
+      </div>
+    </form>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

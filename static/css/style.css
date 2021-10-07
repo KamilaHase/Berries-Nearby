@@ -283,6 +283,13 @@ line-height: 36px!important;
   border-radius: 25px!important;
 }
 
+.btn-contact-farmer {
+  padding: 0;
+  margin-left: 10px!important;
+  border-radius: 25px;
+}
+
+
 /*-------------------------MEDIA QUERIES-------------------------------------------------*/
 @media only screen and (min-width: 550px) {
 .my-par {

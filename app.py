@@ -200,7 +200,7 @@ def report_offer(offer_id):
     return redirect(url_for('offers'))
 
 
-@app.route('/reports', methods=['GET'])
+@app.route('/reports')
 def reports():
     reports = mongo.db.reports.find()
     return render_template("reports.html", reports=reports)
