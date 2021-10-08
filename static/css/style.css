@@ -105,11 +105,18 @@ nav {
 
 
 /*-------------------------footer-------------------------------------------------*/
+footer {
+  margin-bottom: 0px;
+}
+
 .footer-icon {
   margin: 4px;
   display:inline;
 }
 
+.push-down-footer {
+  height: 42vh;
+}
 
 /*-------------------------register.html-------------------------------------------------*/
 .lower-from-logo {

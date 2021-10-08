@@ -110,7 +110,7 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", 
             username=username, user_offers=user_offers, offers=offers)
-    
+   
     return redirect(url_for("signin"))
 
     
@@ -203,7 +203,8 @@ def report_offer(offer_id):
 @app.route('/reports')
 def reports():
     reports = mongo.db.reports.find()
-    return render_template("reports.html", reports=reports)
+    offer = mongo.db.offers.find()
+    return render_template("reports.html", reports=reports, offer=offers)
 
 
 @app.route('/report_detail/<report_id>', methods=['GET'])

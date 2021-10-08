@@ -13,7 +13,7 @@
   </div>
 
   <h5 class="center">My Profile</h5>
-  <h6>Here are your current and finished offers.</h6>
+ 
   
     
   
@@ -22,11 +22,11 @@
   
     <div class="row">
       
-            
+      {% if session.user == offers.created_by %} 
+      <h6>Here are your current offers.</h6>        
 
 <!--offers - cards -->
 {% for offer in offers %} 
-{% if offer.created_by == session["user"] %}
 
       <div class="card col m5 offer-card cards-padding sticky-action">
 
@@ -114,9 +114,6 @@
   </form>
 
   
- 
-  
-  {% endif %}
         {% endfor %}
     </div>
     
@@ -124,7 +121,10 @@
 </div>
 
 
-
+{% else %}
+ <h6 class="push-down-footer">Currently no offers published.</h6>
+  
+  {% endif %}
 
 
 
