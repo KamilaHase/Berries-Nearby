@@ -22,7 +22,7 @@
   
     <div class="row">
       
-      {% if session.user == offers.created_by %} 
+      {% if offers.created_by == session["user"] %} 
       <h6>Here are your current offers.</h6>        
 
 <!--offers - cards -->

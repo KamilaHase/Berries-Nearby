@@ -20,7 +20,6 @@ strong {
   font-weight: 800;
 }
 
-
 header {
   margin-bottom: 20px;
 }
@@ -184,6 +183,7 @@ footer {
 
     .offer-card {
       margin: 30px;
+    
       min-height: 150%;
     }
     
