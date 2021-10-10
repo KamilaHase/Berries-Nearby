@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
-
 <div class="row lower-from-logo">
    <div class="offset-s2 col s8">
       <h5 class="center">Add Your Offer</h5>
@@ -9,125 +7,100 @@
       </h6>
    </div>
 </div>
-
 <div class="row">
-<form class="col s10 offset-s2 form-color-purple" method="POST" action="{{ url_for('add_offer')}}">
-   <!--fruits category-->
-   <div class="row">
-      <div class="input-field input-purple-underline col s10">
-         <select id="category_fruits" name="category_fruits" class="validate" required>
-            <option value="" disabled selected>Choose your option</option>
-            {% for fruit_category in fruit_categories %}
-            <option value="{{ fruit_category.category_fruits }}">{{ fruit_category.category_fruits }}</option>
-            {% endfor %}
-         </select>
-         <label for="category_fruits">Select the category of your fruits</label>
-      </div>
-   </div>
-   <!--location-->
-   <div class="row">
-      <div class="input-field input-purple-underline col s10">
-         <select id="category_location" name="category_location" class="validate" required>
-            <option value="" disabled selected>Choose your option</option>
-            {% for location in location %}
-            <option value="{{ location.category_location }}">{{ location.category_location }}
-            {% endfor %}
-         </select>
-         <label for="category_location">Where can we find you</label>
-      </div>
-   </div>
-   <!--date for pick up-->
-   <div class="row">
-      <div class="input-field input-purple-underline col s10">
-         <input id="date_of_pick_up" name="date_of_pick_up" type="text" class="datepicker validate" required>
-         <label for="date_of_pick_up">Date available for pick up</label>
-      </div>
-   </div>
-   <!--time available-->
-   <div class="row">
-      <div class="input-field input-purple-underline col s5">
-         <input placeholder="From" id="time_start" name="time_start" type="text" class="timepicker validate" required>
-         <label for="time_start">Time available - START</label>
-      </div>
-      <div class="input-field input-purple-underline col s5">
-         <input placeholder="Until" id="time_end" name="time_end" type="text" class="timepicker validate" required>
-         <label for="time_end">Time available for pick up - END</label>
-      </div>
-   </div>
-   <!--description-->
-   <div class="row">
-      <div class="input-field input-purple-underline col s10">
-         <input placeholder="Anything you want to let people know." 
-            id="description" name="description" type="text" class="validate" minlength="3" maxlength="200" required>
-         <label for="description">Description</label>
-      </div>
-   </div>
-   <!--equipment-->
-   <div class="row">
-      <div class="input-field input-purple-underline col s10">
-         <input placeholder="E.g. what is available to borrow and use or necessary to bring on one’s own (ladders, baskets, etc.)"
-            id="equipment" name="equipment" type="text" class="validate" minlength="3" maxlength="200" required>
-         <label for="equipment">Equipment</label>
-      </div>
-   </div>
-   <!--contact-->
-   <div class="row">
-      <div class="input-field input-purple-underline col s10">
-         <input placeholder="Phone, messenger, whatsapp etc. Email not desired." id="contact" name="contact" type="text" class="validate" minlength="3" maxlength="200" required>
-         <label for="contact">Contact</label>
-      </div>
-   </div>
-
-   <!--price-free - on/off-->
-   <div class="row">
-      <div class="input-field input-purple-underline col s10">
-         <div class="switch">
-            <label for="price_free">
-            Free of charge
-            <input type="checkbox" id="price_free" name="price_free">
-            <span class="lever"></span>
-            </label>
+   <form class="col s10 offset-s2 form-color-purple" method="POST" action="{{ url_for('add_offer')}}">
+      <!--fruits category-->
+      <div class="row">
+         <div class="input-field input-purple-underline col s10">
+            <select id="category_fruits" name="category_fruits" class="validate" required>
+               <option value="" disabled selected>Choose your option</option>
+               {% for fruit_category in fruit_categories %}
+               <option value="{{ fruit_category.category_fruits }}">{{ fruit_category.category_fruits }}</option>
+               {% endfor %}
+            </select>
+            <label for="category_fruits">Select the category of your fruits</label>
          </div>
       </div>
-   </div>
-
-   <!--price-->
-   <div class="row" id="price_amount">
-      <div class="input-field input-purple-underline col s10">
-         <input placeholder="Your desired price." 
-            id="price" name="price" type="number" class="validate" min="1" max="1000">
-         <label for="price">Price - SEK/kg</label>
+      <!--location-->
+      <div class="row">
+         <div class="input-field input-purple-underline col s10">
+            <select id="category_location" name="category_location" class="validate" required>
+               <option value="" disabled selected>Choose your option</option>
+               {% for location in location %}
+               <option value="{{ location.category_location }}">{{ location.category_location }}
+                  {% endfor %}
+            </select>
+            <label for="category_location">Where can we find you</label>
+         </div>
       </div>
-   </div>
-
-   <!--price together-->
-     
- 
-
-
-<!--
-<div class="row">
-   <div class="file-field input-field col s10">
-      <div class="btn grey lighten-2">
-         <input type="file" id="offer_image" name="offer_image" accept="image/png, image/jpeg" />
-         <label for="offer_image">Insert Image</label>
+      <!--date for pick up-->
+      <div class="row">
+         <div class="input-field input-purple-underline col s10">
+            <input id="date_of_pick_up" name="date_of_pick_up" type="text" class="datepicker validate" required>
+            <label for="date_of_pick_up">Date available for pick up</label>
+         </div>
       </div>
-      <div class="file-path-wrapper">
-          <input class="file-path validate" type="text" placeholder="Upload offer image" />
-          <span class="helper-text" data-success="right">Help others see what you offer! If no image is added, your offer will be given a generated icon.</span>
+      <!--time available-->
+      <div class="row">
+         <div class="input-field input-purple-underline col s5">
+            <input placeholder="From" id="time_start" name="time_start" type="text" class="timepicker validate" required>
+            <label for="time_start">Time available - START</label>
+         </div>
+         <div class="input-field input-purple-underline col s5">
+            <input placeholder="Until" id="time_end" name="time_end" type="text" class="timepicker validate" required>
+            <label for="time_end">Time available for pick up - END</label>
+         </div>
       </div>
-  </div>
-
+      <!--description-->
+      <div class="row">
+         <div class="input-field input-purple-underline col s10">
+            <input placeholder="Anything you want to let people know." 
+               id="description" name="description" type="text" class="validate" minlength="3" maxlength="200" required>
+            <label for="description">Description</label>
+         </div>
+      </div>
+      <!--equipment-->
+      <div class="row">
+         <div class="input-field input-purple-underline col s10">
+            <input placeholder="E.g. what is available to borrow and use or necessary to bring on one’s own (ladders, baskets, etc.)"
+               id="equipment" name="equipment" type="text" class="validate" minlength="3" maxlength="200" required>
+            <label for="equipment">Equipment</label>
+         </div>
+      </div>
+      <!--contact-->
+      <div class="row">
+         <div class="input-field input-purple-underline col s10">
+            <input placeholder="Phone, messenger, whatsapp etc. Email not desired." id="contact" name="contact" type="text" class="validate" minlength="3" maxlength="200" required>
+            <label for="contact">Contact</label>
+         </div>
+      </div>
+      <!--price-free - on/off-->
+      <div class="row">
+         <div class="input-field input-purple-underline col s10">
+            <div class="switch">
+               <label for="price_free">
+               Free of charge
+               <input type="checkbox" id="price_free" name="price_free">
+               <span class="lever"></span>
+               </label>
+            </div>
+         </div>
+      </div>
+      <!--price-->
+      <div class="row" id="price_amount">
+         <div class="input-field input-purple-underline col s10">
+            <input placeholder="Your desired price." 
+               id="price" name="price" type="number" class="validate" min="1" max="1000">
+            <label for="price">Price - SEK/kg</label>
+         </div>
+      </div>
+      <!--submit-->
+      <div class="row">
+         <div class="center">
+            <button class="btn offset-m3 col s4 waves-effect waves-light pink darken-4 btn-register" 
+               type="submit">Add Offer</button>
+         </div>
+      </div>
+   </form>
 </div>
--->
-
-   <!--submit-->
-   <div class="row">
-   <div class="center">
-      <button class="btn offset-m3 col s4 waves-effect waves-light pink darken-4 btn-register" 
-         type="submit" name="">Add Offer</button>
-   </div>
-</form>
-
-
 {% endblock %}

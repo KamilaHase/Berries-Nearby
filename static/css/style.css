@@ -320,4 +320,8 @@ line-height: 36px!important;
     .nav-wrapper {
         height: 22vh!important;
     }
+
+    .img-categories {
+      display: none;
+    }
     }

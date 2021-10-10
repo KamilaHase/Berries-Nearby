@@ -9,16 +9,14 @@
     </div>
   </div>
 
-  
-   
-
 
 <!--offer cards-->
 
   <div class="row">
-    <div class="">
+    <div>
+      {% if offer_id == offer['offer_id'] %}
       {% for report in reports %}
-      {% if report.offer_id == offer['offer_id'] %}
+      
         <div class="col s12 m6">
           <div class="card cards-reports teal darken-1">
             <div class="card-content white-text">
@@ -31,10 +29,11 @@
           </div>
         
       </div>
+      {% endfor %}
       {% else %}
       <p class="push-down-footer">No reports found.</p>
       {% endif %}
-      {% endfor %}
+      
     </div>
 
   </div>

@@ -1,123 +1,103 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="container">
-  <div class="row lower-from-logo">
-    <div class="">
-      <h5 class="center">Report' s Detail</h5>
-      
-    </div>
-  </div>
-
-   
-     
- 
-
-<!--Report details-->
-
-  <div class="row">
-    <!--Offer card-->
-   
-    {% if report.report_id == report[report_id] %} 
-    <div class="card col m5 offer-card cards-padding sticky-action">
-      <div class="card-image waves-effect waves-block waves-light">
-        {% if report.offer.category_fruits == "Apples and Pears" %}
-        <img class="activator" src="{{ url_for('static', filename='images/apples-pears.jpg') }}">
-        {% elif report.offer.category_fruits == "Peaches, Apricots, Plums" %}
-        <img class="activator" src="{{ url_for('static', filename='images/pears-plums.jpg') }}">
-        {% elif report.offer.category_fruits == "Cherries" %}
-        <img class="activator" src="{{ url_for('static', filename='images/cherries.jpg') }}">
-        {% elif report.offer.category_fruits == "Berries" %}
-        <img class="activator" src="{{ url_for('static', filename='images/berries-cat.jpg') }}">
-        {% elif report.offer.category_fruits == "Vegetables" %}
-        <img class="activator" src="{{ url_for('static', filename='images/vegetables.jpg') }}">
-        {% else %}
-        <img class="activator" src="{{ url_for('static', filename='images/unknown-category.jpg') }}">
-        {% endif %}
+   <div class="row lower-from-logo">
+      <div class="">
+         <h5 class="center">Report' s Detail</h5>
       </div>
+   </div>
 
-      <div class="card-content content-card-padding ">
-        <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ report.offer.category_fruits }}
-          <i class="material-icons right">more_vert</i>
-        </span>
+   <!--Report details-->
+   <div class="row">
 
-        <div class="btns-edit">
-          <a href="" class="white btn-flat tooltipped"
-          data-position="bottom" data-tooltip="Reported"><i
-            class="material-icons red-text">error</i></a>
-          <p class="chip right">by: {{ report.offer.created_by }} </p>
-        </div>
-      
+      <!--offer card-->
+      {% if report.report_id == report[report_id] %} 
+      <div class="card col m5 offer-card cards-padding sticky-action">
+         <div class="card-image waves-effect waves-block waves-light">
+            {% if report.offer.category_fruits == "Apples and Pears" %}
+            <img class="activator" src="{{ url_for('static', filename='images/apples-pears.jpg') }}" alt="Apples and Pears">
+            {% elif report.offer.category_fruits == "Peaches, Apricots, Plums" %}
+            <img class="activator" src="{{ url_for('static', filename='images/pears-plums.jpg') }}" alt="Peaches, Apricots, Plums">
+            {% elif report.offer.category_fruits == "Cherries" %}
+            <img class="activator" src="{{ url_for('static', filename='images/cherries.jpg') }}" alt="Cherries">
+            {% elif report.offer.category_fruits == "Berries" %}
+            <img class="activator" src="{{ url_for('static', filename='images/berries-cat.jpg') }}" alt="Berries">
+            {% elif report.offer.category_fruits == "Vegetables" %}
+            <img class="activator" src="{{ url_for('static', filename='images/vegetables.jpg') }}" alt="Vegetables">
+            {% else %}
+            <img class="activator" src="{{ url_for('static', filename='images/unknown-category.jpg') }}" alt="Others/unknowwn image">
+            {% endif %}
+         </div>
 
-        <div class="card-action pink darken-4 white-text">
-          <span>
-            <p>{{ report.offer.category_location }}</p>
-          </span>
-          <p>{{ report.offer.date_of_pick_up }}, {{ report.offer.time_start }}-{{ report.offer.time_end }}</p>
-        </div>
-      </div>
+         <!--fruit category and action buttons-->
+         <div class="card-content content-card-padding ">
+            <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ report.offer.category_fruits }}
+            <i class="material-icons right">more_vert</i>
+            </span>
+            <div class="btns-edit">
+               <a href="" class="white btn-flat tooltipped"
+                  data-position="bottom" data-tooltip="Reported"><i>
+               class="material-icons red-text">error</i></a>
+               <p class="chip right">by: {{ report.offer.created_by }}</p>
+            </div>
 
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-        <p>{{ report.offer.description }}</p>
-        <p><strong>Equipment:</strong> {{ report.offer.equipment }}</p>
-        <p><strong>Contact:</strong> {{ report.offer.contact }}</p>
-        {% if report.offer.price_free == "off" %}
-        <p><strong>Price:</strong> {{ report.offer.price }} SEK/kg</p>
-        {% endif %}
+            <!--purple sticky area on cards-->  
+            <div class="card-action pink darken-4 white-text">
+               <p>{{ report.offer.category_location }}</p>
+               <p>{{ report.offer.date_of_pick_up }}, {{ report.offer.time_start }}-{{ report.offer.time_end }}</p>
+            </div>
+         </div>
 
-        {% if report.offer.created_by == session["user"] %}
-        <p class="chip indigo right white-text">MY OFFER</p>
-        {% else %}
-        <p class="chip right">Offered by: {{ report.offer.created_by }}</p>
-        {% endif %}
-      </div>
+         <!--card content reveal-->
+         <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+            <p>{{ report.offer.description }}</p>
+            <p><strong>Equipment:</strong> {{ report.offer.equipment }}</p>
+            <p><strong>Contact:</strong> {{ report.offer.contact }}</p>
+            {% if report.offer.price_free == "off" %}
+              <p><strong>Price:</strong> {{ report.offer.price }} SEK/kg</p>
+            {% endif %}
+            {% if report.offer.created_by == session["user"] %}
+              <p class="chip indigo right white-text">MY OFFER</p>
+            {% else %}
+              <p class="chip right">Offered by: {{ report.offer.created_by }}</p>
+            {% endif %}
+         </div>
 
-      {% if report.offer.price_free == "on" %}
-      <div class="z-depth-5">
-        <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free"
-          data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">thumb_up</i></a>
+         <!--free offer icon -->
+         {% if report.offer.price_free == "on" %}
+          <div class="z-depth-5">
+              <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free"
+                data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">thumb_up</i></a>
+          </div>
+         {% endif %}
       </div>
       {% endif %}
-    </div>
-    {% endif %}
-  
-    
-  <!--Report-->
-  <div class="col s12 m6">
-    <div class="card offer-card cards-reports cards-padding report-card teal darken-1">
-    
-      <div class="card-content white-text">
-        <p><em>"{{ report.report.report_content }}"</em></p>
-        <p class="right">by <strong>{{ report.report.reported_by }}</strong></p>
+
+      <!--Report-->
+      <div class="col s12 m6">
+         <div class="card offer-card cards-reports cards-padding report-card teal darken-1">
+            <div class="card-content white-text">
+               <p><em>"{{ report.report.report_content }}"</em></p>
+               <p class="right">by <strong>{{ report.report.reported_by }}</strong></p>
+            </div>
+            <hr>
+            <div class="card-action white-text cards-reports">
+               <div><strong>Farmer's email:</strong>
+                  {{ report.user.email }}
+               </div>
+               <div><strong>Farmer's full name:</strong>
+                  {{ report.user.first_name }} {{ report.user.last_name }}
+               </div>
+            </div>
+         </div>
       </div>
-      <hr>
-      <div class="card-action white-text cards-reports">
-        <div><strong>Farmer's email:</strong>
-        {{ report.user.email }}</div>
-        <div><strong>Farmer's full name:</strong>
-        {{ report.user.first_name }} {{ report.user.last_name }}</div>
-        </div>
-    </div>
-    </div>
-     
-     <div class="">
-      <a href="{{ url_for('reports') }}" class="btn col s3 waves-effect waves-light pink darken-4 btn-register" 
-         type="text">Close report</a>
-      <a href="" class="btn col s3 waves-effect waves-light teal btn-contact-farmer" 
-         type="text" name="messages">Contact Farmer</a>
+      <div>
+         <a href="{{ url_for('reports') }}" class="btn col s3 waves-effect waves-light pink darken-4 btn-register" 
+            type="text">Close report</a>
+         <a href="" class="btn col s3 waves-effect waves-light teal btn-contact-farmer" 
+            type="text" name="messages">Contact Farmer</a>
       </div>
-      
-
-
-    </div>
-
-
-
-  </div>
-
-
-
-
-
+   </div>
+</div>
 {% endblock %}
