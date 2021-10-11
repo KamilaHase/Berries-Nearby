@@ -1,42 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="container">
-  <div class="row lower-from-logo">
-    <div class="">
-      <h5 class="center">Reports</h5>
-      
-    </div>
-  </div>
-
-
-<!--offer cards-->
-
-  <div class="row">
-    <div>
-      {% if offer_id == offer['offer_id'] %}
-      {% for report in reports %}
-      
-        <div class="col s12 m6">
-          <div class="card cards-reports teal darken-1">
-            <div class="card-content white-text">
-              <p><em>"{{ report.report_content }}"</em></p>
-              <p class="right">by <strong>{{ report.reported_by }}</strong></p>
-            </div>
-            <div class="card-action cards-reports">
-              <a href="{{ url_for('report_detail', report_id=report._id) }}" class="white-text">See details of this report</a>
-            </div>
-          </div>
-        
+   <div class="row lower-from-logo">
+      <div class="">
+         <h5 class="center">Reports</h5>
       </div>
-      {% endfor %}
-      {% else %}
-      <p class="push-down-footer">No reports found.</p>
-      {% endif %}
-      
-    </div>
-
-  </div>
+   </div>
+   <!--offer cards-->
+   <div class="row">
+      <div>
+         {% if offer_id == offer['offer_id'] %}
+         {% for report in reports %}
+         <div class="col s12 m6">
+            <div class="card cards-reports teal darken-1">
+               <div class="card-content white-text">
+                  <p><em>"{{ report.report_content }}"</em></p>
+                  <p class="right">by <strong>{{ report.reported_by }}</strong></p>
+               </div>
+               <div class="card-action cards-reports">
+                  <a href="{{ url_for('report_detail', report_id=report._id) }}" class="white-text">See details of this report</a>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+         {% else %}
+         <p class="push-down-footer">No reports found.</p>
+         {% endif %}
+      </div>
+   </div>
 </div>
-
 {% endblock %}

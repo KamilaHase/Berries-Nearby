@@ -1,40 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="row lower-from-logo">
-  <div class="offset-m2 col s8">
-    <h5 class="center">Enter the community offers</h5>
-    <h6>Sign in to Berries Nearby and find out what fruit pie can you make for this weekend. 
-    </h6>
-  </div>
-</div> 
+   <div class="offset-m2 col s8">
+      <h5 class="center">Enter the community offers</h5>
+      <h6>Sign in to Berries Nearby and find out what fruit pie can you make for this weekend. 
+      </h6>
+   </div>
+</div>
 
+<!--form-->
 <div class="row">
-    <form class="col s10 offset-m2 form-color-purple" method="POST" action="{{ url_for('signin') }}">
+   <form class="col s10 offset-m2 form-color-purple" method="POST" action="{{ url_for('signin') }}">
       <div class="row">
-        <div class="input-field input-purple-underline col s10">
-          <input id="username" type="text" class="validate" name="username" required>
-          <label for="username">Username</label>
-        </div>
+         <!--username-->
+         <div class="input-field input-purple-underline col s10">
+            <input id="username" type="text" class="validate" name="username" required>
+            <label for="username">Username</label>
+         </div>
       </div>
+      <!--password-->
       <div class="row">
-        <div class="input-field input-purple-underline col s10">
-          <input id="password" type="password" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" name="password" required>
-          <label for="password">Password</label>
-        </div>
+         <div class="input-field input-purple-underline col s10">
+            <input id="password" type="password" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" name="password" required>
+            <label for="password">Password</label>
+         </div>
       </div>
+      <!--submit/enter-->
       <div class="row">
-        <div class="center">
-        <button class="btn offset-m3 col s4 waves-effect waves-light indigo btn-enter" type="submit" name="action">Enter</button>
+         <div class="center">
+            <button class="btn offset-m3 col s4 waves-effect waves-light indigo btn-enter" type="submit" name="action">Enter</button>
+         </div>
       </div>
-      </div>
-    </form>
-  </div>
+   </form>
+</div>
 
-  <div class="row">
-    <div class="offset-m3 col s6 center">
-    <h6>Not having an account yet?<a class="waves-effect btn-flat" href="{{ url_for('register') }}">Register here.</a></h6>
-  </div>
-        
-
+<!--url for register-->
+<div class="row">
+   <div class="offset-m3 col s6 center">
+      <h6>Not having an account yet?<a class="waves-effect btn-flat" href="{{ url_for('register') }}">Register here.</a></h6>
+   </div>
+</div>
 {% endblock %}
