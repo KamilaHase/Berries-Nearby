@@ -1,5 +1,4 @@
 import os
-import uuid
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -22,6 +21,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+
 
 @app.route("/home")
 def home():
@@ -203,7 +203,7 @@ def report_offer(offer_id):
 @app.route('/reports')
 def reports():
     reports = mongo.db.reports.find()
-    offer = mongo.db.offers.find()
+    offers = mongo.db.offers.find()
     return render_template("reports.html", reports=reports, offer=offers)
 
 

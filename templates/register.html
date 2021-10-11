@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="row lower-from-logo">
-   <div class="offset-m2 col s8">
+   <div class="offset-m2 col m8">
       <h5 class="center">Register</h5>
       <h6>Register to Berries Nearby, get access to list of gardens around you and offer your own fruits to others! 
       </h6>
@@ -9,39 +9,40 @@
 </div>
 
 <!--form-->
+<div class="container">
 <div class="row">
-   <form class="col s10 offset-m2 form-color-purple" method="POST" action="{{ url_for('register') }}">
+   <form class="col s12 form-color-purple" method="POST" action="{{ url_for('register') }}">
     <!--first name-->  
     <div class="row">
-         <div class="input-field input-purple-underline col s10">
+         <div class="input-field input-purple-underline col s12">
             <input id="first_name" type="text" class="validate" name="first_name" minlength="3" maxlength="20" pattern="^[a-zA-Z0-9]{3,20}$" required>
             <label for="first_name">First Name</label>
          </div>
       </div>
       <!--last name-->
       <div class="row">
-         <div class="input-field input-purple-underline col s10">
+         <div class="input-field input-purple-underline col s12">
             <input id="last_name" type="text" class="validate" name="last_name" minlength="3" maxlength="20" pattern="^[a-zA-Z0-9]{3,20}$" required>
             <label for="last_name">Last Name</label>
          </div>
       </div>
       <!--username-->
       <div class="row">
-         <div class="input-field input-purple-underline col s10">
+         <div class="input-field input-purple-underline col s12">
             <input placeholder="Choose username visible to others" id="username" type="text" class="validate" name="username" minlength="3" maxlength="20" pattern="^[a-zA-Z0-9]{3,20}$" required>
             <label for="username">Username</label>
          </div>
       </div>
       <!--email-->
       <div class="row">
-         <div class="input-field input-purple-underline col s10">
+         <div class="input-field input-purple-underline col s12">
             <input id="email" type="email" class="validate" name="email" required>
             <label for="email">Email</label>
          </div>
       </div>
       <!--password-->
       <div class="row">
-         <div class="input-field input-purple-underline col s10">
+         <div class="input-field input-purple-underline col s12">
             <input id="password" type="password" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" name="password" required>
             <label for="password">Password</label>
          </div>
@@ -49,15 +50,16 @@
       <!--submit-->
       <div class="row">
          <div class="center">
-            <button class="btn offset-m3 col s4 waves-effect waves-light pink darken-4 btn-register" type="submit" name="action">Submit</button>
+            <button class="btn offset-s3 col s6 waves-effect waves-light pink darken-4 btn-register" type="submit" name="action">Submit</button>
          </div>
       </div>
    </form>
 </div>
+</div>
 
 <!--url for sign in-->
 <div class="row">
-   <div class="offset-m3 col s6 center">
+   <div class="offset-s3 col s6 center">
       <h6>Do you already have an account?<a class="waves-effect btn-flat" href="{{ url_for('signin') }}">Sign in here.</a></h6>
    </div>
 </div>

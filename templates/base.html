@@ -70,70 +70,61 @@
                         <h6>Register</h6>
                      </a>
                   </li>
-                  <li class="lower-li">
-                     <a href="#">
-                        <h6>About the Project</h6>
-                     </a>
-                  </li>
                   {% endif %}
                </ul>
             </div>
          </nav>
 
          <!--mobile navbar-->
-         <ul class="sidenav" id="mobile-demo">
+         <ul class="sidenav black" id="mobile-demo">
             {% if session.user %}
             <li>
-               <a href="{{ url_for('offers') }}">
+               <a href="{{ url_for('offers') }}" class="white-text">
                   <h6>Current Offers</h6>
                </a>
             </li>
             <li>
-               <a href="{{ url_for('add_offer') }}">
-                  <h6>Current Offers</h6>
+               <a href="{{ url_for('add_offer') }}" class="white-text">
+                  <h6>Add Offer</h6>
                </a>
             </li>
             <li>
-               <a href="{{ url_for('profile', username=session['user']) }}">
+               <a href="{{ url_for('profile', username=session['user']) }}" class="white-text">
                   <h6>Profile</h6>
+               </a>
+            </li>
+            <li>
+               <a href="{{ url_for('signout') }}" class="white-text">
+                  <h6>Sign Out</h6>
                </a>
             </li>
             {% if session.user|lower == "admin"|lower %}
             <li>
-               <a href="{{ url_for('get_categories') }}">
-                  <h5>Manage Categories</h5>
+               <a href="{{ url_for('get_categories') }}" class="teal-text">
+                  <h6>Admin: Manage Categories</h6>
                </a>
             </li>
             <li>
-               <a href="{{ url_for('reports') }}">
-                  <h6>Reports</h6>
+               <a href="{{ url_for('reports') }}" class="teal-text">
+                  <h6>Admin: Reports</h6>
                </a>
             </li>
             {% endif %}
-            <li>
-               <a href="{{ url_for('signout') }}">
-                  <h6>Sign Out</h6>
-               </a>
-            </li>
+
             {% else %}
             <li>
-               <a href="{{ url_for('home') }}">
+               <a href="{{ url_for('home') }}" class="white-text">
                   <h5>Home</h5>
                </a>
             </li>
             <li>
-               <a href="{{ url_for('signin') }}">
+               <a href="{{ url_for('signin') }}" class="white-text">
                   <h5>Enter</h5>
                </a>
             </li>
             <li>
-               <a href="{{ url_for('register') }}">
+               <a href="{{ url_for('register') }}" class="white-text">
                   <h5>Register</h5>
-               </a>
-            </li>
-            <li>
-               <a href="#">
-                  <h5>About the Project</h5>
                </a>
             </li>
             {% endif %}
@@ -146,7 +137,7 @@
          {% if messages %}
          {% for message in messages %}
          <div class="row">
-            <div class="offset-m3 col s6">
+            <div class="offset-m3 col s12">
                <div class="card-panel flash-msg">
                   <h5 class="indigo-text center">{{ message }}</h5>
                </div>

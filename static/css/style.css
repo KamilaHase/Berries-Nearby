@@ -324,4 +324,12 @@ line-height: 36px!important;
     .img-categories {
       display: none;
     }
+
+    .footer-icon {
+      margin: 1px;
+    }
+
+    .parallax-container{
+      
+    }
     }
