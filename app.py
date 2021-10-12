@@ -208,7 +208,7 @@ def reports():
     return render_template("reports.html", reports=reports, offer=offers)
 
 
-@app.route('/report_detail/<report_id>', methods=['GET'])
+@app.route('/report_detail/<report_id>')
 def report_detail(report_id):
     report = mongo.db.reports.find_one({"_id": ObjectId(report_id)})
     offer = mongo.db.offers.find_one({"_id": ObjectId(report['offer_id'])})
@@ -218,6 +218,20 @@ def report_detail(report_id):
         'offer': offer
     }
     return render_template("report_detail.html", report=report_detail)
+
+
+@app.route('/add_message', methods=['GET', 'POST'])
+def add_message():
+    if request.method == 'POST':
+        message = {
+            'message_content': request.form.get('message_content')
+            }
+        mongo.db.messages.insert_one(message)
+        flash('Message sent.')
+        return redirect(url_for("reports"))
+    
+    return render_template("add_message.html")  
+
 
 
 @app.route("/get_categories")

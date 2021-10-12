@@ -36,7 +36,7 @@
             </span>
             <div class="btns-edit">
                <a href="" class="white btn-flat tooltipped"
-                  data-position="bottom" data-tooltip="Reported"><i>
+                  data-position="bottom" data-tooltip="Reported"><i
                class="material-icons red-text">error</i></a>
                <p class="chip right">by: {{ report.offer.created_by }}</p>
             </div>
@@ -74,12 +74,14 @@
       </div>
       {% endif %}
 
+
+
       <!--Report-->
       <div class="col s12 m6">
          <div class="card offer-card cards-reports cards-padding report-card teal darken-1">
             <div class="card-content white-text">
                <p><em>"{{ report.report.report_content }}"</em></p>
-               <p class="right">by <strong>{{ report.report.reported_by }}</strong></p>
+               <p class="right">reported by <strong>{{ report.report.reported_by }}</strong></p>
             </div>
             <hr>
             <div class="card-action white-text cards-reports">
@@ -93,9 +95,9 @@
          </div>
       </div>
       <div>
-         <a href="{{ url_for('reports') }}" class="btn col s3 waves-effect waves-light pink darken-4 btn-register" 
+         <a href="{{ url_for('reports') }}" class="btn col s3 waves-effect waves-light indigo btn-register" 
             type="text">Close report</a>
-         <a href="" class="btn col s3 waves-effect waves-light teal btn-contact-farmer" 
+         <a href="{{ url_for('add_message') }}" class="btn col s3 waves-effect waves-light teal btn-contact-farmer" 
             type="text" name="messages">Contact Farmer</a>
       </div>
    </div>
