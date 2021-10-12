@@ -104,12 +104,13 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    user_offers = mongo.db.offers.find({'created_by': session["user"]})
-    offers = mongo.db.offers.find()
 
+    offers = list(mongo.db.offers.find({"created_by": session["user"]}))
+    
+    print(offers)
     if session["user"]:
         return render_template("profile.html", 
-            username=username, user_offers=user_offers, offers=offers)
+            username=username, offers=offers)
    
     return redirect(url_for("signin"))
 

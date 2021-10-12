@@ -152,6 +152,13 @@
 </div>
 
 {% else %}
-<h6 class="indigo-text">No results found.</h6>
+<div class="row">
+   <div class="">
+<h6 class="indigo-text push-down-footer">
+<a href="{{ url_for('offers') }}" class="waves-effect waves-grey white btn-flat left tooltipped"
+data-position="bottom" data-tooltip="Refresh page"><i class="material-icons indigo-text right">autorenew</i></a>
+No results found.</h6>
+</div>
+</div>
 {% endif %}
 {% endblock %}
