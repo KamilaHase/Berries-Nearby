@@ -12,26 +12,32 @@
 
 <!--message cards-->
 
-<div class="col s12 m6">
-  <div class="card cards-reports darken-1">
+<div class="container">
+  <form action="{{ url_for('add_message') }}" method="POST">
+  <div class="card cards-reports cards-padding report-card">
     <div class="card-content white-text">
-      <form action="{{ url_for('add_message') }}" method="POST">
+      
   
         <div class="input-field input-purple-underline col s10">
-           <textarea 
+           <input 
               id="message_content" name="message_content" type="text" class="validate" minlength="3" maxlength="300" required>
-            </textarea>
+        </input>
            <label for="message_content">Message to Farmer</label>
         </div>
-        <div class="card-action">
-        <button class="btn offset-m3 col s3 waves-effect waves-light teal right btn-register" 
-        type="submit">Send Message</button>
-      </div>
-    </form>
+        
     </div>
   </div>
 
+
+  <div class="">
+    <a href="{{ url_for('reports') }}" class="btn col s3 waves-effect waves-light indigo btn-register">Cancel</a>
+    <button class="btn offset-m3 col s3 waves-effect waves-light teal right btn-register" 
+    type="submit">Send Message</button>
+  </div>
+  </form>
+
 </div>
 
+<div class="push-down-footer-sm"></div>
 
 {% endblock %}

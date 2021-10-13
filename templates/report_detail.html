@@ -85,6 +85,9 @@
             </div>
             <hr>
             <div class="card-action white-text cards-reports">
+               <div><strong>Farmer's username:</strong>
+                  {{ report.user.username }}
+               </div>
                <div><strong>Farmer's email:</strong>
                   {{ report.user.email }}
                </div>
@@ -97,8 +100,8 @@
       <div>
          <a href="{{ url_for('reports') }}" class="btn col s3 waves-effect waves-light indigo btn-register" 
             type="text">Close report</a>
-         <a href="{{ url_for('add_message') }}" class="btn col s3 waves-effect waves-light teal btn-contact-farmer" 
-            type="text" name="messages">Contact Farmer</a>
+         <a href="" class="btn col s3 waves-effect waves-light teal btn-contact-farmer tooltipped" 
+            type="text" name="messages" data-tooltip="Farmer will see a warning badge with suggestion to edit his/hers offer.">Attach warning badge</a>
       </div>
    </div>
 </div>

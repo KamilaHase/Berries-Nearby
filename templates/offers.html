@@ -36,7 +36,7 @@
 </div>
 
 <!--offer cards-->
-<div class="container">
+<div class="container container-offers">
    <div class="row">
       {% for offer in offers %}
       <div class="card col m5 offer-card cards-padding sticky-action">
@@ -89,8 +89,8 @@
             {% else %}
             <div class="btns-edit">
                <a href="#modal1" class="modal-trigger waves-effect waves-grey white btn-flat tooltipped"
-                  data-position="bottom" data-tooltip="Report offer"><i
-                  class="material-icons red-text">error_outline</i></a>
+                  data-position="bottom" data-tooltip="Report offer">
+                  <i class="material-icons red-text">error_outline</i></a>
                <p class="chip right">by: {{ offer.created_by }}</p>
             </div>
             {% endif %}

@@ -117,6 +117,10 @@ footer {
   height: 42vh;
 }
 
+.push-down-footer-sm {
+  height: 25vh; 
+}
+
 /*-------------------------register.html-------------------------------------------------*/
 .lower-from-logo {
   margin-top: 40px;
@@ -189,6 +193,7 @@ footer {
     }
     
 /*-------------------------offers.html-------------------------------------------------*/
+
 
 .btn-action-src-offer {
 line-height: 36px!important;
@@ -304,6 +309,12 @@ line-height: 36px!important;
     width: 100%!important;
 }
 }
+
+@media only screen and (min-width: 976px) {
+  .container-offers {
+    margin-left: 20%;
+  }
+  }
 
 
 @media(max-width: 555px) {
