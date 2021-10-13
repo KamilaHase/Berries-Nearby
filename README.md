@@ -13,3 +13,25 @@ Website users:
 
 Media
 Navbar Main Image - https://www.shutterstock.com/editor/image/berries-variety-background-strawberries-currants-blueberries-514087786
+
+Features to further develop: 
+There is a very large number of features that are left to be implemented. The whole app can be much more interactive for all participants.
+
+ - uploading own images of offers - would serve to other users as marketing and real presentation what the actual offer is 
+ - expiration date of offers - currently the offers stay there until the user or admin deletes them. There would be a nice option to expire offers if the date has already passed. 
+ - time picker - currently the user can pick any time he/she wants no matter what the start and end times are. It would be more user friendly if there is a control function correcting if the time for end is not earlier than time of start of the pick up. 
+ - it would be very nice to have a list of already presented offers that has expired or has been "muted" instead of deleted. That way the user can "reactivate" old offers and he/she would´t need to add all offer information again. 
+- option to be added as "interested" in this offer, therefore added into a group of interested users and be informed on time and clearly about any additional changes of this specific offer 
+ 
+ - chat functions: 
+    - chat functions directly among the users could help immensely the entire interaction among them. The input of adding contact and letting people contact themselves is not a perfect solution but serves the current purposes. Good option would be if each farmer who is posting and offer could create a group of people "interested" in his offer and moderate this group such providing information about the amount of fruits left, or adjusting time of pick up. 
+    - chat functions among admin and farmer - can moderate if a report has been reported, admin can directly inform farmer what has happened
+
+- notifications: 
+    - when a new offer is published
+    - when my offer has been reported
+    - when I received a new message (after chat functions has been implemented)
+
+- rating of offers
+- save (for myself) as favourite offer
+
