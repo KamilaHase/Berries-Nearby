@@ -31,6 +31,11 @@
                </a>
                <ul class="right hide-on-med-and-down nav-menu-mine valign-wrapper">
                   {% if session.user %}
+                  <li>
+                     <a href="{{ url_for('home') }}">
+                        <h6>Home</h6>
+                     </a>
+                  </li>
                   <li class="lower-li">
                      <a href="{{ url_for('offers') }}">
                         <h6>Current Offers</h6>
@@ -78,6 +83,11 @@
          <!--mobile navbar-->
          <ul class="sidenav black" id="mobile-demo">
             {% if session.user %}
+            <li>
+               <a href="{{ url_for('home') }}" class="white-text">
+                  <h5>Home</h5>
+               </a>
+            </li>
             <li>
                <a href="{{ url_for('offers') }}" class="white-text">
                   <h6>Current Offers</h6>
