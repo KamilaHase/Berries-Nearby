@@ -51,6 +51,8 @@
             <img class="activator" src="{{ url_for('static', filename='images/cherries.jpg') }}" alt="Cherries">
             {% elif offer.category_fruits == "Berries" %}
             <img class="activator" src="{{ url_for('static', filename='images/berries-cat.jpg') }}" alt="Berries">
+            {% elif offer.category_fruits == "Nuts" %}
+            <img class="activator" src="{{ url_for('static', filename='images/nuts.jpg') }}" alt="Nuts">
             {% elif offer.category_fruits == "Vegetables" %}
             <img class="activator" src="{{ url_for('static', filename='images/vegetables.jpg') }}" alt="Vegetables">
             {% else %}
