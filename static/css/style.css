@@ -111,7 +111,7 @@ footer {
 }
 
 .push-down-footer-sm {
-  height: 25vh; 
+  height: 15vh; 
 }
 
 /*-------------------------register.html-------------------------------------------------*/
@@ -341,6 +341,10 @@ line-height: 36px!important;
 
     .nav-wrapper {
         height: 22vh!important;
+    }
+
+    .img-fruits-baskets {
+      background-attachment: scroll;
     }
 
     .img-categories {

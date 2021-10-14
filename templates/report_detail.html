@@ -8,10 +8,10 @@
    </div>
 
    <!--Report details-->
-   <div class="row">
+   <div class="row"> 
 
       <!--offer card-->
-      {% if report.report_id == report[report_id] %} 
+      {% if report.report_id == report._id %} 
       <div class="card col m5 offer-card cards-padding sticky-action">
          <div class="card-image waves-effect waves-block waves-light">
             {% if report.offer.category_fruits == "Apples and Pears" %}
