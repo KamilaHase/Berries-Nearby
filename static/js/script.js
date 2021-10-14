@@ -27,6 +27,15 @@ $(document).ready(function(){
     $( "#price_free" ).click(function(){
         $("#price_amount").toggle();
       });
+    
+    $(document).click(function () {
+        "use strict";
+        // Fixes bug with Materialize select elements not working with iOS
+        // https://stackoverflow.com/a/52851046
+        $('li[id^="select-options"]').on('touchend', function (e) {
+            e.stopPropagation();
+        });
+    });
 
 
     /*----validate select/div in forms - adapted from source Code Institute "Materialize Form Validation" lesson---*/
