@@ -90,6 +90,9 @@ There is a very large number of features that are left to be implemented. The wh
 - **Footer**
     - It was difficult for me to provide a footer that would always stick to the bottom while not covering some of the content. If there is not enough content on page that would push footer down, on some devices the footer may be floating on the page. To correct that I was adding a css class "push-down-footer" (height: 42vh) and  "push-down-footer-sm" (height: 15vh) although it is still seen as a bug as it is not sufficient for all types of devices. Also a mistake can easily appear if the programmer wouldn't remember to add the css class in further development. 
 
+- **Images for Offers**
+    - Currently due to time limit and my skills, images are uploaded automatically from static file. Despite users are informed about this "temporar" functionality, it is not best practice in long term. Also uploading own images would serve as marketing for own fruits. The current bug stands for occassion when admin adds another category - currently it is possible to add new category but not to asign it a new image. Therefore fixing this functionality is highly recommended for future development.
+
 
 #### Testing User Stories from User Experience (UX): 
 ## Game walkthrough
