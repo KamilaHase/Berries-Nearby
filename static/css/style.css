@@ -317,15 +317,7 @@ line-height: 36px!important;
     left: 1vh;
 }
 }
-/*
-@media(max-width: 992px) {
-  #logo {
-    height: 20vh;
-    width: 20vh;
-    top: 6vh;
-    left: 1vh;
-} */
-}
+
 
 @media(max-width: 555px) {
     #logo {
