@@ -27,6 +27,7 @@ $(document).ready(function(){
     $( "#price_free" ).click(function(){
         $("#price_amount").toggle();
       });
+      
     
     $(document).click(function () {
         "use strict";

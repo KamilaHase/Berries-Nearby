@@ -233,7 +233,6 @@ def add_message():
     return render_template("add_message.html")  
 
 
-
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.fruit_categories.find().sort("category_fruits", 1))
