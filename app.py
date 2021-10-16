@@ -132,7 +132,7 @@ def add_offer():
             "category_fruits": request.form.get("category_fruits"),
             "contact": request.form.get("contact"),
             "category_location": request.form.get("category_location"),
-            "date_of_pick_up": datetime.now().strftime("%d/%m/%Y"),
+            "date_of_pick_up": request.form.get("date_of_pick_up"),
             "description": request.form.get("description"),
             "equipment": request.form.get("equipment"),
             "time_start": request.form.get("time_start"),

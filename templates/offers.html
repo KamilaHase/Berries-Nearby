@@ -62,13 +62,14 @@
 
          <!--fruit category and action buttons-->
          <div class="card-content content-card-padding ">
+            <!-- category -->
             <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.category_fruits }}
             <i class="material-icons right">more_vert</i>
             </span>
             {% if offer.created_by == session["user"] %}
             <div class="btns-edit">
-
-               {% if offer.created_by == session["user"] or "admin" %}
+               <!-- delete offer -->
+               
                <a href="#modal_delete"
                   class="modal-trigger waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Delete"><i
                   class="material-icons red-text">clear</i></a>
@@ -85,21 +86,26 @@
                   </div>
                </div>
                
+               <!-- edit offer -->
                <a href="{{ url_for('edit_offer', offer_id=offer._id) }}"
                   class="waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Edit"><i
                   class="material-icons indigo-text">edit</i></a>
-                {% endif %}
+                
 
+               
+
+               <!-- my offer chip -->
                <p class="chip indigo right white-text">MY OFFER</p>
             </div>
 
-            {% else %}
+               {% else %}
             <div class="btns-edit">
                <a href="#modal1" class="modal-trigger waves-effect waves-grey white btn-flat tooltipped"
                   data-position="bottom" data-tooltip="Report offer">
                   <i class="material-icons grey-text">error_outline</i></a>
                <p class="chip right">by: {{ offer.created_by }}</p>
             </div>
+               
             {% endif %}
 
             <!--purple sticky area on cards-->
@@ -126,7 +132,7 @@
          </div>
 
           <!--free offer icon -->
-         {% if offer.price_free == "on" %}
+         {% if (offer.price_free == "on") or (offer.price == "0") %}
           <div class="z-depth-5">
               <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free"
                 data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">thumb_up</i></a>
