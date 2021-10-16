@@ -1,17 +1,49 @@
-![Mockup](wireframes-mockups/main_mockup.png)
+![Mockup](static/wireframes and mockup/mockup-berries-nearby.png)
 
 # Berries Nearby
 
-A website dedicated to a community of people who want to help each other out with consumation of fruits and vegetables. There are two main groups of users of this page: people - "farmers" - who own gardens where there has grown too many fruits and vegetables (for short I will be using "fruits" only but it is meant both) and the farmers want to offer these fruits to anyone who is interested. The fruits would otherwise just stay on trees left for birds or just to rott. Second group of website users are people who are interested in self picking these fruits. Together they create a community of people who help each other out - one with offers, other with taking care of the offer. 
+A website dedicated to a community of people who want to help each other out with consumation of fruits and vegetables. There are two main groups of users of this page: people - "farmers" - who own gardens where there has grown too many fruits and vegetables (for short I will be using "fruits" only but it is meant both) and the farmers want to offer these fruits to anyone who is interested. The fruits would otherwise just stay on trees left for birds or just to rott. 
+Second group of website users are people who are interested in self picking these fruits. Together they create a community of people who help each other out - one with offers, other with taking care of the offer. 
 The website is closed for public, everybody who wants to join in has to provide basic data and log into the page. The area of gardens and self picking is limited to a specific location, in our case it is the town of Gothenburg in Sweden and its surrounding areas. 
 When logged in, every user has the chance to see other people offers and at the same time post an advertisement - offer himself. There is no need to post an advertisement to see the offers.
-The website community owners take no responsibility for the physical interaction between the people, although bad behaviour may be reported and some users can be kicked out by the web admin.
+The website community owners take no responsibility for the physical interaction between the people, although bad behaviour may be reported. The community also takes no responsibility for quality of fruits offered.
 
 This project is fictional only. The idea came from seeing actual people putting small papers of invitation for picking berries and fruits, or simply leaving baskets full of fruits in front of their gardens.
 
 ## UX
-
+The web has been been built to provide simple yet clear information to all users. As mentioned above, there are mainly two groups of users: farmers, who offer their fruits, and customers, who come and get the fruits from farmers. 
 ### User stories:
+1. Farmers: 
+    - I am a person who owns a big garden, have a lot of fruits and don't know what to do with them. Therefore I want to offer these fruits to other people, someone who would come and get the fruits themselves. 
+    a) I may be offering to pick fruits completely (physically pick the fruits up from trees)
+    b) I may have already picked the fruits and offer them prepared in baskets, boxes, etc.
+    - the farmer has the option to offer fruits for free or for a certain price (price is limited up to 1000SEK)
+
+    - Goal of a farmer to visit the website: 
+        - open website, check the current offers, add a new offer with description what I offer
+        - second and third time visit: check or edit my own offer, check my profile page with possible reports from other users, delete offer in case it is no longer available.
+        - checking the website and contacts for community administrators in order to contact them via email
+
+2. Customer: 
+    - I am interested in getting home-grown fruits, I am ready to make some work in order to receive that.
+
+    - Goal of a farmer to visit the website: 
+        - open website and check the available offers, possibly pick an offer I am intersted at, and note down (separately, not yet within the current app) contacts for farmer in order to contact him when pick up
+        - reporting an offer that I have been in touch with for faulty information or any possible disruptive behaviour
+        - checking the website and contacts for community administrators in order to contact them via email
+
+3. Admin
+    - Currently the admin has limited rights to work with the website, many of them left for future development. 
+    - Admin's role is apart from the two above enriched with possibilities to: 
+        - add new fruit categories
+        - check reports of fruits 
+        - sending automatic warning to farmers in order to inform them about the need of editing their offer
+        - editing offers of others
+        - delete other offers
+
+
+
+    
 
 ### Design of the website:
 #### Typography
@@ -52,6 +84,7 @@ There is a very large number of features that are left to be implemented. The wh
 
 - rating of offers
 - save (for myself) as favourite offer
+- payment methods - could be connected to online payment methods such Swish (Sweden) 
 
 ## Technologies Used
 (adapted accordingly by: https://github.com/Code-Institute-Solutions/SampleREADME)
