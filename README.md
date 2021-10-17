@@ -1,4 +1,4 @@
-![Mockup](static/wireframes and mockup/mockup-berries-nearby.png)
+![Mockup](/static/wireframes and mockup/mockup-berries-nearby.png)
 
 # Berries Nearby
 
@@ -13,7 +13,7 @@ This project is fictional only. The idea came from seeing actual people putting 
 ## UX
 The web has been been built to provide simple yet clear information to all users. As mentioned above, there are mainly two groups of users: farmers, who offer their fruits, and customers, who come and get the fruits from farmers. 
 ### User stories:
-1. Farmers: 
+1. Farmer: 
     - I am a person who owns a big garden, have a lot of fruits and don't know what to do with them. Therefore I want to offer these fruits to other people, someone who would come and get the fruits themselves. 
     a) I may be offering to pick fruits completely (physically pick the fruits up from trees)
     b) I may have already picked the fruits and offer them prepared in baskets, boxes, etc.
@@ -23,6 +23,7 @@ The web has been been built to provide simple yet clear information to all users
         - open website, check the current offers, add a new offer with description what I offer
         - second and third time visit: check or edit my own offer, check my profile page with possible reports from other users, delete offer in case it is no longer available.
         - checking the website and contacts for community administrators in order to contact them via email
+        - farmer may also visit the webpage in order to get more information about the project or get contact information to community administrators/managers via email or social media. 
 
 2. Customer: 
     - I am interested in getting home-grown fruits, I am ready to make some work in order to receive that.
@@ -31,24 +32,64 @@ The web has been been built to provide simple yet clear information to all users
         - open website and check the available offers, possibly pick an offer I am intersted at, and note down (separately, not yet within the current app) contacts for farmer in order to contact him when pick up
         - reporting an offer that I have been in touch with for faulty information or any possible disruptive behaviour
         - checking the website and contacts for community administrators in order to contact them via email
+        - customer may also visit the webpage in order to get more information about the project or get contact information to community administrators/managers via email or social media. 
 
 3. Admin
     - Currently the admin has limited rights to work with the website, many of them left for future development. 
     - Admin's role is apart from the two above enriched with possibilities to: 
-        - add new fruit categories
+        - add, edit or delete fruit categories
         - check reports of fruits 
         - sending automatic warning to farmers in order to inform them about the need of editing their offer
         - editing offers of others
         - delete other offers
 
+    - Goal of Admin to visit the website: 
+        - as a general user, Admin may be interested in the presented offers, therefore it is reckoned Admin may be checking the offers as any other user. As is Admin's role defined, he would visit the website in order to perform his administration role: check any new reports, send warnings to farmers, edit offers of others if necessary, delete offers of others if necessary. Admin can also add a new fruit category if one is currently sought after or he/she may delete a category if it is not popular at all. 
 
+4. First time visitor
+    - Anybody who has heard about the project, is interested about getting to know more or is considering joining the community. First time visitor has limited access into the website and can view only the home page, registration page or sign in page (for those who have already registered earlier.)
 
-    
 
 ### Design of the website:
+Design has been chosen to be aligned with the topic of fruits and berries. Overall design is based on warm colors and images of fruits, it is a rather "simple" design that is meant to evoke imaginations of fruit tastes and coziness with family and friends.
+
 #### Typography
+- For all texts on website has been chosen font 'Montserrat' that is light and modern. The purpose is to evoke dynamic atmosphere. 
+- Logo and text "Berries Nearby" is written with font 'Azeret Mono ExtraLight' although the logo itself has been inserted as an image to simplify it's usage. Text 'Gothenburg' on logo is written with 'Montserrat ExtraLight'.
+- All fonts come from [Google Fonts](https://fonts.google.com/ "Google Fonts").
+
 #### Colors
+- There are 4 main colors used in the general user view, one extra is linked for Admin and his/hers roles, colors are using Materialize color palette:
+    - #880e4f pink darken-4
+    - #3f51b5 indigo
+    - #000000 black
+    - #ffffff white
+    - #009688 teal - for Admin roles
+
+- The colors has been devided accordingly: 
+    - The project uses two main colors for its branding: #880e4f (pink darken-4 by Materialize) and #000000 (black). These two colors together with #ffffff (white) are meant to be the representative colors.
+    - When entering the website (signing in) the colors has been devided as: 
+        - #880e4f pink darken-4 - for action where there is "a change" such "submit", "edit offer" etc. 
+            - #e91e63 pink is used for font in Flash messages announcing change
+        - #3f51b5 indigo - for action where it is confirmation of the actual statement or canceling changes, indigo color is meant to be "stable" color
+        - #009688 teal - Admin has been assigned an extra color in order to assure the actions he/she is doing are visible only for Admin role.
+
+- The website is using images with a lot of red and purple colors in order to bring in the feeling of "juice" and food tastes
+
 #### Imagery
+Images on website are to be found under these links (all have been dowloaded from [Shutterstock](https://www.shutterstock.com/).)
+- [Main Berries image](https://www.shutterstock.com/cs/image-photo/berries-variety-background-strawberries-currants-blueberries-514087786)
+- [Home page parallax scroll image](https://www.shutterstock.com/cs/image-photo/summer-fruit-berry-assortment-flatlay-strawberries-1488978506)
+- Images of fruits on Offers.html
+    - [Apples and Pears](https://www.shutterstock.com/cs/image-photo/apples-pears-63252076)
+    - [Apricots, nectarines](https://www.shutterstock.com/cs/image-photo/pile-colorful-summer-fruits-apricots-nectarines-90071506)
+    - [Cherries](https://www.shutterstock.com/cs/image-photo/red-cherries-pile-ripe-stalks-1703667262)
+    - [Berries](https://www.shutterstock.com/cs/image-photo/woven-basket-red-strawberries-green-leafy-1930097360)
+    - [Vegetables](https://www.shutterstock.com/cs/image-photo/assortment-fresh-vegetables-carrot-garlic-kohlrabi-429138103)
+    - [Nuts](https://www.shutterstock.com/cs/image-photo/different-nuts-heap-1210210198)
+    - [Others](https://www.shutterstock.com/cs/image-photo/box-unknown-contents-no-image-product-731673463)
+- [Manage Categories](https://www.shutterstock.com/cs/image-photo/berries-on-wooden-rustic-background-253899859)
+
 #### Wireframes
 #### Mockups
 
@@ -78,6 +119,7 @@ There is a very large number of features that are left to be implemented. The wh
     - chat functions among admin and farmer - can moderate if a report has been reported, admin can directly inform farmer what has happened
 
 - notifications: 
+    - when Admin executed any changes to my offers (edited or deleted)
     - when a new offer is published
     - when my offer has been reported
     - when I received a new message (after chat functions has been implemented)
@@ -95,10 +137,7 @@ There is a very large number of features that are left to be implemented. The wh
 - **GitHub** - used to store the projects code after being pushed from Git.
 
 - technologies to adapt the images (crop, adding the number circles for touch screen version, removing background etc.): 
-  - **Media Bang Paint Pro**
-  - **Photoshop Editor**
-  - **Painting**
-- **Animate.css** - for animation of lamp on index.html
+
 - **MS Office Power Point** - used for creating wireframes
 - **techsini.com** and **ami.responsivedesign.is** for mockups
 
