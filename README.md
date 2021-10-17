@@ -141,6 +141,7 @@ For users who accidentaly open the page and already have en existing account, a 
     4. **Sign Out**
 
 - Admin sees another one(two according to size screens) links to: 
+    
     **Large screens**:
     5. **Admin Editor**
         - **Manage Categories**
