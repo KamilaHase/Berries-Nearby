@@ -143,7 +143,7 @@ For users who accidentaly open the page and already have en existing account, a 
 - Admin sees another one(two according to size screens) links to: 
     
     **Large screens**:
-    
+
     5. **Admin Editor**
         - **Manage Categories**
         - **Reports**
@@ -311,13 +311,6 @@ Technologies used for wireframes and images:
 
 
 #### Testing User Stories from User Experience (UX): 
-## Game walkthrough
-
-##### First Time Visitor Goals
-First time visitor would most likely go through the all stages and would not skip anything forward. The goal is to learn about the game and give a try of playing it.
-
-##### Second Time Visitor Goals
-Visitors who return to page would most likely skip the index.html and its introduction (in case they understood well during the previous visit). They would either spend time on memorizing words again, or possibly just skip directly to the game.html page where they can test their progress in knowledge and memory.
 
 ## Deployment
 The website was developed on hosting page GitHub with a help of GitPod and deployed to Heroku for production. 
@@ -370,7 +363,13 @@ The project was deployed to GitHub Pages using the following steps:
 8. Press Enter. Your local clone will be created.
 
 ## Credits
-
+- miniproject Task Management from [Code Institute](https://learn.codeinstitute.net/) tutorial was the base of this project
+- https://stackoverflow.com/a/52851046
+- [Slack](https://app.slack.com/) - Slack comments of other students and alumni on Code Institute page
+- Materialize CSS - https://materializecss.com/
+- inspiration from
+    - https://github.com/Sojasmine/swedevco
+    - https://github.com/zokam1411/milestone-project
 
 ### Acknowledgements
 Many thanks to mentor Guido who provided me with inspiration and valuable suggestions.
