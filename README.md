@@ -102,7 +102,7 @@ Images on website are to be found under these links (all have been dowloaded fro
 - [Edit Offer](static/wireframes-mockup/edit_offer.png)
 - [Offers - Admin View](static/wireframes-mockup/offers_admin.png)
 - [Manage Categories - Admin View](static/wireframes-mockup/manage_categories_admin.png)
-- [Add Category - Admin View](static/wireframes-mockup/add_categry_admin.png)
+- [Add Category - Admin View](static/wireframes-mockup/add_category_admin.png)
 - [Reports - Admin View](static/wireframes-mockup/reports_admin.png)
 - [Report's Detail - Admin View](static/wireframes-mockup/reports_detail_admin.png)
 
