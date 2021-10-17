@@ -210,11 +210,35 @@ For users who accidentaly open the page and already have en existing account, a 
     - clicking on link signs out the user, user appears on page signin.html and sees a flash message with "You have been signed out."
 
 5. **Admin Editor**: 
-    **Manage Categories**
-        - open page get_categories.html with a list of current categories stored in database
-        - each category offers the option of "delete" and "edit"
-        - clicking on "delete" open a modal with a question "Are you sure you want to delete this category?", "Yes, delete" deletes category from database, or "cancel" renders back to get_categories.html
-        - clicking on "edit category" opens page edit_category.html
+    **Manage Categories - get_categories**
+        - Opens page get_categories.html with a list of current categories stored in database
+        - Each category offers the option of "delete" and "edit"
+        - Clicking on "delete" open a modal with a question "Are you sure you want to delete this category?", "Delete" deletes category from database, or "cancel" renders back to get_categories.html
+        - Clicking on "edit category" opens page edit_category.html with the option of changing name of the category in a simple form. Admin confirms by clicking on "Edit category" or cancels by button "cancel"
+    
+    **Reports - reports.html**
+        - Opens page with a list of reports written by users. As mentioned above on offers.html, each customer has the option to report other offers in case he/she has the impression of offer containing false information or the farmer has not been behaving ethicaly. 
+        - Reports are presented in teal color to make sure Admin is aware this is a page not visible to general users. 
+        - Each card present the text reported, then field "reported by" and username and the option to See details of this report. 
+
+    **Report's detail - report_detail.html**
+        - Page opens more details about the current offer that has been reported. 
+        **1. Card with detailed information:**
+        The text of report is being repeated together with username of "reported by", under are fields rendered from database providing more information: 
+            - Farmer's username
+            - Farmer's email
+            - Farmer's full name
+        **2.Offer card**
+            - The actual offer card that has been reported. Contains all presented information (description, equipment, price included)
+        **3.Action buttons**
+            - Close report - goes to reports.html
+            - Attach warning badge - with tooltip "Farmer will see a warning badge with suggestion to edit his/hers offer." - clicking on button attaches warning button on offer that has been reported. Warning is visible only to Admin and the Farmer who presented offer
+
+- additional page: 
+6. **Edit Offer - edit_offer.html**
+    - user gets to page from offers.html when clicking on Edit offer icon on his/her own offer
+    - link opens identical form as in Add offer but with it's specific information rendered from database.
+    - option to "Cancel" or "Edit offer" buttons confirm or cancel the changes made. 
 
 
 ### Features Left to Implement
