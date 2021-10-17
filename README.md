@@ -10,6 +10,11 @@ The website community owners take no responsibility for the physical interaction
 
 This project is fictional only. The idea came from seeing actual people putting small papers of invitation for picking berries and fruits, or simply leaving baskets full of fruits in front of their gardens.
 
+### Project Construction:
+This application contains the key CRUD requirement functionalities. Data handling document is database based on MongoDB. Functionality is created using Flask, HTML5, CSS and JavaScript. Materialize framework was used in building fronted structure to make sure app is responsive as possible and can be used on multiple screen sizes.
+
+Application offer a registration and login system with password hashing to protect each user. Logged user can browse offers created by other registered users and create, update and delete offers created by him/her.
+
 ## UX
 The web has been been built to provide simple yet clear information to all users. As mentioned above, there are mainly two groups of users: farmers, who offer their fruits, and customers, who come and get the fruits from farmers. 
 ### User stories:
@@ -48,7 +53,6 @@ The web has been been built to provide simple yet clear information to all users
 
 4. First time visitor
     - Anybody who has heard about the project, is interested about getting to know more or is considering joining the community. First time visitor has limited access into the website and can view only the home page, registration page or sign in page (for those who have already registered earlier.)
-
 
 ### Design of the website:
 Design has been chosen to be aligned with the topic of fruits and berries. Overall design is based on warm colors and images of fruits, it is a rather "simple" design that is meant to evoke imaginations of fruit tastes and coziness with family and friends.
@@ -193,6 +197,33 @@ First time visitor would most likely go through the all stages and would not ski
 Visitors who return to page would most likely skip the index.html and its introduction (in case they understood well during the previous visit). They would either spend time on memorizing words again, or possibly just skip directly to the game.html page where they can test their progress in knowledge and memory.
 
 ## Deployment
+The website was developed on hosting page GitHub with a help of GitPod and deployed to Heroku for production. 
+The website is published on: https://berries-nearby.herokuapp.com/
+
+### Deploying to Heroku
+- Changed the settings to Debug=False ("FLASK_DEBUG": "0")
+- Made sure that the env.py file is included in the gitignore file.
+
+1. Log in to your Heroku account
+2. Create a new app from your dashboard
+3. Create an app name
+4. Choose a region
+5. Connect with Github
+6. Search your repository name and connect Go to settings:
+7. Click on the Reavel Config Vars
+8. Add IP with the value of 0.0.0.0
+9. PORT with the value of 5000
+10. SECRET_KEY with the password from https://randomkeygen.com/
+11. MONGO_DBNAME with the name of your database.
+12. Before deploying to heroku we need to push our repository to Github.
+13. Go back to deploy and inactivate ”Enable Automatic Deploys”
+14. Click the button ”Deploy branch”
+15. Heroku connected successfully with your Github.
+
+- 
+
+
+
 The website was developed on hosting page GitHub with a help of GitPod. Therefore the deployed page is hosted on Github Pages.
 Now the website is published on: https://kamilahase.github.io/MS2-Vocab-Memorize/
 
