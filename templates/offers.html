@@ -70,12 +70,12 @@
             <div class="btns-edit">
                <!-- delete offer -->
                
-               <a href="#modal_delete"
+               <a href="#modal_delete-{{ offer._id }}"
                   class="modal-trigger waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Delete"><i
                   class="material-icons red-text">clear</i></a>
                
                <!-- modal - Delete Offer-->
-               <div id="modal_delete" class="modal">
+               <div id="modal_delete-{{ offer._id }}" class="modal">
                   <div class="modal-content">
                      <h4>Delete Offer</h4>
                      <p>Are you sure you want to delete this offer?</p>

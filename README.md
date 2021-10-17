@@ -1,4 +1,4 @@
-![Mockup](/static/wireframes and mockup/mockup-berries-nearby.png)
+![Mockup](static/wireframes and mockup/mockup-berries-nearby.png)
 
 # Berries Nearby
 
@@ -18,7 +18,7 @@ Application offer a registration and login system with password hashing to prote
 ## UX
 The web has been been built to provide simple yet clear information to all users. As mentioned above, there are mainly two groups of users: farmers, who offer their fruits, and customers, who come and get the fruits from farmers. 
 ### User stories:
-1. Farmer: 
+1. **Farmer**
     - I am a person who owns a big garden, have a lot of fruits and don't know what to do with them. Therefore I want to offer these fruits to other people, someone who would come and get the fruits themselves. 
     a) I may be offering to pick fruits completely (physically pick the fruits up from trees)
     b) I may have already picked the fruits and offer them prepared in baskets, boxes, etc.
@@ -30,7 +30,7 @@ The web has been been built to provide simple yet clear information to all users
         - checking the website and contacts for community administrators in order to contact them via email
         - farmer may also visit the webpage in order to get more information about the project or get contact information to community administrators/managers via email or social media. 
 
-2. Customer: 
+2. **Customer**
     - I am interested in getting home-grown fruits, I am ready to make some work in order to receive that.
 
     - Goal of a farmer to visit the website: 
@@ -39,7 +39,7 @@ The web has been been built to provide simple yet clear information to all users
         - checking the website and contacts for community administrators in order to contact them via email
         - customer may also visit the webpage in order to get more information about the project or get contact information to community administrators/managers via email or social media. 
 
-3. Admin
+3. **Admin**
     - Currently the admin has limited rights to work with the website, many of them left for future development. 
     - Admin's role is apart from the two above enriched with possibilities to: 
         - add, edit or delete fruit categories
@@ -51,7 +51,7 @@ The web has been been built to provide simple yet clear information to all users
     - Goal of Admin to visit the website: 
         - as a general user, Admin may be interested in the presented offers, therefore it is reckoned Admin may be checking the offers as any other user. As is Admin's role defined, he would visit the website in order to perform his administration role: check any new reports, send warnings to farmers, edit offers of others if necessary, delete offers of others if necessary. Admin can also add a new fruit category if one is currently sought after or he/she may delete a category if it is not popular at all. 
 
-4. First time visitor
+4. **First time visitor**
     - Anybody who has heard about the project, is interested about getting to know more or is considering joining the community. First time visitor has limited access into the website and can view only the home page, registration page or sign in page (for those who have already registered earlier.)
 
 ### Design of the website:
@@ -118,49 +118,147 @@ Images on website are to be found under these links (all have been dowloaded fro
 
 ### Existing Features
 
-- **Main page - Index.html** 
-- **Get ready** 
-- **Game** 
- - **Computer version**
-   1. **Check answers**
+- **Home - home.html** 
+    - Introduces the community project with motivational and marketing quotes
+    - Navigation menu displays three links only: 
+        1. Home - goes back to home.html
+        2. Enter - link to signin.html
+        3. Register - link to register.html
+    
+    - Purple area with motivational text suggests "Get started now" with a link to register.html
+    - Footer to present links to email and to social media - external resources of information about the project(fictional) and Copyright (fictional)
 
-- **Touch screens version**
+- **Enter - signin.html** - for already registered users, page provides simple form to write in username and password in order to enter the page. 
+For users who accidentaly open the page and do not have an account yet is placed a link below the form to "register.html."
+
+- **Register - register.html** - for user who have not yet registered into the website, page provides a form where user writes in some essential personal information in order to be able to use the website. These information could be possibly used by Admin in later conversation. 
+For users who accidentaly open the page and already have en existing account, a link below the form gets the user to "signin.html."
+
+- once a regular user (not Admin) is logged in, the navigation changes and provides different links: 
+    1. **Current Offers**
+    2. **Add Offer**
+    3. **Profile**
+    4. **Sign Out**
+
+- Admin sees another one(two according to size screens) links to: 
+    **Large screens**:
+    5. **Admin Editor**
+        - **Manage Categories**
+        - **Reports**
+    
+    **Small Screen devices**
+    - two links are presented directly in the mobile navbar
+        - **Manage Categories**
+        - **Reports**
+
+1. **Current Offers - offers.html**
+    - User sees the list of current offers that are available. Each offer is presented in a card with a reveal function to show more information. 
+    - Each card present (without needing to click on anything) basic information: 
+        - Fruit category
+        - Username of the person, who is offering
+        - Image of fruits (to be replaced by a real image of fruits later, see Features left to implement)
+        - Location of pick up
+        - Date and time of pick up
+        - A possibility to report the offer in case user finds any information falsy
+        - A badge if offer is free of charge (if charge is requested badge is hidden)
+    
+    - On click, each card with the offer reveals more detailed information: 
+        - Description of the current offer
+        - Equipment needed for the pick up
+        - Contact information 
+        - Price - in case offer is not for free
+        - Offer created by - once again username of the person presenting the offer (for providing better user friendly experience)
+
+    - For Admin and for offers that are "mine" - each offer that belongs to the currently signed in user, each card additionally provides the option to: 
+        - Edit offer - link leads to edit_offer.html
+        - Delete offer - click opens a modal with verification for delete of offer, on click "delete" this offer is deleted from database. Modal also offers the option of "Cancel" where the user goes afterwards to offers.html
+        - Offer created by is automaticaly marked in indigo color as "My Offer"
+    
+    - At the bottom page displays Footer - presented above on Home.html
+
+2. **Add Offer - add_offer.html**
+    - Form where a new offer can be inserted. 
+    - Requested fields: 
+        - Select category of your fruits (select input)
+            - list of available fruits is rendered from MongoDB
+        - Where can we find you (select input)
+            - list of locations is rendered from MongoDB
+        - Date available for pick up (date picker)
+        - Time available - START (time picker)
+        - Time available - END (time picker)
+        - Description - Anything you want to let people know. (input, on purpose it is not a textarea as the design of Materialize is not as pleasant)
+        - Equipment (input, on purpose it is not a textarea as the design of Materialize is not as pleasant)
+        - Contact (input, on purpose it is not a textarea as the design of Materialize is not as pleasant)
+    
+    - Not requested fields
+        - Free of Price - switch - on/off
+        - Price SEK/kg
+            - These price fields are not "requested" as there is a condition either price free or the user inserts their own price. For cases users ignore these fields there is an automatic amount of 0 that appears on the offer and badge "Free of charge" also appears on the offer.
+
+    - Submit button - "Publish Your Offer". In the case of "Add Offer" a button "cancel" seemed to be redundant therefore is not present but may be added according to the future developer's taste.
+
+3. **Profile - profile.html**
+    - profile webpage shows a small chip with username in order to make sure the user is aware it is only his own page presented
+    - offers that belong to the current username are displayed, all offers have the same functions as displayed on offers.html
+    - in case an offer has been reported: 
+        - a warning badge appears on the offer
+            **This offer has been reported as providing faulty information. Please edit your offer as soon as possible.*
+            **In case of further questions, do not hesitate to contact us at berriesnearby@gmail.com.*
+        - on click, the user is warned that his offer has been reported and is encouraged to edit his/hers offer. On submit button "OK and edit", page edit_offer.html opens with the information from the specific reported offer.
+
+4. **Sign Out**
+    - clicking on link signs out the user, user appears on page signin.html and sees a flash message with "You have been signed out."
+
+5. **Admin Editor**: 
+    **Manage Categories**
+        - open page get_categories.html with a list of current categories stored in database
+        - each category offers the option of "delete" and "edit"
+        - clicking on "delete" open a modal with a question "Are you sure you want to delete this category?", "Yes, delete" deletes category from database, or "cancel" renders back to get_categories.html
+        - clicking on "edit category" opens page edit_category.html
+
 
 ### Features Left to Implement
 There is a very large number of features that are left to be implemented. The whole app can be much more interactive for all participants.
 
- - uploading own images of offers - would serve to other users as marketing and real presentation what the actual offer is 
- - expiration date of offers - currently the offers stay there until the user or admin deletes them. There would be a nice option to expire offers if the date has already passed. 
- - time picker - currently the user can pick any time he/she wants no matter what the start and end times are. It would be more user friendly if there is a control function correcting if the time for end is not earlier than time of start of the pick up. 
- - it would be very nice to have a list of already presented offers that has expired or has been "muted" instead of deleted. That way the user can "reactivate" old offers and he/she would´t need to add all offer information again. 
-- option to be added as "interested" in this offer, therefore added into a group of interested users and be informed on time and clearly about any additional changes of this specific offer 
+ - **uploading own images of offers** - would serve to other users as marketing and real presentation what the actual offer is 
+ - **expiration date of offers** - currently the offers stay there until the user or admin deletes them. There would be a nice option to expire offers if the date has already passed. 
+ - **time picker** - currently the user can pick any time he/she wants no matter what the start and end times are. It would be more user friendly if there is a control function correcting if the time for end is not earlier than time of start of the pick up. 
+ - it would be very nice to have a **list of already presented offers** that has expired or has been "muted" instead of deleted. That way the user can "reactivate" old offers and he/she would´t need to add all offer information again. 
+- option to be added as **"interested" in this offer**, therefore added into a group of interested users and be informed on time and clearly about any additional changes of this specific offer 
  
- - chat functions: 
-    - chat functions directly among the users could help immensely the entire interaction among them. The input of adding contact and letting people contact themselves is not a perfect solution but serves the current purposes. Good option would be if each farmer who is posting and offer could create a group of people "interested" in his offer and moderate this group such providing information about the amount of fruits left, or adjusting time of pick up. 
-    - chat functions among admin and farmer - can moderate if a report has been reported, admin can directly inform farmer what has happened
+ - **chat functions**: 
+    - chat functions directly **among the users** could help immensely the entire interaction among them. The input of adding contact and letting people contact themselves is not a perfect solution but serves the current purposes. Good option would be if each farmer who is posting and offer could **create a group** of people "interested" in his offer and moderate this group such providing information about the amount of fruits left, or adjusting time of pick up. 
+    - chat functions among **admin and farmer** - can moderate if a report has been reported, admin can directly inform farmer what has happened
 
-- notifications: 
+- **notifications**: 
     - when Admin executed any changes to my offers (edited or deleted)
     - when a new offer is published
     - when my offer has been reported
     - when I received a new message (after chat functions has been implemented)
 
-- rating of offers
-- save (for myself) as favourite offer
-- payment methods - could be connected to online payment methods such Swish (Sweden) 
+- **rating of offers**
+- save (for myself) as **favourite offer**
+- **payment methods** - could be connected to online payment methods such Swish (Sweden) 
+- **API with map** of current offers although there is a risk of presenting too much of private in
 
 ## Technologies Used
 (adapted accordingly by: https://github.com/Code-Institute-Solutions/SampleREADME)
-- **Bootstrap v5.0** - Bootstrap was used to assist with the responsiveness and styling of the website.
-- **Google Fonts** - Google fonts were used to import all fonts into the style.css file which is used on all pages throughout the project.
+- [Materialize CSS](https://materializecss.com/) - was used to assist with the responsiveness and styling of the website.
+- **Google Fonts** - Google fonts were used to import fonts into the style.css file which is used on all pages throughout the project.
+- **Font Awesome** - for icons in footer
 - **jQuery** - to provide support with javascript codes
 - **Git** - used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - **GitHub** - used to store the projects code after being pushed from Git.
+- **MongoDB** - used to store data
+- **Flask** - web framework used for the app to access MongoDB
+- **Jinja** - used for Python templates
+- **Werkzeug** to generate password-hash and check-hash
+- **Randomkeygen** used to generate strong password and secure the appplication
+- **Heroku** - used for deployment of the project
 
-- technologies to adapt the images (crop, adding the number circles for touch screen version, removing background etc.): 
-
+Technologies used for wireframes and images:
 - **MS Office Power Point** - used for creating wireframes
-- **techsini.com** and **ami.responsivedesign.is** for mockups
+- **techsini.com** for mockup
 
 
 ## Testing
@@ -170,8 +268,7 @@ There is a very large number of features that are left to be implemented. The wh
 - https://validator.w3.org/ 
 
 #### Testing of features:
-**Index.html**
- - **Get-ready.html**
+
 
 #### Bugs and problems in development:
 - **Sign for "Free price" at offers.html**
@@ -201,9 +298,9 @@ The website was developed on hosting page GitHub with a help of GitPod and deplo
 The website is published on: https://berries-nearby.herokuapp.com/
 
 ### Deploying to Heroku
-- Changed the settings to Debug=False ("FLASK_DEBUG": "0")
-- Made sure that the env.py file is included in the gitignore file.
-
+Changed the settings to Debug=False ("FLASK_DEBUG": "0")
+Made sure that the env.py file is included in the gitignore file.
+(credit: https://github.com/Sojasmine/swedevco)
 1. Log in to your Heroku account
 2. Create a new app from your dashboard
 3. Create an app name
@@ -219,13 +316,6 @@ The website is published on: https://berries-nearby.herokuapp.com/
 13. Go back to deploy and inactivate ”Enable Automatic Deploys”
 14. Click the button ”Deploy branch”
 15. Heroku connected successfully with your Github.
-
-- 
-
-
-
-The website was developed on hosting page GitHub with a help of GitPod. Therefore the deployed page is hosted on Github Pages.
-Now the website is published on: https://kamilahase.github.io/MS2-Vocab-Memorize/
 
 ### GitHub Pages
 (credit: https://github.com/Code-Institute-Solutions/SampleREADME)
@@ -257,8 +347,8 @@ The project was deployed to GitHub Pages using the following steps:
 
 
 ### Acknowledgements
-Many thanks to mentor Marcel who provided me with inspirational feedback, valuable tips and boosted my motivation.
-Many thanks to tutors of Code Institue who´s help was highly appreciated and saved my nerves.
+Many thanks to mentor Guido who provided me with inspiration and valuable suggestions.
+Many thanks to tutors of Code Institute who´s help was highly appreciated.
 
 
 
