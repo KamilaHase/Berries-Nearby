@@ -91,7 +91,24 @@ Images on website are to be found under these links (all have been dowloaded fro
 - [Manage Categories](https://www.shutterstock.com/cs/image-photo/berries-on-wooden-rustic-background-253899859)
 
 #### Wireframes
-#### Mockups
+- [Home 1](static/wireframes-mockup/home1.png)
+- [Home 2](static/wireframes-mockup/home2.png)
+- [Register](static/wireframes-mockup/register.png)
+- [Sign In](static/wireframes-mockup/signIn.png)
+- [Profile](static/wireframes-mockup/profile.png)
+- [Offers 1](static/wireframes-mockup/offers1.png)
+- [Offers 2](static/wireframes-mockup/offers2.png)
+- [Add Offer](static/wireframes-mockup/add_offer.png)
+- [Edit Offer](static/wireframes-mockup/edit_offer.png)
+- [Offers - Admin View](static/wireframes-mockup/offers_admin.png)
+- [Manage Categories - Admin View](static/wireframes-mockup/manage_categories_admin.png)
+- [Add Category - Admin View](static/wireframes-mockup/add_categry_admin.png)
+- [Reports - Admin View](static/wireframes-mockup/reports_admin.png)
+- [Report's Detail - Admin View](static/wireframes-mockup/reports_detail_admin.png)
+
+
+#### Mockup - main page
+- [Mockup of Home Page](static/wireframes-mockup/mockup-berries-nearby.png)
 
 ## Features
 
