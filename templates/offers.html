@@ -97,9 +97,11 @@
 
                {% else %}
             <div class="btns-edit">
+               <!-- report offer -->
                <a href="#modal_report-{{ offer._id }}" class="modal-trigger waves-effect waves-grey white btn-flat tooltipped"
                   data-position="bottom" data-tooltip="Report offer">
                   <i class="material-icons grey-text">error_outline</i></a>
+               <!-- offer by -->
                <p class="chip right">by: {{ offer.created_by }}</p>
             </div>
                
@@ -146,7 +148,7 @@
                   query.
                </p>
                <div class="input-field col m8">
-                  <input id="report_content" name="report_content" type="text" class="validate" minlength="3" maxlength="50">
+                  <input id="report_content" name="report_content" type="text" class="validate" minlength="3" maxlength="50" required>
                   <label for="report_content">Write Your Report</label>
                </div>
             </div>
