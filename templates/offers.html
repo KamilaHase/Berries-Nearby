@@ -91,16 +91,13 @@
                   class="waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Edit"><i
                   class="material-icons indigo-text">edit</i></a>
                   
-
-               
-
                <!-- my offer chip -->
                <p class="chip indigo right white-text">MY OFFER</p>
             </div>
 
                {% else %}
             <div class="btns-edit">
-               <a href="#modal1" class="modal-trigger waves-effect waves-grey white btn-flat tooltipped"
+               <a href="#modal_report-{{ offer._id }}" class="modal-trigger waves-effect waves-grey white btn-flat tooltipped"
                   data-position="bottom" data-tooltip="Report offer">
                   <i class="material-icons grey-text">error_outline</i></a>
                <p class="chip right">by: {{ offer.created_by }}</p>
@@ -142,7 +139,7 @@
 
       <!-- modal - Report Offer -->
       <form method="POST" action="{{ url_for('report_offer', offer_id=offer._id) }}">
-         <div id="modal1" class="modal">
+         <div id="modal_report-{{ offer._id }}" class="modal">
             <div class="modal-content">
                <h4>Report Offer</h4>
                <p>Is there anything you want to let us know about this farmer? Please go ahead and we will proceed the

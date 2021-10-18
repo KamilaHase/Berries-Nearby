@@ -197,6 +197,7 @@ def report_offer(offer_id):
                 'reported_by': session["user"],
                 'offer_id': offer_id
             })
+        mongo.db.offers.update_one({"_id": ObjectId(offer_id)}, {"$set": {"reported": True}})
         flash('Offer reported, thank you.')
     return redirect(url_for('offers'))
 
