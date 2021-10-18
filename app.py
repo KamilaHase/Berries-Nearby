@@ -183,7 +183,8 @@ def edit_offer(offer_id):
 
 @app.route("/delete_offer/<offer_id>")
 def delete_offer(offer_id):
-    mongo.db.offers.remove({"_id": ObjectId(offer_id)})
+    mongo.db.offers.delete_one({"_id": ObjectId(offer_id)})
+    mongo.db.reports.delete_many({"offer_id": offer_id})
     flash("Offer Deleted")
     return redirect(url_for("offers"))
 
