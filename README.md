@@ -122,13 +122,13 @@ Images on website are to be found under these links (all have been dowloaded fro
     - Introduces the community project with motivational and marketing quotes
     - Navigation menu displays three links only: 
         1. Home - goes back to home.html
-        2. Enter - link to signin.html
+        2. Sign In - link to signin.html
         3. Register - link to register.html
     
     - Purple area with motivational text suggests "Get started now" with a link to register.html
     - Footer to present links to email and to social media - external resources of information about the project(fictional) and Copyright (fictional)
 
-- **Enter - signin.html** - for already registered users, page provides simple form to write in username and password in order to enter the page. 
+- **Sign In - signin.html** - for already registered users, page provides simple form to write in username and password in order to enter the page. 
 For users who accidentaly open the page and do not have an account yet is placed a link below the form to "register.html."
 
 - **Register - register.html** - for user who have not yet registered into the website, page provides a form where user writes in some essential personal information in order to be able to use the website. These information could be possibly used by Admin in later conversation. 
