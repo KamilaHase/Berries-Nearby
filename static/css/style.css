@@ -231,13 +231,6 @@ line-height: 36px!important;
   position: relative;
 }
 
-.btn-admin-delete-edit {
-  position: relative;
-  z-index: 100!important;
-  display: inline;
-  margin: 3px;
-}
-
 .icon-free {
   font-size: 1.5rem!important;
 }
