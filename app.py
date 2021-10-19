@@ -4,8 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import (generate_password_hash, 
-    check_password_hash, safe_str_cmp)
+from werkzeug.security import (generate_password_hash, check_password_hash)
 if os.path.exists("env.py"):
     import env
 
@@ -67,7 +66,7 @@ def register():
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html")                          
+    return render_template("register.html")
 
 
 # sign in existing user
@@ -77,28 +76,28 @@ def signin():
         # check if username already exists in db
         existing_username = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         if existing_username:
             # ensure inserted password matches username input
             if check_password_hash(
-                existing_username["password"], request.form.get("password")):
+               existing_username["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome! You are signed in as {}"
-                    .format(request.form.get("username")))
+                flash("Welcome! You are signed in as {}".format(
+                        request.form.get("username")))
                 return redirect(url_for(
-                    "profile", username=session["user"]))
-            
+                        "profile", username=session["user"]))
+
             else:
                 # invalid password match
                 flash("Incorrect username and/or password.")
                 return redirect(url_for("signin"))
-            
+
         else:
             # user doesn't exist
             flash("Incorrect username and/or password.")
             return redirect(url_for("signin"))
 
-    return render_template("signin.html") 
+    return render_template("signin.html")
 
 
 # profile page
@@ -112,9 +111,9 @@ def profile(username):
     # show user's offers
     print(offers)
     if session["user"]:
-        return render_template("profile.html", 
-            username=username, offers=offers)
-   
+        return render_template(
+            "profile.html", username=username, offers=offers)
+
     return redirect(url_for("signin"))
 
 
@@ -151,9 +150,12 @@ def add_offer():
         flash("Offer Successfully Added")
         return redirect(url_for("offers"))
 
-    fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits",1)
-    location = mongo.db.location.find().sort("category_location",1)
-    return render_template("add_offer.html", fruit_categories=fruit_categories, location=location)   
+    fruit_categories = mongo.db.fruit_categories.find().sort(
+        "category_fruits", 1)
+    location = mongo.db.location.find().sort(
+        "category_location", 1)
+    return render_template(
+        "add_offer.html", fruit_categories=fruit_categories, location=location)
 
 
 # edit existing offer
@@ -180,11 +182,13 @@ def edit_offer(offer_id):
         flash("Offer Successfully Updated")
 
     offer = mongo.db.offers.find_one({"_id": ObjectId(offer_id)})
-    fruit_categories = mongo.db.fruit_categories.find().sort("category_fruits",1)
-    location = mongo.db.location.find().sort("category_location",1)
+    fruit_categories = mongo.db.fruit_categories.find().sort(
+        "category_fruits", 1)
+    location = mongo.db.location.find().sort("category_location", 1)
 
-    return render_template("edit_offer.html", offer=offer, 
-        fruit_categories=fruit_categories, location=location)
+    return render_template(
+        "edit_offer.html", offer=offer, fruit_categories=fruit_categories,
+        location=location)
 
 
 # delete an offer
@@ -206,7 +210,8 @@ def report_offer(offer_id):
                 'reported_by': session["user"],
                 'offer_id': offer_id
             })
-        mongo.db.offers.update_one({"_id": ObjectId(offer_id)}, 
+        mongo.db.offers.update_one(
+            {"_id": ObjectId(offer_id)},
             {"$set": {"reported": True}})
         flash('Offer reported, thank you.')
     return redirect(url_for('offers'))
@@ -236,7 +241,8 @@ def report_detail(report_id):
 # show all categories of fruits
 @app.route("/get_categories")
 def get_categories():
-    categories = list(mongo.db.fruit_categories.find().sort("category_fruits", 1))
+    categories = list(mongo.db.fruit_categories.find().sort(
+        "category_fruits", 1))
     return render_template("get_categories.html", categories=categories)
 
 
@@ -260,11 +266,13 @@ def edit_category(category_id):
         submit = {
             "category_fruits": request.form.get("category_fruits")
         }
-        mongo.db.fruit_categories.update({"_id": ObjectId(category_id)}, submit)
+        mongo.db.fruit_categories.update(
+            {"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
 
-    category = mongo.db.fruit_categories.find_one({"_id": ObjectId(category_id)})
+    category = mongo.db.fruit_categories.find_one(
+        {"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
 
