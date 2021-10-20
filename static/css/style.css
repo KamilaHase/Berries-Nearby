@@ -64,12 +64,11 @@ nav {
 
 /*-------------------------footer-------------------------------------------------*/
 footer {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .footer-icon {
   margin: 4px;
-  display:inline;
 }
 
 .push-down-footer {
