@@ -356,4 +356,9 @@ line-height: 36px!important;
     .btn-register {
       margin-right: 20px;
     }
+
+    .modal-mobile-size {
+      height: 30vh;
+    }
+
     }

@@ -44,12 +44,10 @@ The web has been been built to provide simple yet clear information to all users
     - Admin's role is apart from the two above enriched with possibilities to: 
         - add, edit or delete fruit categories
         - check reports of fruits 
-        - sending automatic warning to farmers in order to inform them about the need of editing their offer
-        - editing offers of others
         - delete other offers
 
     - Goal of Admin to visit the website: 
-        - as a general user, Admin may be interested in the presented offers, therefore it is reckoned Admin may be checking the offers as any other user. As is Admin's role defined, he would visit the website in order to perform his administration role: check any new reports, send warnings to farmers, edit offers of others if necessary, delete offers of others if necessary. Admin can also add a new fruit category if one is currently sought after or he/she may delete a category if it is not popular at all. 
+        - as a general user, Admin may be interested in the presented offers, therefore it is reckoned Admin may be checking the offers as any other user. As is Admin's role defined, he would visit the website in order to perform his administration role: check any new reports, delete offers of others if necessary. Admin can also add a new fruit category if one is currently sought after or he/she may delete a category if it is not popular at all. 
 
 4. **First time visitor**
     - Anybody who has heard about the project, is interested about getting to know more or is considering joining the community. First time visitor has limited access into the website and can view only the home page, registration page or sign in page (for those who have already registered earlier.)
@@ -249,8 +247,10 @@ There is a very large number of features that are left to be implemented. The wh
  - **uploading own images of offers** - would serve to other users as marketing and real presentation what the actual offer is 
  - **expiration date of offers** - currently the offers stay there until the user or admin deletes them. There would be a nice option to expire offers if the date has already passed. 
  - **time picker** - currently the user can pick any time he/she wants no matter what the start and end times are. It would be more user friendly if there is a control function correcting if the time for end is not earlier than time of start of the pick up. 
- - it would be very nice to have a **list of already presented offers** that has expired or has been "muted" instead of deleted. That way the user can "reactivate" old offers and he/she would´t need to add all offer information again. 
-- option to be added as **"interested" in this offer**, therefore added into a group of interested users and be informed on time and clearly about any additional changes of this specific offer 
+ - **Admin functionality to remove warning badge** - currently if any offer has been reported a warning badge appears on user's Profile page attached to his/hers offer. When opening modal with information about the report, user is encouraged to edit his/hers offer, once offer has been edited, the warning badge disappears. This is a temporar solution, it is highly recommended to include a functionality that only Admin can remove the warning badge and check at the same time if the changes made are acceptable. Therefore on page report_detail is already prepared button to "Remove warning badge" which may lead to removing the badge only by Admin. Currently the button is tooltiped with text "Operation not available yet".
+ The functionality may be expanded, connected to notification and chat functionalities.
+ - It would be very nice to have a **list of already presented offers** that has expired or has been "muted" instead of deleted. That way the user can "reactivate" old offers and he/she would´t need to add all offer information again. 
+- Option to be added as **"interested" in this offer**, therefore added into a group of interested users and be informed on time and clearly about any additional changes of this specific offer.
  
  - **chat functions**: 
     - chat functions directly **among the users** could help immensely the entire interaction among them. The input of adding contact and letting people contact themselves is not a perfect solution but serves the current purposes. Good option would be if each farmer who is posting and offer could **create a group** of people "interested" in his offer and moderate this group such providing information about the amount of fruits left, or adjusting time of pick up. 
@@ -288,12 +288,7 @@ Technologies used for wireframes and images:
 
 
 ## Testing
-
-#### Website has been tested and corrected by: 
-- https://www.freeformatter.com/html-formatter.html 
-- https://validator.w3.org/ 
-
-#### Testing of features:
+Testing can be found in a separate file [here](TESTING.md)
 
 
 #### Bugs and problems in development:
