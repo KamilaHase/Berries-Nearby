@@ -93,20 +93,20 @@ Images on website are to be found under these links (all have been dowloaded fro
 - [Manage Categories](https://www.shutterstock.com/cs/image-photo/berries-on-wooden-rustic-background-253899859)
 
 #### Wireframes
-- [Home 1](static/wireframes-mockup/home1.png)
-- [Home 2](static/wireframes-mockup/home2.png)
-- [Register](static/wireframes-mockup/register.png)
-- [Sign In](static/wireframes-mockup/signIn.png)
-- [Profile](static/wireframes-mockup/profile.png)
-- [Offers 1](static/wireframes-mockup/offers1.png)
-- [Offers 2](static/wireframes-mockup/offers2.png)
-- [Add Offer](static/wireframes-mockup/add_offer.png)
-- [Edit Offer](static/wireframes-mockup/edit_offer.png)
-- [Offers - Admin View](static/wireframes-mockup/offers_admin.png)
-- [Manage Categories - Admin View](static/wireframes-mockup/manage_categories_admin.png)
-- [Add Category - Admin View](static/wireframes-mockup/add_category_admin.png)
-- [Reports - Admin View](static/wireframes-mockup/reports_admin.png)
-- [Report's Detail - Admin View](static/wireframes-mockup/reports_detail_admin.png)
+- [Home 1](static/wireframes-mockup/wireframes/home1.png)
+- [Home 2](static/wireframes-mockup/wireframes/home2.png)
+- [Register](static/wireframes-mockup/wireframes/register.png)
+- [Sign In](static/wireframes-mockup/wireframes/signIn.png)
+- [Profile](static/wireframes-mockup/wireframes/profile.png)
+- [Offers 1](static/wireframes-mockup/wireframes/offers1.png)
+- [Offers 2](static/wireframes-mockup/wireframes/offers2.png)
+- [Add Offer](static/wireframes-mockup/wireframes/add_offer.png)
+- [Edit Offer](static/wireframes-mockup/wireframes/edit_offer.png)
+- [Offers - Admin View](static/wireframes-mockup/wireframes/offers_admin.png)
+- [Manage Categories - Admin View](static/wireframes-mockup/wireframes/manage_categories_admin.png)
+- [Add Category - Admin View](static/wireframes-mockup/wireframes/add_category_admin.png)
+- [Reports - Admin View](static/wireframes-mockup/wireframes/reports_admin.png)
+- [Report's Detail - Admin View](static/wireframes-mockup/wireframes/reports_detail_admin.png)
 
 
 #### Mockup - main page
@@ -303,6 +303,12 @@ Testing can be found in a separate file [here](TESTING.md)
 
 - **Images for Offers**
     - Currently due to time limit and my skills, images are uploaded automatically from static file. Despite users are informed about this "temporar" functionality, it is not best practice in long term. Also uploading own images would serve as marketing for own fruits. The current bug stands for occassion when admin adds another category - currently it is possible to add new category but not to asign it a new image. Therefore fixing this functionality is highly recommended for future development.
+
+- **Reactivity of some input fields**
+    - Currently due to 
+
+- **Scroll down when offer is opened**
+    - Currently due to 
 
 
 #### Testing User Stories from User Experience (UX): 
