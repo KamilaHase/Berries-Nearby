@@ -50,7 +50,7 @@ The web has been been built to provide simple yet clear information to all users
         - as a general user, Admin may be interested in the presented offers, therefore it is reckoned Admin may be checking the offers as any other user. As is Admin's role defined, he would visit the website in order to perform his administration role: check any new reports, delete offers of others if necessary. Admin can also add a new fruit category if one is currently sought after or he/she may delete a category if it is not popular at all. 
 
 4. **First time visitor**
-    - Anybody who has heard about the project, is interested about getting to know more or is considering joining the community. First time visitor has limited access into the website and can view only the home page, registration page or sign in page (for those who have already registered earlier.)
+    - Anybody who has heard about the project, is interested about getting to know more or is considering joining the community. First time visitor has limited access into the website and can view only the home page, registration page and sign in page.
 
 ### Design of the website:
 Design has been chosen to be aligned with the topic of fruits and berries. Overall design is based on warm colors and images of fruits, it is a rather "simple" design that is meant to evoke imaginations of fruit tastes and coziness with family and friends.
@@ -252,6 +252,10 @@ There is a very large number of features that are left to be implemented. The wh
  The functionality may be expanded, connected to notification and chat functionalities.
  - It would be very nice to have a **list of already presented offers** that has expired or has been "muted" instead of deleted. That way the user can "reactivate" old offers and he/she would´t need to add all offer information again. 
 - Option to be added as **"interested" in this offer**, therefore added into a group of interested users and be informed on time and clearly about any additional changes of this specific offer.
+- Currently there is no option to restore password or username in case the user forgets one of these information needed for sign in. Left for future development.
+- Currently there is no special order added for displaying offers and offers appear in the order they have been added to database. It would be more practical to display offer according to certain filter, e.g. date, or expire date. 
+- When the action "delete offer" or "delete category" (for admin), it would be practical to show some information about what exactly is being deleted. Currently if farmer would have more offers published and accidentaly clicks on other than desired offer, he/she would't have any check functionality of which one is the offer being deleted. The same applies for deleting a category for admin. 
+- Admin should be given the option to change location categories and add new location. From time limited reasons these have not been implemented.
  
  - **chat functions**: 
     - chat functions directly **among the users** could help immensely the entire interaction among them. The input of adding contact and letting people contact themselves is not a perfect solution but serves the current purposes. Good option would be if each farmer who is posting and offer could **create a group** of people "interested" in his offer and moderate this group such providing information about the amount of fruits left, or adjusting time of pick up. 
@@ -315,6 +319,9 @@ Testing can be found in a separate file [here](TESTING.md)
 
 - **Scroll down when offer is opened**
     - The offer cards provide nice and dynamic functionality that they reveal on click more information. Although mainly for (only) certain smaller devices it is not clear the offer card continues and demands some scroll down. Left for future development.
+
+- **Warning badge and list of Reports**
+    - As mentioned in the section with future development suggestions, the warning badge when an offer is reported currently disappears if a Farmer clicks on Edit offer. But the actual report message still appears in the list of Reports that Admin can see. This is a current bug left for future development to be fixed/interconected.
 
 ## Deployment
 The website was developed on hosting page GitHub with a help of GitPod and deployed to Heroku for production. 
