@@ -213,6 +213,7 @@ For users who accidentally open the page and already have an existing account, a
     - clicking on link signs out the user, user appears on page signin.html and sees a flash message with "You have been signed out."
 
 5. **Admin Editor**: 
+
     **Manage Categories - get_categories**
         - Opens page get_categories.html with a list of current fruit categories stored in database
         - Each category offers the option of "delete" and "edit"
