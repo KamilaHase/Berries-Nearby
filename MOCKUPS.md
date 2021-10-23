@@ -51,6 +51,7 @@
 ![Error 404](static/wireframes-mockup/mockups-lg-scrn/error404.png)
 
 
+
 ### Mockups small screen devices
 
 ![Error 404](static/wireframes-mockup/mockups-mobile/home1-m.jpg)
@@ -60,8 +61,7 @@
 ![Error 404](static/wireframes-mockup/mockups-mobile/register-m.jpg)
 ![Error 404](static/wireframes-mockup/mockups-mobile/profile-m.jpg)
 ![Error 404](static/wireframes-mockup/mockups-mobile/nav-m.jpg)
-![Error 404](static/wireframes-mockup/mockups-mobile/sign-in-m.jpg)
-![Error 404](static/wireframes-mockup/mockups-mobile/sign-in-success-m.jpg)
+
 
 ![Error 404](static/wireframes-mockup/mockups-mobile/offers-m.jpg)
 
@@ -81,6 +81,8 @@
 ![Error 404](static/wireframes-mockup/mockups-mobile/edit-offer-m.jpg)
 ![Error 404](static/wireframes-mockup/mockups-mobile/offer-edit-success-m.jpg)
 ![Error 404](static/wireframes-mockup/mockups-mobile/sign-out-m.jpg)
+![Error 404](static/wireframes-mockup/mockups-mobile/sign-in-m.jpg)
+![Error 404](static/wireframes-mockup/mockups-mobile/sign-in-success-m.jpg)
 ![Error 404](static/wireframes-mockup/mockups-mobile/report-m.jpg)
 ![Error 404](static/wireframes-mockup/mockups-mobile/report-success-m.jpg)
 ![Error 404](static/wireframes-mockup/mockups-mobile/my-profile-warning-m.jpg)

@@ -268,22 +268,27 @@ There is a very large number of features that are left to be implemented. The wh
 - **API with map** of current offers although there is a risk of presenting too much of private in
 
 ## Technologies Used
+### Database
+The project is using [MongoDB](https://www.mongodb.com/) to store data. 
+The schema of database "berries-nearby" is following: 
+![Database schema](static/database-schema/database-schema.png)
+
+### Frameworks, Libraries & Programs Used: 
 (adapted accordingly by: https://github.com/Code-Institute-Solutions/SampleREADME)
-- [Materialize CSS](https://materializecss.com/) - was used to assist with the responsiveness and styling of the website.
-- **Google Fonts** - Google fonts were used to import fonts into the style.css file which is used on all pages throughout the project.
-- **Font Awesome** - for icons in footer
-- **jQuery** - to provide support with javascript codes
+- **Materialize CSS** - was used to assist with the responsiveness and styling of the website.
 - **Git** - used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - **GitHub** - used to store the projects code after being pushed from Git.
-- **MongoDB** - used to store data
 - **Flask** - web framework used for the app to access MongoDB
 - **Jinja** - used for Python templates
 - **Werkzeug** to generate password-hash and check-hash
 - **Randomkeygen** used to generate strong password and secure the appplication
 - **Heroku** - used for deployment of the project
+- **jQuery** - to provide support with javascript codes
+- **Google Fonts** - Google fonts were used to import fonts into the style.css file which is used on all pages throughout the project.
+- **Font Awesome** - for icons in footer
 
 Technologies used for wireframes and images:
-- **MS Office Power Point** - used for creating wireframes
+- **MS Office Power Point** - used for creating wireframes, adjusting all printscreens
 - **techsini.com** for mockup
 
 
@@ -305,13 +310,10 @@ Testing can be found in a separate file [here](TESTING.md)
     - Currently due to time limit and my skills, images are uploaded automatically from static file. Despite users are informed about this "temporar" functionality, it is not best practice in long term. Also uploading own images would serve as marketing for own fruits. The current bug stands for occassion when admin adds another category - currently it is possible to add new category but not to asign it a new image. Therefore fixing this functionality is highly recommended for future development.
 
 - **Reactivity of some input fields**
-    - Currently due to 
+    - Certain input fields don't react well when clicked, therefore give impression as not working. That has occured mainly in input of "Report offer", some testing showed the select buttons on "Add offer" took longer time to react as well. As these belong to Materialize CSS, I leave the correction for future development.
 
 - **Scroll down when offer is opened**
-    - Currently due to 
-
-
-#### Testing User Stories from User Experience (UX): 
+    - The offer cards provide nice and dynamic functionality that they reveal on click more information. Although mainly for (only) certain smaller devices it is not clear the offer card continues and demands some scroll down. Left for future development.
 
 ## Deployment
 The website was developed on hosting page GitHub with a help of GitPod and deployed to Heroku for production. 
@@ -368,6 +370,7 @@ The project was deployed to GitHub Pages using the following steps:
 - https://stackoverflow.com/a/52851046
 - [Slack](https://app.slack.com/) - Slack comments of other students and alumni on Code Institute page
 - Materialize CSS - https://materializecss.com/
+- https://www.flask.palletsprojects.com/en
 - inspiration from
     - https://github.com/Sojasmine/swedevco
     - https://github.com/zokam1411/milestone-project

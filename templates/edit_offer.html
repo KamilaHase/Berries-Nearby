@@ -18,7 +18,7 @@
             <option value="" disabled>Choose your option</option>
             {% for fruit_category in fruit_categories %}
                {% if fruit_category.category_fruits == offer.category_fruits %}
-                  <option value="{{ fruit_category.category_fruits }}"selected>{{ fruit_category.category_fruits }}</option>
+                  <option value="{{ fruit_category.category_fruits }}" selected>{{ fruit_category.category_fruits }}</option>
                {% else %}
                   <option value="{{ fruit_category.category_fruits }}">{{ fruit_category.category_fruits }}</option>
                {% endif %}
@@ -34,7 +34,7 @@
             <option value="" disabled>Choose your option</option>
             {% for location in location %}
                {% if location.category_location == offer.category_location %}
-                  <option value="{{ location.category_location }}"selected>{{ location.category_location }}
+                  <option value="{{ location.category_location }}" selected>{{ location.category_location }}
                {% else %}
                   <option value="{{ location.category_location }}">{{ location.category_location }}
                {% endif %}
@@ -99,19 +99,21 @@
    <!--price-->
    <div class="row" id="price_amount">
       <div class="input-field input-purple-underline col s10">
-         <input value="{{ offer.price }}"placeholder="Change your price."  class="input-purple-underline" 
+         <input value="{{ offer.price }}" placeholder="Change your price." class="input-purple-underline" 
             id="price" name="price" type="number" min="0" max="1000">
          <label for="price">Price - SEK/kg</label>
       </div>
    </div>
    <!--submit-->
    <div class="row">
-   <div class="center">
-      <a href="{{ url_for('offers') }}" class="btn col s3 waves-effect waves-light indigo btn-register">Cancel</a>
-      <button class="btn offset-m3 col s3 waves-effect waves-light pink darken-4 btn-register" 
-         type="submit">Edit Offer</button>
+      <div class="center">
+         <a href="{{ url_for('offers') }}" class="btn col s3 waves-effect waves-light indigo btn-register">Cancel</a>
+         <button class="btn offset-m3 col s3 waves-effect waves-light pink darken-4 btn-register" 
+            type="submit">Edit Offer</button>
+      </div>
    </div>
 </form>
+</div>
 
 
 {% endblock %}
