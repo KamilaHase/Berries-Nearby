@@ -1,4 +1,4 @@
-![Mockup](static/wireframes and mockup/mockup-berries-nearby.png)
+![Mockup](static/wireframes-mockup/mockup-berries-nearby.png)
 
 # Berries Nearby
 
