@@ -215,28 +215,30 @@ For users who accidentally open the page and already have an existing account, a
 5. **Admin Editor**: 
 
     **Manage Categories - get_categories**
-        - Opens page get_categories.html with a list of current fruit categories stored in database
-        - Each category offers the option of "delete" and "edit"
-        - Clicking on "delete" opens a modal with a question "Are you sure you want to delete this category?", "Delete" deletes category from database, or "cancel" renders back to get_categories.html
-        - Clicking on "edit category" opens page edit_category.html with the option of changing name of the category in a simple form. Admin confirms by clicking on "Edit category" or cancels by button "cancel"
+    - Opens page get_categories.html with a list of current fruit categories stored in database
+    - Each category offers the option of "delete" and "edit"
+    - Clicking on "delete" opens a modal with a question "Are you sure you want to delete this category?", "Delete" deletes category from database, or "cancel" renders back to get_categories.html
+    - Clicking on "edit category" opens page edit_category.html with the option of changing name of the category in a simple form. Admin confirms by clicking on "Edit category" or cancels by button "cancel"
     
     **Reports - reports.html**
-        - Opens page with a list of reports written by users. As mentioned above on offers.html, each customer has the option to report other offers in case he/she has the impression of offer containing false information or the farmer has not been behaving trustworthy. 
-        - Reports are presented in teal color to make sure Admin is aware this is a page not visible to general users. 
-        - Each card presents the text reported, then field "reported by" and username and the option to “See details of this report”. 
+    - Opens page with a list of reports written by users. As mentioned above on offers.html, each customer has the option to report other offers in case he/she has the impression of offer containing false information or the farmer has not been behaving trustworthy. 
+    - Reports are presented in teal color to make sure Admin is aware this is a page not visible to general users. 
+    - Each card presents the text reported, then field "reported by" and username and the option to “See details of this report”. 
 
     **Report's detail - report_detail.html**
-        - Page opens more details about the current offer that has been reported. 
+     - Page opens more details about the current offer that has been reported. 
         **1. Card with detailed information:**
         The text of report is being repeated together with username of "reported by", under are fields rendered from database providing more information: 
-            - Farmer's username
-            - Farmer's email
-            - Farmer's full name
+        - Farmer's username
+        - Farmer's email
+        - Farmer's full name
+
         **2.Offer card**
-            - The actual offer card that has been reported. Contains all presented information (description, equipment, price included)
+        - The actual offer card that has been reported. Contains all presented information (description, equipment, price included)
+
         **3.Action buttons**
-            - Close report - goes to reports.html
-            - Remove warning badge – in the future development, there is reckoned with a check-up functionality where only Admin will be able to remove the warning badge. This feature is left for future development (as noted below) and currently is tooltipped with text “Operation not available yet.”
+        - Close report - goes to reports.html
+        - Remove warning badge – in the future development, there is reckoned with a check-up functionality where only Admin will be able to remove the warning badge. This feature is left for future development (as noted below) and currently is tooltipped with text “Operation not available yet.”
 
 - additional pages not accessible from navigation menu: 
 6. **Edit Offer - edit_offer.html**
