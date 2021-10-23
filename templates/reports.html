@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="container">
    <div class="row lower-from-logo">
-      <div class="">
+      <div>
          <h5 class="center">Reports</h5>
       </div>
    </div>
+
    <!--offer cards-->
    <div class="row">
       <div>
@@ -23,11 +25,14 @@
             </div>
          </div>
          {% endfor %}
+
          <div class="push-down-footer"></div>
+
          {% else %}
          <p class="push-down-footer">No reports found.</p>
          {% endif %}
       </div>
    </div>
 </div>
+
 {% endblock %}

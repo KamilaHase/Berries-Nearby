@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="row lower-from-logo">
    <div class="offset-s2 col s8">
       <h5 class="center">Add Category of Fruits</h5>
    </div>
 </div>
-
 <div class="row">
    <form class="col s10 offset-s2 form-color-purple" method="POST" action="{{ url_for('add_category')}}">
-      
       <!--add fruits category-->
       <div class="row">
          <div class="input-field input-purple-underline col s10">
@@ -17,7 +16,6 @@
             <label for="category_fruits">Category of fruits</label>
          </div>
       </div>
-
       <!--submit/cancel-->
       <div class="row">
          <div class="center push-down-footer">
@@ -28,4 +26,5 @@
       </div>
    </form>
 </div>
+
 {% endblock %}

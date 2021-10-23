@@ -14,18 +14,16 @@
    <h5 class="center">My Profile</h5>
 </div>
 
-
 <!--offer cards-->
 <div class="container container-offers">
    <div class="row">
       {% if offers %} 
       <h6>Here are your current offers.</h6>
 
-      
       <!--offers - cards -->
       {% for offer in offers %} 
       <div class="card col m5 offer-card cards-padding sticky-action">
-
+        
          <!--fruit images-->
          <div class="card-image waves-effect waves-block waves-light">
             {% if offer.category_fruits == "Apples and Pears" %}
@@ -44,19 +42,20 @@
             <img class="activator" src="{{ url_for('static', filename='images/unknown-category.jpg') }}" alt="Others/unknowwn image">
             {% endif %}
          </div>
-
+        
          <!--fruit category and action buttons-->
          <div class="card-content content-card-padding ">
             <span class="card-title activator grey-text text-darken-4 card-title-padding">{{ offer.category_fruits }}
             <i class="material-icons right">more_vert</i>
             </span>
+
             {% if offer.created_by == session["user"] %}
             <div class="btns-edit">
                <a href="#modal_delete-{{ offer._id }}"
                   class="modal-trigger waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Delete"><i
                   class="material-icons red-text">clear</i></a>
                
-               <!-- modal - Delete Offer-->
+                  <!-- modal - delete offer-->
                <div id="modal_delete-{{ offer._id }}" class="modal">
                   <div class="modal-content">
                      <h4>Delete Offer</h4>
@@ -67,7 +66,6 @@
                      <a href="{{ url_for('offers') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
                   </div>
                </div>
-
                <a href="{{ url_for('edit_offer', offer_id=offer._id) }}" class="waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Edit"><i class="material-icons indigo-text">edit</i></a>
                
                <!-- warning badge -->
@@ -80,13 +78,13 @@
             </div>
             {% endif %}
 
-
             <!--purple sticky area on cards-->
             <div class="card-action pink darken-4 white-text">
                <p>{{ offer.category_location }}</p>
                <p>{{ offer.date_of_pick_up }}, {{ offer.time_start }}-{{ offer.time_end }}</p>
             </div>
          </div>
+
          <!--card content reveal-->
          <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
@@ -94,46 +92,44 @@
             <p><strong>Equipment:</strong> {{ offer.equipment }}</p>
             <p><strong>Contact:</strong> {{ offer.contact }}</p>
             {% if offer.price_free == "off" %}
-              <p><strong>Price:</strong> {{ offer.price }} SEK/kg</p>
+               <p><strong>Price:</strong> {{ offer.price }} SEK/kg</p>
             {% endif %}
             {% if offer.created_by == session["user"] %}
-              <p class="chip indigo right white-text">MY OFFER</p>
+               <p class="chip indigo right white-text">MY OFFER</p>
             {% else %}
-              <p class="chip right">Offered by: {{ offer.created_by }}</p>
+               <p class="chip right">Offered by: {{ offer.created_by }}</p>
             {% endif %}
          </div>
+
          {% if offer.price_free == "on" %}
-          <div class="z-depth-5">
-              <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free" 
-                data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">thumb_up</i></a>
-          </div>
+         <div class="z-depth-5">
+            <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free" 
+               data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">thumb_up</i></a>
+         </div>
          {% endif %}
-        
- <!-- modal - Warning -->
-    <div id="modal-warning-{{ offer._id }}" class="modal">
-      <div class="modal-content">
-         <h4 class="red-text">Warning</h4>
-         <p>This offer has been reported as providing faulty information. Please edit your offer as soon as possible. 
-            <br> In case of further questions, do not hesitate to contact us at berriesnearby@gmail.com.
-         </p>
-      </div>
-      <div class="modal-footer">
-         <a href="{{ url_for('edit_offer', offer_id=offer._id) }}" class="modal-close waves-effect red lighten-5 waves-red btn-flat">OK and edit offer</a>
-      </div>
-   </div>
 
-
+         <!-- modal - warning -->
+         <div id="modal-warning-{{ offer._id }}" class="modal">
+            <div class="modal-content">
+               <h4 class="red-text">Warning</h4>
+               <p>This offer has been reported as providing faulty information. Please edit your offer as soon as possible. 
+                  <br> In case of further questions, do not hesitate to contact us at berriesnearby@gmail.com.
+               </p>
+            </div>
+            <div class="modal-footer">
+               <a href="{{ url_for('edit_offer', offer_id=offer._id) }}" class="modal-close waves-effect red lighten-5 waves-red btn-flat">OK and edit offer</a>
+            </div>
+         </div>
 
       </div>
       {% endfor %}
    </div>
 </div>
 
-
 <div class="push-down-footer-sm"></div>
-
 
 {% else %}
 <h6 class="push-down-footer">Currently no offers published.</h6>
 {% endif %}
+
 {% endblock %}

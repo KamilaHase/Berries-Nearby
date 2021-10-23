@@ -1,25 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="container">
+   
    <div class="row lower-from-logo">
       <div class="col s8">
          <h5 class="center">Manage Categories</h5>
       </div>
    </div>
+
    <section>
       <div>
          <img src="{{ url_for('static', filename='images/berriesCategories-circle.png') }}" class="img-categories" alt="Categories of fruits">
       </div>
 
       <div>
-        <!--categories-->
+         <!--categories-->
          {% for category in categories %}
          <div class="waves-effect waves-light btn-large card-categories grey lighten-3">
-            <div class="black-text">{{ category.category_fruits }}
-                <!-- delete category -->
+            <div class="black-text">
+               {{ category.category_fruits }}
+               <!-- delete category -->
                <a href="#modal_delete_category-{{ category._id }}" class="modal-trigger waves-effect waves-grey white btn-flat transparent tooltipped" 
                   data-position="bottom" data-tooltip="Delete"><i class="material-icons red-text icons-edit-cat">clear</i></a>
-               
                <!-- modal - delete category-->
                <div id="modal_delete_category-{{ category._id }}" class="modal get-it-above">
                   <div class="modal-content">
@@ -31,17 +34,19 @@
                      <a href="{{ url_for('get_categories') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
                   </div>
                </div>
-               
                <a href="{{ url_for('edit_category', category_id=category._id )}}" class="waves-effect waves-grey white btn-flat transparent tooltipped" 
                   data-position="bottom" data-tooltip="Edit"><i class="material-icons indigo-text icons-edit-cat">edit</i></a>
             </div>
          </div>
          {% endfor %}  
+         
          <div>
-           <!--add category-->
+            <!--add category-->
             <a href="{{ url_for('add_category') }}" class="btn btn-large col s4 waves-effect waves-light card-categories pink darken-4">Add a New Category</a>
          </div>
+
       </div>
    </section>
 </div>
+
 {% endblock %}

@@ -111,6 +111,7 @@ Images on website are to be found under these links (all have been dowloaded fro
 
 #### Mockup - main page
 - [Mockup of Home Page](static/wireframes-mockup/mockup-berries-nearby.png)
+- [Detailed mockups of large and small screens](MOCKUPS.md)
 
 ## Features
 

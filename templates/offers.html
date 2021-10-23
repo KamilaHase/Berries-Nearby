@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="container">
+   
    <div class="row lower-from-logo">
       <div>
          <h5 class="center">Current Offers</h5>
@@ -16,7 +17,7 @@
 
    <!--search area-->
    <div>
-{% if offers|length > 0 %}
+      {% if offers|length > 0 %}
       <form class="form-color-purple" method="POST" action="{{ url_for('search')}}">
          <div class="row input-field input-purple-underline">
             <div class="input-field col m10">
@@ -40,9 +41,9 @@
    <div class="row">
       {% for offer in offers %}
       <div class="card col m5 offer-card cards-padding sticky-action">
-        
-        <!--fruit images-->
-        <div class="card-image waves-effect waves-block waves-light">
+         
+         <!--fruit images-->
+         <div class="card-image waves-effect waves-block waves-light">
             {% if offer.category_fruits == "Apples and Pears" %}
             <img class="activator" src="{{ url_for('static', filename='images/apples-pears.jpg') }}" alt="Apples and Pears">
             {% elif offer.category_fruits == "Peaches, Apricots, Plums" %}
@@ -68,12 +69,12 @@
             </span>
             {% if offer.created_by == session["user"] %}
             <div class="btns-edit">
+
                <!-- delete offer -->
                <a href="#modal_delete-{{ offer._id }}"
                   class="modal-trigger waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Delete"><i
                   class="material-icons red-text">clear</i></a>
-
-               <!-- modal - Delete Offer-->
+               <!-- modal - delete offer-->
                <div id="modal_delete-{{ offer._id }}" class="modal">
                   <div class="modal-content">
                      <h4>Delete Offer</h4>
@@ -84,26 +85,24 @@
                      <a href="{{ url_for('offers') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
                   </div>
                </div>
-               
+
                <!-- edit offer -->
                <a href="{{ url_for('edit_offer', offer_id=offer._id) }}"
                   class="waves-effect waves-grey white btn-flat tooltipped" data-position="bottom" data-tooltip="Edit"><i
                   class="material-icons indigo-text">edit</i></a>
-                  
                <!-- my offer chip -->
                <p class="chip indigo right white-text">MY OFFER</p>
             </div>
 
-               {% else %}
+            {% else %}
             <div class="btns-edit">
                <!-- report offer -->
                <a href="#modal_report-{{ offer._id }}" class="modal-trigger waves-effect waves-grey white btn-flat tooltipped"
                   data-position="bottom" data-tooltip="Report offer">
-                  <i class="material-icons grey-text">error_outline</i></a>
+               <i class="material-icons grey-text">error_outline</i></a>
                <!-- offer by -->
                <p class="chip right">by: {{ offer.created_by }}</p>
             </div>
-               
             {% endif %}
 
             <!--purple sticky area on cards-->
@@ -120,44 +119,43 @@
             <p><strong>Equipment:</strong> {{ offer.equipment }}</p>
             <p><strong>Contact:</strong> {{ offer.contact }}</p>
             {% if offer.price_free == "off" %}
-              <p><strong>Price:</strong> {{ offer.price }} SEK/kg</p>
+               <p><strong>Price:</strong> {{ offer.price }} SEK/kg</p>
             {% endif %}
             {% if offer.created_by == session["user"] %}
-              <p class="chip indigo right white-text">MY OFFER</p>
+               <p class="chip indigo right white-text">MY OFFER</p>
             {% else %}
-              <p class="chip right">Offered by: {{ offer.created_by }}</p>
+               <p class="chip right">Offered by: {{ offer.created_by }}</p>
             {% endif %}
          </div>
 
-          <!--free offer icon -->
+         <!--free offer icon -->
          {% if (offer.price_free == "on") or (offer.price == "0") %}
-          <div class="z-depth-5">
-              <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free"
-                data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">thumb_up</i></a>
-          </div>
+         <div class="z-depth-5">
+            <a class="btn-floating tooltipped btn-large halfway-fab waves-effect waves-light red button-free"
+               data-position="bottom" data-tooltip="FREE of charge"><i class="material-icons icon-free">thumb_up</i></a>
+         </div>
          {% endif %}
 
          {% if session.user|lower == "admin"|lower %}
-          <!-- delete offer admin -->
-          <a href="#modal_delete-admin-{{ offer._id }}" class="modal-trigger left btn-floating tooltipped btn-small halfway-fab waves-effect waves-light teal button-free"
-                data-position="bottom" data-tooltip="Delete offer"><i class="material-icons icon-free">clear</i></a>
+         <!-- delete offer admin -->
+         <a href="#modal_delete-admin-{{ offer._id }}" class="modal-trigger left btn-floating tooltipped btn-small halfway-fab waves-effect waves-light teal button-free"
+            data-position="bottom" data-tooltip="Delete offer"><i class="material-icons icon-free">clear</i></a>
+         <!-- modal - Delete Offer admin-->
+         <div id="modal_delete-admin-{{ offer._id }}" class="modal">
+            <div class="modal-content">
+               <h4>Delete Offer</h4>
+               <p>Are you sure you want to delete this offer?</p>
+            </div>
+            <div class="modal-footer">
+               <a href="{{ url_for('delete_offer', offer_id=offer._id) }}" class="modal-close waves-effect waves-green btn-flat">Delete</a>
+               <a href="{{ url_for('offers') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            </div>
+         </div>
+         {% endif %}
 
-       <!-- modal - Delete Offer admin-->
-       <div id="modal_delete-admin-{{ offer._id }}" class="modal">
-          <div class="modal-content">
-             <h4>Delete Offer</h4>
-             <p>Are you sure you want to delete this offer?</p>
-          </div>
-          <div class="modal-footer">
-             <a href="{{ url_for('delete_offer', offer_id=offer._id) }}" class="modal-close waves-effect waves-green btn-flat">Delete</a>
-             <a href="{{ url_for('offers') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-          </div>
-       </div>
-        {% endif %}
-        
       </div>
 
-      <!-- modal - Report Offer -->
+      <!-- modal - report offer -->
       <form method="POST" action="{{ url_for('report_offer', offer_id=offer._id) }}">
          <div id="modal_report-{{ offer._id }}" class="modal modal-mobile-size">
             <div class="modal-content">
@@ -184,11 +182,13 @@
 {% else %}
 <div class="row">
    <div class="">
-<h6 class="indigo-text push-down-footer">
-<a href="{{ url_for('offers') }}" class="waves-effect waves-grey white btn-flat left tooltipped"
-data-position="bottom" data-tooltip="Refresh page"><i class="material-icons indigo-text right">autorenew</i></a>
-No results found.</h6>
-</div>
+      <h6 class="indigo-text push-down-footer">
+         <a href="{{ url_for('offers') }}" class="waves-effect waves-grey white btn-flat left tooltipped"
+            data-position="bottom" data-tooltip="Refresh page"><i class="material-icons indigo-text right">autorenew</i></a>
+         No results found.
+      </h6>
+   </div>
 </div>
 {% endif %}
+
 {% endblock %}
