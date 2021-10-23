@@ -31,6 +31,7 @@ Features were tested in Chrome, Mozzilla Firefox, Safari and Microsoft Edge for 
 - After filling the form and submiting, user gets to page profile.html while receiving flash message "Registration Successful!". 
 - In case the user has already signed up his account, there is a "helper" link under the submit button that leads to sign in page.
 - First time user may later on behave similarily as "Second and more time user" therefore more is described below.
+- User may be interested in checking social media, links provided on footer at each page
 - all links tested, work well, documented under mockups section
 
 #### Second and more time user 
@@ -78,9 +79,12 @@ Features were tested in Chrome, Mozzilla Firefox, Safari and Microsoft Edge for 
 - Famer may want to see and read what others have to offer 
     - after sign in, a registered user may read all offers currently presented under link "Current offers" - offer.html
 - Farmer may want to report another farmer, description below at "Customer"
+- Farmer may be interested in checking social media, links provided on footer at each page
+- all links tested, work well, documented under mockups section
 
 2. **Customer**
 - All users who decide not to post any of their own offers but are registered, have an access to read all current offers under "Current Offers" - offers.html
+- Customer may be interested in checking social media, links provided on footer at each page
 - A customer may report a farmer in case the customer gets impression some information are false or the farmer is behaving not trustworthy 
     - on page "Current offers" - offers.html each card of offers has an icon of exclamation mark in circle. By clicking on the icon a modal opens
     - modal contains
@@ -89,6 +93,7 @@ Features were tested in Chrome, Mozzilla Firefox, Safari and Microsoft Edge for 
         - submit and cancel button
     - after submitting, a flash message appears with text "offer reported, thank you".
     - report links tested, work well, documented under mockups section
+- all links tested, work well, documented under mockups section
 
 2. **Admin**
 - admin has all rights as a farmer and customer
